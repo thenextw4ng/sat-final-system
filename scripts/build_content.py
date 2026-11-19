@@ -14,38 +14,55 @@ def extract_vocabulary(pdf_path: Path) -> list[dict[str, Any]]:
     except ImportError as exc:
         raise SystemExit("Install dependencies: pip install -r requirements.txt") from exc
     doc = fitz.open(pdf_path)
-    found = []
+    entries: list[dict[str, Any]] = []
     for page_no, page in enumerate(doc):
         blocks = page.get_text("blocks")
         heads = []
-        for b in blocks:
-            x, y, _, _, txt = b[:5]
-            m = re.search(r"^\s*([A-Za-z][A-Za-z -]*?)\s+(NOUN|VERB|ADJ)\s+#(\d+)\s*", txt.strip())
-            if m:
-                heads.append({"x": round(x), "y": float(y), "word": m.group(1).strip(),
-                              "pos": m.group(2), "id": int(m.group(3)), "page": page_no + 1})
-        for h in heads:
-            next_y = min((x["y"] for x in heads if x["x"] == h["x"] and x["y"] > h["y"]), default=float("inf"))
-            content = []
-            for b in blocks:
-                x, y, _, _, txt = b[:5]
-                if abs(round(x)-h["x"]) <= 1 and h["y"] < y < next_y and txt.strip() and not re.search(r"\b(?:NOUN|VERB|ADJ)\s+#\d+", txt):
-                    content.append((y, txt.strip()))
-            content.sort()
-            if len(content) < 2:
-                raise ValueError(f"Could not extract vocabulary #{h['id']} {h['word']}")
-            lines = [x.strip() for x in content[0][1].splitlines() if x.strip()]
-            found.append({"id": h["id"], "word": h["word"], "part_of_speech": h["pos"],
-                          "meaning_id": lines[0] if lines else "",
-                          "definition_en": clean(" ".join(lines[1:])),
-                          "example": clean(content[1][1]), "source_page": h["page"]})
-    found.sort(key=lambda x: x["id"])
-    if [x["id"] for x in found] != list(range(1,456)):
-        raise ValueError(f"Vocabulary IDs/count invalid: {len(found)} entries")
-    if any(not all(x[k] for k in ("word","meaning_id","definition_en","example")) for x in found):
-        raise ValueError("One or more vocabulary entries have missing fields")
-    return found
-
+        for block in blocks:
+            x0, y0, _, _, text = block[:5]
+            match = re.search(r"^\s*([A-Za-z][A-Za-z -]*?)\s+(NOUN|VERB|ADJ)\s+#(\d+)\s*", text.strip())
+            if match:
+                heads.append({"x": round(x0), "y": float(y0), "word": match.group(1).strip(),
+                              "pos": match.group(2), "id": int(match.group(3)), "page": page_no + 1})
+        positioned_lines = []
+        for block in page.get_text("dict")["blocks"]:
+            if block.get("type") != 0:
+                continue
+            for line in block.get("lines", []):
+                spans = line.get("spans", [])
+                if not spans:
+                    continue
+                text = "".join(span["text"] for span in spans).strip()
+                if text:
+                    positioned_lines.append({"x": round(line["bbox"][0]), "y": float(line["bbox"][1]),
+                                             "text": text, "spans": spans})
+        for head in heads:
+            next_y = min((x["y"] for x in heads if x["x"] == head["x"] and x["y"] > head["y"]),
+                         default=float("inf"))
+            lines = [line for line in positioned_lines
+                     if abs(line["x"] - head["x"]) <= 1 and head["y"] < line["y"] < next_y]
+            meanings, definitions, examples = [], [], []
+            for line in sorted(lines, key=lambda x: (x["y"], x["x"])):
+                main = line["spans"][0]
+                font = main.get("font", "")
+                size = float(main.get("size", 0))
+                if "Oblique" in font:
+                    examples.append(line["text"])
+                elif "Bold" in font and 9.0 <= size <= 10.0:
+                    meanings.append(line["text"])
+                elif "Bold" not in font and 7.5 <= size <= 8.2:
+                    definitions.append(line["text"])
+            if not meanings or not definitions or not examples:
+                raise ValueError(f"Cannot extract all fields for vocabulary #{head['id']} ({head['word']})")
+            entries.append({"id": head["id"], "word": head["word"], "part_of_speech": head["pos"],
+                            "meaning_id": clean(" ".join(meanings)),
+                            "definition_en": clean(" ".join(definitions)),
+                            "example": clean(" ".join(examples)), "source_page": head["page"]})
+    entries.sort(key=lambda x: x["id"])
+    ids = [x["id"] for x in entries]
+    if len(entries) != 455 or ids != list(range(1, 456)):
+        raise ValueError(f"Vocabulary IDs/count invalid: {len(entries)} entries")
+    return entries
 def extract_questions(path: Path) -> list[dict[str, Any]]:
     text = path.read_text(encoding="utf-8")
     marks = list(re.finditer(r"^## Question (\d{4}) — \`([0-9a-f]+)\`\s*$", text, re.M))
