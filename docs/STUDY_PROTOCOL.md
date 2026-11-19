@@ -18,12 +18,12 @@ Use two separate counters. Vocabulary Day 1 is not automatically the same study 
 ### Vocabulary session sequence
 
 1. **Study cards:** review each exact headword, Indonesian meaning, English definition, and source example in the private repository app. Mark a word mastered only after recalling it without looking.
-2. **Contextual reading:** click **Copy SAT reading-passage prompt**. The AI tutor verifies the day's headwords against the matching JSON part, then writes a new academic passage in 3–5 connected paragraphs using the target words naturally. It creates exactly five new SAT-style questions about that passage.
+2. **Contextual reading:** Vocabulary Day 1 has a built-in original four-paragraph passage that uses all 57 exact target headwords; the app highlights them and checks coverage. For Days 2–8, click **Copy AI practice prompt**. The AI tutor should verify the day's headwords against the matching JSON part, translate each definition into Indonesian, then write a new academic passage in 3–5 connected paragraphs using the target words naturally. It should create exactly five new SAT-style questions about that passage.
 3. **Reading quiz:** answer the five new questions using clickable A–D controls. Reveal correctness and an explanation immediately after each selection.
 4. **Vocabulary quiz:** finish Set 1 (20), Set 2 (20), Set 3 (10), and the bonus audit (7 or 6). The app provides immediate feedback, Indonesian meaning, English definition, and the source example for the tested word.
 5. **Review:** revisit incorrect words and words not yet marked mastered. Mastery progress is separate from quiz accuracy.
 
-The app's source cards are the place to inspect the repository's original vocabulary fields. When generating new examples or contextual reading in ChatGPT, use fresh wording rather than reproducing source passages or long blocks of protected text.
+The Day 1 Indonesian definition overlay is supplementary learning content; it does not overwrite the extracted source fields. Other vocabulary days currently retain their short Indonesian gloss and English definition until their Indonesian definition overlays are added. The app's source cards are the place to inspect the repository's original vocabulary fields. When generating new examples or contextual reading in ChatGPT, use fresh wording rather than reproducing source passages or long blocks of protected text.
 
 ## Track B — Original SAT question bank: 21 days / 1,234 questions
 
