@@ -61,3 +61,8 @@ This repository is currently public. Verify that every source license explicitly
 ## Progress and privacy
 
 Progress is stored in this browser's `localStorage`; it is not synced between devices and no analytics are sent. Vocabulary mastery, vocabulary quizzes, and question-bank answers use separate storage keys.
+
+
+### Answer-key audit
+
+All 1,234 repository `Correct answer` letters were compared with the attached master MD for Question IDs 0001–1234: **1,234 matched, 0 missing, 0 mismatched**. See [Question Key Audit](docs/QUESTION-KEY-AUDIT.md). The original question-bank files were not modified by the audit.
