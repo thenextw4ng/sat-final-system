@@ -19,11 +19,11 @@ Use two separate counters. Vocabulary Day 1 is not automatically the same study 
 
 1. **Study cards:** review each exact headword, Indonesian meaning, English definition, and source example in the browser app. Mark a word mastered only after recalling it without looking.
 2. **Contextual reading:** every Vocabulary Day 1–8 has a built-in original four-paragraph passage. Days 1–7 use all 57 exact target headwords; Day 8 uses all 56. The app highlights each target word and checks the passage's coverage and target-list alignment against the matching vocabulary JSON part.
-3. **Reading quiz:** answer the five new questions using clickable A–D controls. Reveal correctness and an explanation immediately after each selection.
+3. **Reading quiz:** click **Copy AI comprehension quiz prompt** and send it to ChatGPT. The tutor reads the built-in passage for the selected day, generates exactly five original SAT-style questions, verifies each answer key against that passage, and presents an interactive A–D quiz with Indonesian explanations. These are GENERATED PRACTICE, separate from the original 1,234-question bank.
 4. **Vocabulary quiz:** finish Set 1 (20), Set 2 (20), Set 3 (10), and the bonus audit (7 or 6). The app provides immediate feedback, Indonesian meaning, English definition, and the source example for the tested word.
 5. **Review:** revisit incorrect words and words not yet marked mastered. Mastery progress is separate from quiz accuracy.
 
-The Day 1 Indonesian definition overlay is supplementary learning content; it does not overwrite the extracted source fields. Other vocabulary days currently retain their short Indonesian gloss and English definition until their Indonesian definition overlays are added. The app's source cards are the place to inspect the repository's original vocabulary fields. When generating new examples or contextual reading in ChatGPT, use fresh wording rather than reproducing source passages or long blocks of protected text.
+The Day 1 Indonesian definition overlay is supplementary learning content; it does not overwrite the extracted source fields. Other vocabulary days currently retain their short Indonesian gloss and English definition until their Indonesian definition overlays are added. The app's source cards are the place to inspect the repository's original vocabulary fields. When generating new examples and comprehension questions in ChatGPT, use fresh wording. The built-in contextual passages are repository-owned original learning content; do not replace them with unrelated passages.
 
 ## Track B — Original SAT question bank: 21 days / 1,234 questions
 
@@ -64,3 +64,8 @@ The question bank's audit reports 875 questions with complete explicit Domain/Sk
 All explanations must be in Indonesian, even when the source explanation is in English. For each Question Bank item, use this order: (1) inti soal, (2) skill yang diuji, (3) petunjuk/bukti kunci, (4) langkah penalaran, (5) alasan jawaban benar, (6) analisis opsi A–D satu per satu, (7) jebakan umum, and (8) strategi SAT yang dapat dipakai ulang. Paraphrase source material; do not reproduce the full passage or long source explanation. If a user answers incorrectly, diagnose the reasoning error constructively.
 
 The browser app currently shows the original source explanation in English and offers a button to copy a Question-ID-based prompt for a structured Indonesian explanation in ChatGPT. The prompt points the tutor to the repository record rather than copying the source question into the chat.
+
+
+## Original question-bank answer-key audit
+
+The 1,234 repository answer-key letters were compared against the attached master file `Pasted text.txt` (English Question Bank — 1,234 Questions). All Question IDs 0001–1234 were present, with 0 missing keys and 0 mismatches. See `docs/QUESTION-KEY-AUDIT.md` and `data/question-bank-key-audit.json`. This audit does not certify rights to redistribute the question text.
