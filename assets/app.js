@@ -11,6 +11,8 @@
     vocab: null,
     questions: null,
     vocabReviewQueue: [],
+    indonesianDefinitions: {},
+    readingPassage: null,
     vocabDay: 1,
     questionDay: 1,
     vocabIndex: 0,
@@ -116,6 +118,57 @@
     renderVocabQuestion();
   }
 
+  function appendHighlightedText(parent, text, words) {
+    const escaped = words.map((word) => word.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&"));
+    const pattern = new RegExp(`\\\\b(${escaped.join("|")})\\\\b`, "gi");
+    let cursor = 0;
+    for (const match of text.matchAll(pattern)) {
+      parent.append(document.createTextNode(text.slice(cursor, match.index)));
+      parent.append(node("mark", "target-word", match[0]));
+      cursor = match.index + match[0].length;
+    }
+    parent.append(document.createTextNode(text.slice(cursor)));
+  }
+
+  async function renderReadingPassage(day) {
+    const area = $("readingPassageArea");
+    area.replaceChildren();
+    area.classList.add("hidden");
+    state.readingPassage = null;
+    if (day !== 1) return;
+    try {
+      const passage = await loadJson("data/reading-passages/day-01.json");
+      state.readingPassage = passage;
+      const fullText = passage.paragraphs.join(" ");
+      const found = passage.target_words.filter((word) => new RegExp(`\\\\b${word}\\\\b`, "i").test(fullText));
+      const missing = passage.target_words.filter((word) => !found.includes(word));
+      const card = node("article", "reading-card");
+      const header = node("div", "reading-heading");
+      header.append(
+        node("div", "eyebrow", "DAY 1 · CONTEXTUAL READING"),
+        node("h3", "", passage.title),
+        node("p", "subtle", passage.subtitle)
+      );
+      const body = node("div", "reading-body");
+      passage.paragraphs.forEach((paragraph) => {
+        const p = node("p");
+        appendHighlightedText(p, paragraph, passage.target_words);
+        body.append(p);
+      });
+      const audit = node("div", `passage-audit ${missing.length ? "audit-warning" : "audit-success"}`,
+        missing.length
+          ? `Vocabulary coverage: ${found.length}/${passage.target_words.length}. Missing: ${missing.join(", ")}`
+          : `Vocabulary coverage verified: all ${found.length}/${passage.target_words.length} exact target words appear in the passage. Highlighted words are the Day 1 list.`
+      );
+      card.append(header, body, audit);
+      area.append(card);
+      area.classList.remove("hidden");
+    } catch (error) {
+      area.replaceChildren(node("div", "error", `Reading passage unavailable: ${error.message}`));
+      area.classList.remove("hidden");
+    }
+  }
+
   function renderVocabCards() {
     const mastered = masteredIds();
     const grid = $("vocabGrid");
@@ -128,8 +181,9 @@
       top.append(node("div", "word", word.word), node("span", "pos", word.part_of_speech || ""));
       details.hidden = true;
       details.append(
-        node("div", "meaning", word.meaning_id),
-        node("div", "definition", word.definition_en),
+        node("div", "meaning", `Arti ringkas (Indonesia): ${word.meaning_id}`),
+        node("div", "definition", `Definition (English): ${word.definition_en}`),
+        node("div", "definition-id", `Definisi (Indonesia): ${state.indonesianDefinitions[word.id] || "Terjemahan definisi bahasa Indonesia belum tersedia untuk hari ini."}`),
         node("div", "example", word.example)
       );
       const reveal = button("Reveal meaning + example", "reveal", () => {
@@ -262,8 +316,9 @@
       const feedback = node("div", `feedback ${correct ? "feedback-correct" : "feedback-incorrect"}`);
       feedback.append(
         node("strong", "", correct ? "Correct!" : `Not quite. Correct answer: ${correctChoice.letter}.`),
-        node("p", "meaning", word.meaning_id),
-        node("p", "definition", word.definition_en),
+        node("p", "meaning", `Arti ringkas (Indonesia): ${word.meaning_id}`),
+        node("p", "definition", `Definition (English): ${word.definition_en}`),
+        node("p", "definition-id", `Definisi (Indonesia): ${state.indonesianDefinitions[word.id] || "Terjemahan definisi bahasa Indonesia belum tersedia untuk hari ini."}`),
         node("p", "example", word.example)
       );
       card.append(feedback);
@@ -338,6 +393,9 @@
     $("vocabGrid").replaceChildren(node("div", "loading", "Loading vocabulary…"));
     try {
       state.vocab = await loadJson(`data/vocabulary/part-${String(day).padStart(2, "0")}.json`);
+      const definitionData = await loadJson(`data/vocabulary/indonesian-definitions/part-${String(day).padStart(2, "0")}.json`).catch(() => ({ definitions: {} }));
+      state.indonesianDefinitions = definitionData.definitions || {};
+      await renderReadingPassage(day);
       const saved = read(KEYS.vocabDay(day), { answers: {}, index: 0, finished: false });
       state.vocabAnswers = saved.answers || {};
       state.vocabIndex = Math.min(saved.index || 0, Math.max(0, state.vocab.count - 1));
@@ -365,6 +423,7 @@
       "First, verify the target list against data/vocabulary/part-XX.json in the repository. Do not add, omit, or substitute headwords.",
       "Create one coherent original academic reading passage in 3–5 connected paragraphs (about 550–800 words) that uses every target word naturally. Do not force awkward usage; if a word genuinely cannot fit, identify it and explain why.",
       "Then create exactly five original Digital SAT Reading and Writing-style multiple-choice questions about the passage. Use varied skills: words in context, central idea, inference, textual evidence, and author purpose/structure.",
+      "For every target word, also provide a clear, natural Indonesian definition that explains the concept, not only a one-word synonym. Keep the English definition and Indonesian explanation side by side.",
       "For every question, provide four plausible choices, one correct answer, and a concise explanation. Do not copy a published SAT passage or question.",
       "Render the five questions as a genuinely interactive multiple-choice quiz with clickable A–D options and immediate right/wrong feedback, correct answer, and explanation after each selection.",
       "After the reading quiz, run the vocabulary quiz in blocks of 20, 20, 10, then the remaining 7 words (6 on Day 8). Explain the tested word's Indonesian meaning and usage after each answer.",
