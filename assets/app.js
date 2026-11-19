@@ -10,6 +10,7 @@
   const state = {
     vocab: null,
     questions: null,
+    vocabReviewQueue: [],
     vocabDay: 1,
     questionDay: 1,
     vocabIndex: 0,
