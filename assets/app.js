@@ -8,6 +8,28 @@ function read(k,d){try{let x=localStorage.getItem(k);return x?JSON.parse(x):d}ca
 function write(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){$("headerStatus").textContent="Browser storage unavailable"}}
 function el(t,c,txt){let n=document.createElement(t);if(c)n.className=c;if(txt!==undefined)n.textContent=String(txt);return n}
 async function load(path){let r=await fetch(path);if(!r.ok)throw Error("Cannot load "+path+" (HTTP "+r.status+")");return r.json()}
+
+async function loadText(path){const r=await fetch(path,{cache:"no-store"});if(!r.ok)throw Error("Cannot load "+path+" (HTTP "+r.status+")");return r.text()}
+function parseQuestionMarkdown(md,part){
+  const marks=[...md.matchAll(/^## Question (\d{4}) — \x60([0-9a-f]+)\x60[ \t]*$/gm)];
+  if(!marks.length)throw Error("No original questions found in this part");
+  const questions=marks.map((m,i)=>{
+    const raw=md.slice(m.index,i+1<marks.length?marks[i+1].index:md.length);
+    const meta=raw.match(/^Domain: (.+?) · Skill: (.+?) · Difficulty: (.+?)\s*$/m);
+    const blockMatch=raw.match(/### Question\s*\n([\s\S]*?)(?=\n### Answer choices)/);
+    if(!blockMatch)throw Error("Question "+m[1]+" has no question block");
+    let questionText=blockMatch[1].trim(),prompt="";
+    if(questionText.includes("**Prompt:**")){const pieces=questionText.split("**Prompt:**");questionText=pieces[0].trim();prompt=pieces.slice(1).join("**Prompt:**").trim()}
+    const cb=raw.match(/### Answer choices\s*\n([\s\S]*?)(?=\n\*\*Correct answer:)/);
+    const choices=cb?[...cb[1].matchAll(/^- \*\*([A-D])\.\*\*\s*(.*?)\s*$/gm)].map(x=>({letter:x[1],text:x[2].trim()})):[];
+    const answer=raw.match(/\*\*Correct answer: ([A-D])\*\*/);
+    const explanation=raw.match(/### Explanation\s*\n([\s\S]*)$/);
+    if(choices.length!==4||!answer||!explanation)throw Error("Question "+m[1]+" failed structural integrity check");
+    return{id:Number(m[1]),hash:m[2],domain:meta?meta[1]:null,skill:meta?meta[2]:null,difficulty:meta?meta[3]:null,question_text:questionText,prompt,choices,correct_answer:answer[1],explanation:explanation[1].trim()};
+  });
+  return{part,total_parts:21,start_id:questions[0].id,end_id:questions[questions.length-1].id,count:questions.length,questions};
+}
+
 function error(box,e){box.replaceChildren(el("div","error",e.message+". Run scripts/build_content.py, then commit the generated data/ folder."))}
 function setTab(name){document.querySelectorAll(".tab[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));$("vocabPanel").classList.toggle("hidden",name!=="vocab");$("quizPanel").classList.toggle("hidden",name!=="quiz")}
 document.querySelectorAll(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
@@ -16,7 +38,7 @@ for(let p=1;p<=21;p++)$("questionPart").add(new Option("Part "+String(p).padStar
 async function loadVocab(p){s.vocabPart=p;$("vocabPart").value=p;$("vocabGrid").replaceChildren(el("div","loading","Loading vocabulary…"));try{s.vocab=await load("data/vocabulary/part-"+String(p).padStart(2,"0")+".json");$("vocabRange").textContent="Words #"+s.vocab.start_id+"–"+s.vocab.end_id+" · "+s.vocab.count+" entries";renderVocab()}catch(e){error($("vocabGrid"),e)}}
 function progressV(){let n=read(VK,[]).length;$("vocabProgress").textContent=n+" / 455 mastered"}
 function renderVocab(){let mastered=new Set(read(VK,[])),grid=$("vocabGrid");grid.replaceChildren();s.vocab.words.forEach(w=>{let card=el("article","word-card"),top=el("div","word-top"),detail=el("div","word-detail"),actions=el("div","word-actions");top.append(el("div","word",w.word),el("span","pos",w.part_of_speech));detail.hidden=true;detail.append(el("div","meaning",w.meaning_id),el("div","definition",w.definition_en),el("div","example",w.example));let reveal=el("button","reveal","Reveal meaning + example");reveal.type="button";reveal.onclick=()=>{detail.hidden=!detail.hidden;reveal.textContent=detail.hidden?"Reveal meaning + example":"Hide details"};let label=el("label","mastered"),check=document.createElement("input");check.type="checkbox";check.checked=mastered.has(w.id);check.onchange=()=>{let all=new Set(read(VK,[]));check.checked?all.add(w.id):all.delete(w.id);write(VK,Array.from(all));progressV()};label.append(check,document.createTextNode("Mastered"));actions.append(reveal,label);card.append(top,detail,actions);grid.append(card)});progressV()}
-async function loadQuiz(p){s.questionPart=p;$("questionPart").value=p;$("quizArea").replaceChildren(el("div","loading","Loading original questions…"));try{s.questions=await load("data/questions/part-"+String(p).padStart(2,"0")+".json");let old=read(QK(p),{answers:{},finished:false});s.answers=old.answers||{};s.finished=!!old.finished;s.index=0;$("questionRange").textContent="Original IDs #"+s.questions.start_id+"–"+s.questions.end_id+" · "+s.questions.count+" questions";s.finished?review():renderQuestion();progressQ()}catch(e){error($("quizArea"),e)}}
+async function loadQuiz(p){s.questionPart=p;$("questionPart").value=p;$("quizArea").replaceChildren(el("div","loading","Loading original questions…"));try{const md=await loadText("data/question-markdown/part-"+String(p).padStart(2,"0")+".md");s.questions=parseQuestionMarkdown(md,p);let old=read(QK(p),{answers:{},finished:false});s.answers=old.answers||{};s.finished=!!old.finished;s.index=0;$("questionRange").textContent="Original IDs #"+s.questions.start_id+"–"+s.questions.end_id+" · "+s.questions.count+" questions";s.finished?review():renderQuestion();progressQ()}catch(e){error($("quizArea"),e)}}
 function saveQ(){write(QK(s.questionPart),{answers:s.answers,finished:s.finished});progressQ()}
 function score(){let n=0;s.questions.questions.forEach(q=>{if(s.answers[q.id]===q.correct_answer)n++});return n}
 function progressQ(){if(!s.questions)return;let n=Object.keys(s.answers).filter(k=>s.answers[k]).length;$("quizProgress").textContent=n+"/"+s.questions.count+" answered"+(s.finished?" · "+score()+"/"+s.questions.count+" correct":"")}

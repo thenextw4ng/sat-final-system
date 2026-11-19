@@ -1,0 +1,522 @@
+{
+  "part": 3,
+  "total_parts": 8,
+  "start_id": 115,
+  "end_id": 171,
+  "count": 57,
+  "words": [
+    {
+      "id": 115,
+      "word": "dearth",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kekurangan; kelangkaan",
+      "definition_en": "a lack of something",
+      "example": "“There is a dearth of good doctors in rural areas.”",
+      "source_page": 9
+    },
+    {
+      "id": 116,
+      "word": "debacle",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kegagalan total; kekacauan",
+      "definition_en": "a fiasco or failure",
+      "example": "“The product launch was a total debacle.”",
+      "source_page": 9
+    },
+    {
+      "id": 117,
+      "word": "debauch",
+      "part_of_speech": "VERB",
+      "meaning_id": "merusak moral",
+      "definition_en": "ruin or debase, particularly morally",
+      "example": "“Wealth and idleness debauched the young prince.”",
+      "source_page": 9
+    },
+    {
+      "id": 118,
+      "word": "decorum",
+      "part_of_speech": "NOUN",
+      "meaning_id": "sopan santun; tata krama",
+      "definition_en": "proper behavior",
+      "example": "“Students must maintain decorum in the library.”",
+      "source_page": 9
+    },
+    {
+      "id": 119,
+      "word": "deference",
+      "part_of_speech": "NOUN",
+      "meaning_id": "sikap hormat; patuh",
+      "definition_en": "respectful submission",
+      "example": "“He spoke with deference to the elders.”",
+      "source_page": 9
+    },
+    {
+      "id": 120,
+      "word": "defunct",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak berfungsi lagi; sudah mati",
+      "definition_en": "no longer working",
+      "example": "“The defunct factory stood empty for years.”",
+      "source_page": 9
+    },
+    {
+      "id": 121,
+      "word": "deleterious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "merugikan; berbahaya",
+      "definition_en": "causing harm",
+      "example": "“Smoking has deleterious effects on health.”",
+      "source_page": 9
+    },
+    {
+      "id": 122,
+      "word": "demagogue",
+      "part_of_speech": "NOUN",
+      "meaning_id": "demagog; penghasut rakyat",
+      "definition_en": "political leader who appeals to the prejudices of the",
+      "example": "common people “The demagogue stirred up fear for votes.”",
+      "source_page": 9
+    },
+    {
+      "id": 123,
+      "word": "demur",
+      "part_of_speech": "VERB",
+      "meaning_id": "keberatan; ragu",
+      "definition_en": "show reluctance; raise objections",
+      "example": "“She demurred when asked to lead the project.”",
+      "source_page": 9
+    },
+    {
+      "id": 124,
+      "word": "denigrate",
+      "part_of_speech": "VERB",
+      "meaning_id": "merendahkan; mencemarkan nama",
+      "definition_en": "disparage",
+      "example": "“Do not denigrate your rivals' efforts.”",
+      "source_page": 9
+    },
+    {
+      "id": 125,
+      "word": "deride",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengejek; mencemooh",
+      "definition_en": "mock or ridicule",
+      "example": "“Critics derided the film as shallow.”",
+      "source_page": 9
+    },
+    {
+      "id": 126,
+      "word": "despot",
+      "part_of_speech": "NOUN",
+      "meaning_id": "tiran; penguasa lalim",
+      "definition_en": "a tyrant",
+      "example": "“The despot ruled with an iron fist.”",
+      "source_page": 9
+    },
+    {
+      "id": 127,
+      "word": "desultory",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak terarah; sambil lalu",
+      "definition_en": "lacking purpose or direction",
+      "example": "“They held a desultory conversation about nothing.”",
+      "source_page": 9
+    },
+    {
+      "id": 128,
+      "word": "diaphanous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tipis dan tembus pandang",
+      "definition_en": "light and translucent",
+      "example": "“She wore a diaphanous scarf.”",
+      "source_page": 9
+    },
+    {
+      "id": 129,
+      "word": "didactic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bersifat mendidik; menggurui",
+      "definition_en": "intended to teach",
+      "example": "“The novel is too didactic and preachy.”",
+      "source_page": 9
+    },
+    {
+      "id": 130,
+      "word": "diffident",
+      "part_of_speech": "ADJ",
+      "meaning_id": "pemalu; kurang percaya diri",
+      "definition_en": "shy and lacking confidence",
+      "example": "“The diffident boy never raised his hand.”",
+      "source_page": 9
+    },
+    {
+      "id": 131,
+      "word": "dirge",
+      "part_of_speech": "NOUN",
+      "meaning_id": "lagu duka; nyanyian pemakaman",
+      "definition_en": "song of lament for the dead",
+      "example": "“The band played a slow dirge at the funeral.”",
+      "source_page": 9
+    },
+    {
+      "id": 132,
+      "word": "discomfit",
+      "part_of_speech": "VERB",
+      "meaning_id": "membuat canggung; mengacaukan",
+      "definition_en": "make someone uncomfortable",
+      "example": "“The hard question discomfited the speaker.”",
+      "source_page": 9
+    },
+    {
+      "id": 133,
+      "word": "discordant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak selaras; sumbang",
+      "definition_en": "in disagreement; harsh",
+      "example": "“The discordant notes hurt our ears.”",
+      "source_page": 9
+    },
+    {
+      "id": 134,
+      "word": "discrepancy",
+      "part_of_speech": "NOUN",
+      "meaning_id": "perbedaan; ketidakcocokan",
+      "definition_en": "lack of agreement",
+      "example": "“There is a discrepancy between the two reports.”",
+      "source_page": 10
+    },
+    {
+      "id": 135,
+      "word": "disdain",
+      "part_of_speech": "NOUN",
+      "meaning_id": "penghinaan; sikap meremehkan",
+      "definition_en": "scorn or contempt",
+      "example": "“He looked at the cheap gift with disdain.”",
+      "source_page": 10
+    },
+    {
+      "id": 136,
+      "word": "disparate",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat berbeda; tidak sejenis",
+      "definition_en": "different from one another",
+      "example": "“The two cultures have disparate customs.”",
+      "source_page": 10
+    },
+    {
+      "id": 137,
+      "word": "disrepute",
+      "part_of_speech": "NOUN",
+      "meaning_id": "nama buruk; aib",
+      "definition_en": "state of disgrace",
+      "example": "“The scandal brought the firm into disrepute.”",
+      "source_page": 10
+    },
+    {
+      "id": 138,
+      "word": "dissemble",
+      "part_of_speech": "VERB",
+      "meaning_id": "berpura-pura; menyembunyikan maksud",
+      "definition_en": "conceal one's true motives",
+      "example": "“She dissembled to hide her real plans.”",
+      "source_page": 10
+    },
+    {
+      "id": 139,
+      "word": "dogmatic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "dogmatis; kaku berpendirian",
+      "definition_en": "inclined to lay down opinions as facts",
+      "example": "“His dogmatic views left no room for debate.”",
+      "source_page": 10
+    },
+    {
+      "id": 140,
+      "word": "dubious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "meragukan; mencurigakan",
+      "definition_en": "doubtful; suspicious",
+      "example": "“The claim rests on dubious evidence.”",
+      "source_page": 10
+    },
+    {
+      "id": 141,
+      "word": "duplicity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kemunafikan; sikap bermuka dua",
+      "definition_en": "deceitfulness",
+      "example": "“His duplicity was exposed when the emails leaked.”",
+      "source_page": 10
+    },
+    {
+      "id": 142,
+      "word": "duress",
+      "part_of_speech": "NOUN",
+      "meaning_id": "paksaan; tekanan",
+      "definition_en": "intimidation or coercion to force someone to act",
+      "example": "“The prisoner signed the paper under duress.” E                                                                                                           36 kata",
+      "source_page": 10
+    },
+    {
+      "id": 143,
+      "word": "ebullient",
+      "part_of_speech": "ADJ",
+      "meaning_id": "penuh semangat; riang",
+      "definition_en": "cheerful and lively",
+      "example": "“The ebullient winner hugged everyone.”",
+      "source_page": 10
+    },
+    {
+      "id": 144,
+      "word": "eclectic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "beragam; dari berbagai sumber",
+      "definition_en": "wide-ranging",
+      "example": "“She has an eclectic taste in music.”",
+      "source_page": 10
+    },
+    {
+      "id": 145,
+      "word": "edict",
+      "part_of_speech": "NOUN",
+      "meaning_id": "dekret; perintah resmi",
+      "definition_en": "an official order",
+      "example": "“The ruler issued an edict banning the festival.”",
+      "source_page": 10
+    },
+    {
+      "id": 146,
+      "word": "efficacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "ampuh; manjur",
+      "definition_en": "has the power to achieve a particular result",
+      "example": "“The vaccine proved highly efficacious.”",
+      "source_page": 10
+    },
+    {
+      "id": 147,
+      "word": "effluvia",
+      "part_of_speech": "NOUN",
+      "meaning_id": "bau tidak sedap",
+      "definition_en": "unpleasant odor",
+      "example": "“Effluvia from the swamp drifted over the town.”",
+      "source_page": 10
+    },
+    {
+      "id": 148,
+      "word": "effrontery",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kelancangan; tidak tahu malu",
+      "definition_en": "insolent or shameless behavior",
+      "example": "“He had the effrontery to ask for a raise after missing deadlines.”",
+      "source_page": 10
+    },
+    {
+      "id": 149,
+      "word": "egregious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat buruk; keterlaluan",
+      "definition_en": "outstandingly bad",
+      "example": "“It was an egregious error in judgment.”",
+      "source_page": 10
+    },
+    {
+      "id": 150,
+      "word": "elegy",
+      "part_of_speech": "NOUN",
+      "meaning_id": "elegi; puisi ratapan",
+      "definition_en": "poem of reflection, typically a lament for the dead",
+      "example": "“The poet wrote an elegy for his friend.”",
+      "source_page": 10
+    },
+    {
+      "id": 151,
+      "word": "elicit",
+      "part_of_speech": "VERB",
+      "meaning_id": "memancing; menimbulkan",
+      "definition_en": "evoke or draw out",
+      "example": "“The joke elicited laughter from the crowd.”",
+      "source_page": 10
+    },
+    {
+      "id": 152,
+      "word": "eloquent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "fasih; pandai berbicara",
+      "definition_en": "well-spoken",
+      "example": "“Her eloquent speech moved the audience.”",
+      "source_page": 10
+    },
+    {
+      "id": 153,
+      "word": "elude",
+      "part_of_speech": "VERB",
+      "meaning_id": "menghindari; lolos dari",
+      "definition_en": "escape one's grasp",
+      "example": "“The answer eluded me despite hours of thought.”",
+      "source_page": 11
+    },
+    {
+      "id": 154,
+      "word": "emollient",
+      "part_of_speech": "ADJ",
+      "meaning_id": "melembutkan; menenangkan",
+      "definition_en": "soothing",
+      "example": "“She applied an emollient cream to dry skin.”",
+      "source_page": 11
+    },
+    {
+      "id": 155,
+      "word": "empirical",
+      "part_of_speech": "ADJ",
+      "meaning_id": "empiris; berdasarkan bukti",
+      "definition_en": "based on observation or evidence",
+      "example": "“The theory needs empirical support.”",
+      "source_page": 11
+    },
+    {
+      "id": 156,
+      "word": "emulate",
+      "part_of_speech": "VERB",
+      "meaning_id": "meniru; menyaingi",
+      "definition_en": "imitate",
+      "example": "“Young athletes emulate their heroes.”",
+      "source_page": 11
+    },
+    {
+      "id": 157,
+      "word": "enervate",
+      "part_of_speech": "VERB",
+      "meaning_id": "melemahkan; menguras tenaga",
+      "definition_en": "weaken; drain of energy",
+      "example": "“The tropical heat enervated the hikers.”",
+      "source_page": 11
+    },
+    {
+      "id": 158,
+      "word": "engender",
+      "part_of_speech": "VERB",
+      "meaning_id": "menimbulkan; melahirkan",
+      "definition_en": "bring about",
+      "example": "“Poverty can engender crime.”",
+      "source_page": 11
+    },
+    {
+      "id": 159,
+      "word": "enmity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "permusuhan",
+      "definition_en": "deep-seated hostility",
+      "example": "“Years of enmity separated the two families.”",
+      "source_page": 11
+    },
+    {
+      "id": 160,
+      "word": "ephemeral",
+      "part_of_speech": "ADJ",
+      "meaning_id": "singkat; cepat berlalu",
+      "definition_en": "short-lived",
+      "example": "“Fame can be ephemeral.”",
+      "source_page": 11
+    },
+    {
+      "id": 161,
+      "word": "equanimity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "ketenangan batin",
+      "definition_en": "mental calmness",
+      "example": "“She faced the bad news with equanimity.”",
+      "source_page": 11
+    },
+    {
+      "id": 162,
+      "word": "equivocal",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bermakna ganda; tidak tegas",
+      "definition_en": "ambiguous",
+      "example": "“The results were equivocal and proved nothing.”",
+      "source_page": 11
+    },
+    {
+      "id": 163,
+      "word": "erudite",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berpengetahuan luas; terpelajar",
+      "definition_en": "scholarly; learned",
+      "example": "“The erudite professor quoted ancient texts.”",
+      "source_page": 11
+    },
+    {
+      "id": 164,
+      "word": "esoteric",
+      "part_of_speech": "ADJ",
+      "meaning_id": "hanya dipahami kalangan tertentu",
+      "definition_en": "understood by only a small group",
+      "example": "“The lecture covered esoteric points of philosophy.”",
+      "source_page": 11
+    },
+    {
+      "id": 165,
+      "word": "estranged",
+      "part_of_speech": "ADJ",
+      "meaning_id": "terasing; renggang",
+      "definition_en": "alienated from a former friend or family",
+      "example": "“He is estranged from his brother.”",
+      "source_page": 11
+    },
+    {
+      "id": 166,
+      "word": "eulogy",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pidato pujian (biasanya untuk almarhum)",
+      "definition_en": "speech of high praise, often for the dead",
+      "example": "“She delivered a moving eulogy at the service.”",
+      "source_page": 11
+    },
+    {
+      "id": 167,
+      "word": "evanescent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "cepat lenyap; fana",
+      "definition_en": "fading quickly from sight",
+      "example": "“The evanescent rainbow vanished in seconds.”",
+      "source_page": 11
+    },
+    {
+      "id": 168,
+      "word": "evince",
+      "part_of_speech": "VERB",
+      "meaning_id": "menunjukkan; memperlihatkan",
+      "definition_en": "reveal the presence of",
+      "example": "“Her smile evinced great joy.”",
+      "source_page": 11
+    },
+    {
+      "id": 169,
+      "word": "exacerbate",
+      "part_of_speech": "VERB",
+      "meaning_id": "memperburuk",
+      "definition_en": "make worse",
+      "example": "“Scratching will exacerbate the rash.”",
+      "source_page": 11
+    },
+    {
+      "id": 170,
+      "word": "execrable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat buruk; menjijikkan",
+      "definition_en": "extremely bad or unpleasant",
+      "example": "“The restaurant's service was execrable.”",
+      "source_page": 11
+    },
+    {
+      "id": 171,
+      "word": "exhort",
+      "part_of_speech": "VERB",
+      "meaning_id": "mendesak; menganjurkan dengan kuat",
+      "definition_en": "strongly encourage someone to do something",
+      "example": "“The coach exhorted the team to keep fighting.”",
+      "source_page": 11
+    }
+  ]
+}

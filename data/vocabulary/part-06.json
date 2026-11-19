@@ -1,0 +1,522 @@
+{
+  "part": 6,
+  "total_parts": 8,
+  "start_id": 286,
+  "end_id": 342,
+  "count": 57,
+  "words": [
+    {
+      "id": 286,
+      "word": "nonchalant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "acuh tak acuh; santai",
+      "definition_en": "casually indifferent",
+      "example": "“He seemed nonchalant about the exam.”",
+      "source_page": 18
+    },
+    {
+      "id": 287,
+      "word": "noxious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "beracun; berbahaya",
+      "definition_en": "poisonous; harmful",
+      "example": "“Noxious fumes filled the lab.” O                                                                                                        14 kata",
+      "source_page": 18
+    },
+    {
+      "id": 288,
+      "word": "obdurate",
+      "part_of_speech": "ADJ",
+      "meaning_id": "keras kepala; tak mudah luluh",
+      "definition_en": "stubborn",
+      "example": "“The obdurate leader refused all pleas.”",
+      "source_page": 18
+    },
+    {
+      "id": 289,
+      "word": "obfuscate",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengaburkan; membingungkan",
+      "definition_en": "render unclear; bewilder someone",
+      "example": "“Jargon obfuscates the real issue.”",
+      "source_page": 18
+    },
+    {
+      "id": 290,
+      "word": "oblique",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak langsung; miring",
+      "definition_en": "indirect or evasive",
+      "example": "“She made an oblique reference to his failure.”",
+      "source_page": 18
+    },
+    {
+      "id": 291,
+      "word": "obsequious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menjilat; terlalu patuh",
+      "definition_en": "excessively eager to please",
+      "example": "“The obsequious waiter bowed constantly.”",
+      "source_page": 18
+    },
+    {
+      "id": 292,
+      "word": "obstinate",
+      "part_of_speech": "ADJ",
+      "meaning_id": "keras kepala",
+      "definition_en": "stubbornly refusing to change",
+      "example": "“The obstinate mule would not move.”",
+      "source_page": 18
+    },
+    {
+      "id": 293,
+      "word": "obstreperous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "ribut dan sulit diatur",
+      "definition_en": "noisy and difficult to control",
+      "example": "“Obstreperous fans were escorted out.”",
+      "source_page": 18
+    },
+    {
+      "id": 294,
+      "word": "obtuse",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lamban memahami; tumpul",
+      "definition_en": "slow to understand",
+      "example": "“Are you being obtuse on purpose?”",
+      "source_page": 18
+    },
+    {
+      "id": 295,
+      "word": "officious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sok berkuasa; suka mencampuri",
+      "definition_en": "self-assertive, overbearing",
+      "example": "“The officious clerk demanded extra forms.”",
+      "source_page": 18
+    },
+    {
+      "id": 296,
+      "word": "onerous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "memberatkan; berat",
+      "definition_en": "involving many obligations or effort",
+      "example": "“The onerous task took weeks.”",
+      "source_page": 18
+    },
+    {
+      "id": 297,
+      "word": "opaque",
+      "part_of_speech": "ADJ",
+      "meaning_id": "buram; tidak jelas maknanya",
+      "definition_en": "not transparent; hard to understand",
+      "example": "“The contract was written in opaque language.”",
+      "source_page": 18
+    },
+    {
+      "id": 298,
+      "word": "opulent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "mewah; megah",
+      "definition_en": "rich and lavish",
+      "example": "“They stayed in an opulent hotel.”",
+      "source_page": 18
+    },
+    {
+      "id": 299,
+      "word": "ostensible",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tampaknya; yang tampak di permukaan",
+      "definition_en": "seemingly so",
+      "example": "“The ostensible reason was illness.”",
+      "source_page": 18
+    },
+    {
+      "id": 300,
+      "word": "ostentatious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "pamer; mencolok",
+      "definition_en": "showy; designed to impress",
+      "example": "“His ostentatious car drew stares.”",
+      "source_page": 18
+    },
+    {
+      "id": 301,
+      "word": "ostracism",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pengucilan",
+      "definition_en": "exclusion from a group",
+      "example": "“The liar faced ostracism from classmates.”",
+      "source_page": 18
+    },
+    {
+      "id": 302,
+      "word": "palliate",
+      "part_of_speech": "VERB",
+      "meaning_id": "meredakan (tanpa menyembuhkan)",
+      "definition_en": "make less severe",
+      "example": "“Medicine can palliate pain.”",
+      "source_page": 19
+    },
+    {
+      "id": 303,
+      "word": "palpable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "terasa jelas; kasatmata",
+      "definition_en": "able to be felt or perceived",
+      "example": "“The tension in the room was palpable.”",
+      "source_page": 19
+    },
+    {
+      "id": 304,
+      "word": "panacea",
+      "part_of_speech": "NOUN",
+      "meaning_id": "obat mujarab untuk segalanya",
+      "definition_en": "a remedy for all diseases",
+      "example": "“No single policy is a panacea.”",
+      "source_page": 19
+    },
+    {
+      "id": 305,
+      "word": "paradigm",
+      "part_of_speech": "NOUN",
+      "meaning_id": "paradigma; model",
+      "definition_en": "typical example or pattern; a model",
+      "example": "“Darwin's work changed the biological paradigm.”",
+      "source_page": 19
+    },
+    {
+      "id": 306,
+      "word": "pariah",
+      "part_of_speech": "NOUN",
+      "meaning_id": "orang buangan; paria",
+      "definition_en": "an outcast",
+      "example": "“After the scandal he became a pariah.”",
+      "source_page": 19
+    },
+    {
+      "id": 307,
+      "word": "paucity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kelangkaan; kekurangan",
+      "definition_en": "a lack of; scarcity",
+      "example": "“There is a paucity of evidence.”",
+      "source_page": 19
+    },
+    {
+      "id": 308,
+      "word": "pedantic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bertele-tele soal detail; sok teliti",
+      "definition_en": "overly concerned with minor details",
+      "example": "“The pedantic editor argued over commas.”",
+      "source_page": 19
+    },
+    {
+      "id": 309,
+      "word": "pejorative",
+      "part_of_speech": "ADJ",
+      "meaning_id": "merendahkan (kata/makna)",
+      "definition_en": "expressing contempt or disapproval",
+      "example": "“\"Nerd\" can be a pejorative term.”",
+      "source_page": 19
+    },
+    {
+      "id": 310,
+      "word": "penchant",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kecenderungan; kegemaran",
+      "definition_en": "habitual liking for something",
+      "example": "“She has a penchant for mystery novels.”",
+      "source_page": 19
+    },
+    {
+      "id": 311,
+      "word": "penurious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat miskin; pelit",
+      "definition_en": "poverty-stricken",
+      "example": "“The penurious family lived in a shed.”",
+      "source_page": 19
+    },
+    {
+      "id": 312,
+      "word": "perfunctory",
+      "part_of_speech": "ADJ",
+      "meaning_id": "asal-asalan; sekadar formalitas",
+      "definition_en": "done with minimal effort",
+      "example": "“He gave a perfunctory nod and left.”",
+      "source_page": 19
+    },
+    {
+      "id": 313,
+      "word": "pernicious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "merusak secara halus; berbahaya",
+      "definition_en": "having a harmful effect on",
+      "example": "“Pernicious rumors destroyed her reputation.”",
+      "source_page": 19
+    },
+    {
+      "id": 314,
+      "word": "perspicacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tajam wawasan; cerdik menilai",
+      "definition_en": "having keen insight",
+      "example": "“A perspicacious judge, she spotted the lie.”",
+      "source_page": 19
+    },
+    {
+      "id": 315,
+      "word": "pert",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lincah dan lancang; genit",
+      "definition_en": "attractive; impudent or saucy",
+      "example": "“The pert girl answered back cheekily.”",
+      "source_page": 19
+    },
+    {
+      "id": 316,
+      "word": "pertinacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "gigih; keras kepala",
+      "definition_en": "holding firmly to a course; determined",
+      "example": "“Her pertinacious effort paid off.”",
+      "source_page": 19
+    },
+    {
+      "id": 317,
+      "word": "pervasive",
+      "part_of_speech": "ADJ",
+      "meaning_id": "merata; meresap di mana-mana",
+      "definition_en": "spreading widely throughout",
+      "example": "“A pervasive smell of smoke filled the house.”",
+      "source_page": 19
+    },
+    {
+      "id": 318,
+      "word": "philanthropic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "dermawan; filantropis",
+      "definition_en": "generous, particularly in a monetary sense",
+      "example": "“The philanthropic couple funded scholarships.”",
+      "source_page": 19
+    },
+    {
+      "id": 319,
+      "word": "phlegmatic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tenang; tidak mudah emosi",
+      "definition_en": "self-controlled; calm and stoic",
+      "example": "“The phlegmatic pilot stayed calm in the storm.”",
+      "source_page": 19
+    },
+    {
+      "id": 320,
+      "word": "pithy",
+      "part_of_speech": "ADJ",
+      "meaning_id": "ringkas tapi bermakna",
+      "definition_en": "concise and expressive",
+      "example": "“She gave a pithy summary.”",
+      "source_page": 19
+    },
+    {
+      "id": 321,
+      "word": "placate",
+      "part_of_speech": "VERB",
+      "meaning_id": "menenangkan; meredakan",
+      "definition_en": "make less angry",
+      "example": "“He tried to placate the angry crowd.”",
+      "source_page": 19
+    },
+    {
+      "id": 322,
+      "word": "plaudit",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pujian; tepuk tangan",
+      "definition_en": "expression of praise",
+      "example": "“The film earned plaudits from critics.”",
+      "source_page": 20
+    },
+    {
+      "id": 323,
+      "word": "plenitude",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kelimpahan",
+      "definition_en": "an abundance; full or complete",
+      "example": "“The garden bloomed in plenitude.”",
+      "source_page": 20
+    },
+    {
+      "id": 324,
+      "word": "plethora",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kelebihan; banyak sekali",
+      "definition_en": "an abundance of",
+      "example": "“A plethora of options confused her.”",
+      "source_page": 20
+    },
+    {
+      "id": 325,
+      "word": "polar",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berlawanan total; kutub",
+      "definition_en": "directly opposite",
+      "example": "“They hold polar views on the issue.”",
+      "source_page": 20
+    },
+    {
+      "id": 326,
+      "word": "polemic",
+      "part_of_speech": "NOUN",
+      "meaning_id": "polemik; serangan tulisan/lisan",
+      "definition_en": "strong written or verbal attack",
+      "example": "“The article was a polemic against the mayor.”",
+      "source_page": 20
+    },
+    {
+      "id": 327,
+      "word": "postulate",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengandaikan; mendalilkan",
+      "definition_en": "assume as true",
+      "example": "“Einstein postulated the speed of light is constant.”",
+      "source_page": 20
+    },
+    {
+      "id": 328,
+      "word": "potentate",
+      "part_of_speech": "NOUN",
+      "meaning_id": "penguasa; raja",
+      "definition_en": "monarch or ruler",
+      "example": "“The potentate lived in a golden palace.”",
+      "source_page": 20
+    },
+    {
+      "id": 329,
+      "word": "pragmatic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "pragmatis; realistis",
+      "definition_en": "realistic, sensible",
+      "example": "“A pragmatic leader focuses on what works.”",
+      "source_page": 20
+    },
+    {
+      "id": 330,
+      "word": "precarious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "genting; berbahaya",
+      "definition_en": "uncertain; dangerous",
+      "example": "“The climber was in a precarious position.”",
+      "source_page": 20
+    },
+    {
+      "id": 331,
+      "word": "preclude",
+      "part_of_speech": "VERB",
+      "meaning_id": "mencegah; menutup kemungkinan",
+      "definition_en": "prevent from taking place",
+      "example": "“A broken leg precludes running.”",
+      "source_page": 20
+    },
+    {
+      "id": 332,
+      "word": "precocious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "matang sebelum waktunya; cerdas dini",
+      "definition_en": "showing early development",
+      "example": "“The precocious child read at age three.”",
+      "source_page": 20
+    },
+    {
+      "id": 333,
+      "word": "predilection",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kecenderungan; kesukaan",
+      "definition_en": "preference or liking for something",
+      "example": "“He has a predilection for spicy food.”",
+      "source_page": 20
+    },
+    {
+      "id": 334,
+      "word": "prescient",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berpandangan jauh; mampu meramal",
+      "definition_en": "having foresight",
+      "example": "“Her prescient warning came true.”",
+      "source_page": 20
+    },
+    {
+      "id": 335,
+      "word": "probity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kejujuran; integritas",
+      "definition_en": "honesty; integrity",
+      "example": "“The judge was known for her probity.”",
+      "source_page": 20
+    },
+    {
+      "id": 336,
+      "word": "proclivity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kecenderungan",
+      "definition_en": "tendency toward",
+      "example": "“She has a proclivity for procrastination.”",
+      "source_page": 20
+    },
+    {
+      "id": 337,
+      "word": "prodigal",
+      "part_of_speech": "ADJ",
+      "meaning_id": "boros; pemboros",
+      "definition_en": "wastefully extravagant",
+      "example": "“The prodigal heir wasted his fortune.”",
+      "source_page": 20
+    },
+    {
+      "id": 338,
+      "word": "profligate",
+      "part_of_speech": "ADJ",
+      "meaning_id": "boros dan ceroboh",
+      "definition_en": "recklessly extravagant",
+      "example": "“A profligate spender, he was soon broke.”",
+      "source_page": 20
+    },
+    {
+      "id": 339,
+      "word": "profound",
+      "part_of_speech": "ADJ",
+      "meaning_id": "mendalam",
+      "definition_en": "showing deep knowledge or insight",
+      "example": "“The book had a profound effect on her.”",
+      "source_page": 20
+    },
+    {
+      "id": 340,
+      "word": "profuse",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berlimpah; deras",
+      "definition_en": "abundant; plentiful",
+      "example": "“He offered profuse apologies.”",
+      "source_page": 20
+    },
+    {
+      "id": 341,
+      "word": "proliferate",
+      "part_of_speech": "VERB",
+      "meaning_id": "berkembang biak; menjamur",
+      "definition_en": "increase rapidly",
+      "example": "“Fast-food chains proliferated across the city.”",
+      "source_page": 20
+    },
+    {
+      "id": 342,
+      "word": "promulgate",
+      "part_of_speech": "VERB",
+      "meaning_id": "menyebarluaskan; mengumumkan (hukum)",
+      "definition_en": "promote widely",
+      "example": "“The government promulgated the new law.”",
+      "source_page": 21
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+{
+  "part": 2,
+  "total_parts": 8,
+  "start_id": 58,
+  "end_id": 114,
+  "count": 57,
+  "words": [
+    {
+      "id": 58,
+      "word": "bombastic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "muluk-muluk; berlebihan (bahasa)",
+      "definition_en": "inflated",
+      "example": "“His bombastic speech was full of empty promises.”",
+      "source_page": 6
+    },
+    {
+      "id": 59,
+      "word": "bovine",
+      "part_of_speech": "ADJ",
+      "meaning_id": "seperti sapi; lamban",
+      "definition_en": "cow-like",
+      "example": "“The herd had a calm, bovine stare.”",
+      "source_page": 6
+    },
+    {
+      "id": 60,
+      "word": "braggart",
+      "part_of_speech": "NOUN",
+      "meaning_id": "orang sombong; pembual",
+      "definition_en": "someone who boasts",
+      "example": "“No one liked the braggart at the party.”",
+      "source_page": 6
+    },
+    {
+      "id": 61,
+      "word": "brevity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "keringkasan; kesingkatan",
+      "definition_en": "concise",
+      "example": "“Brevity is the soul of wit.”",
+      "source_page": 6
+    },
+    {
+      "id": 62,
+      "word": "brusque",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kasar; ketus",
+      "definition_en": "abrupt or curt in manner",
+      "example": "“His brusque reply hurt her feelings.”",
+      "source_page": 6
+    },
+    {
+      "id": 63,
+      "word": "bucolic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bersifat pedesaan; asri",
+      "definition_en": "relating to the countryside",
+      "example": "“The painting shows a bucolic scene of farms and meadows.” C",
+      "source_page": 6
+    },
+    {
+      "id": 64,
+      "word": "burgeon",
+      "part_of_speech": "VERB",
+      "meaning_id": "berkembang pesat",
+      "definition_en": "grow or expand rapidly",
+      "example": "“The city's tech industry began to burgeon.” 49 kata",
+      "source_page": 6
+    },
+    {
+      "id": 65,
+      "word": "cacophony",
+      "part_of_speech": "NOUN",
+      "meaning_id": "hiruk-pikuk bunyi; kekacauan suara",
+      "definition_en": "discordant mixture of sounds",
+      "example": "“A cacophony of horns filled the street.”",
+      "source_page": 6
+    },
+    {
+      "id": 66,
+      "word": "cajole",
+      "part_of_speech": "VERB",
+      "meaning_id": "membujuk; merayu",
+      "definition_en": "persuade someone via flattery",
+      "example": "“She cajoled her brother into lending the car.”",
+      "source_page": 6
+    },
+    {
+      "id": 67,
+      "word": "callous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak berperasaan",
+      "definition_en": "cruel disregard for others",
+      "example": "“His callous remark upset everyone.”",
+      "source_page": 6
+    },
+    {
+      "id": 68,
+      "word": "calumny",
+      "part_of_speech": "NOUN",
+      "meaning_id": "fitnah",
+      "definition_en": "slander",
+      "example": "“The politician sued over the calumny printed about him.”",
+      "source_page": 6
+    },
+    {
+      "id": 69,
+      "word": "camaraderie",
+      "part_of_speech": "NOUN",
+      "meaning_id": "keakraban; persahabatan",
+      "definition_en": "friendship",
+      "example": "“The team's camaraderie kept spirits high.”",
+      "source_page": 6
+    },
+    {
+      "id": 70,
+      "word": "candid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "jujur; terus terang",
+      "definition_en": "truthful",
+      "example": "“She gave a candid answer about her mistakes.”",
+      "source_page": 6
+    },
+    {
+      "id": 71,
+      "word": "candor",
+      "part_of_speech": "NOUN",
+      "meaning_id": "keterusterangan",
+      "definition_en": "quality of being honest",
+      "example": "“He spoke with refreshing candor.”",
+      "source_page": 6
+    },
+    {
+      "id": 72,
+      "word": "capricious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berubah-ubah; plin-plan",
+      "definition_en": "unpredictable in mood or behavior",
+      "example": "“The capricious weather ruined our picnic plans.”",
+      "source_page": 6
+    },
+    {
+      "id": 73,
+      "word": "carouse",
+      "part_of_speech": "VERB",
+      "meaning_id": "berpesta pora",
+      "definition_en": "drink and party in a lively way",
+      "example": "“The sailors caroused all night in port.”",
+      "source_page": 6
+    },
+    {
+      "id": 74,
+      "word": "carp",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengomel soal hal sepele",
+      "definition_en": "complain about trivial matters",
+      "example": "“He always carps about small details.”",
+      "source_page": 6
+    },
+    {
+      "id": 75,
+      "word": "castigate",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengecam keras",
+      "definition_en": "reprimand severely",
+      "example": "“The editor castigated the writer for careless errors.”",
+      "source_page": 7
+    },
+    {
+      "id": 76,
+      "word": "catastrophic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "dahsyat; bencana besar",
+      "definition_en": "involving large-scale damage, usually sudden",
+      "example": "“The earthquake had catastrophic effects.”",
+      "source_page": 7
+    },
+    {
+      "id": 77,
+      "word": "cavort",
+      "part_of_speech": "VERB",
+      "meaning_id": "melompat-lompat riang",
+      "definition_en": "dance around excitedly",
+      "example": "“Children cavorted in the sprinklers.”",
+      "source_page": 7
+    },
+    {
+      "id": 78,
+      "word": "censorious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "suka mengkritik",
+      "definition_en": "critical of others",
+      "example": "“The censorious neighbor judged everyone's lawn.”",
+      "source_page": 7
+    },
+    {
+      "id": 79,
+      "word": "chagrin",
+      "part_of_speech": "NOUN",
+      "meaning_id": "rasa malu dan kesal",
+      "definition_en": "distress at being humiliated",
+      "example": "“To her chagrin, she forgot her lines on stage.”",
+      "source_page": 7
+    },
+    {
+      "id": 80,
+      "word": "chicanery",
+      "part_of_speech": "NOUN",
+      "meaning_id": "tipu daya; akal bulus",
+      "definition_en": "deception or trickery",
+      "example": "“Legal chicanery let the company avoid taxes.”",
+      "source_page": 7
+    },
+    {
+      "id": 81,
+      "word": "circumlocution",
+      "part_of_speech": "NOUN",
+      "meaning_id": "bertele-tele; berputar-putar (bicara)",
+      "definition_en": "using many words, particularly in an evasive way",
+      "example": "“Stop the circumlocution and answer the question.”",
+      "source_page": 7
+    },
+    {
+      "id": 82,
+      "word": "circumscribe",
+      "part_of_speech": "VERB",
+      "meaning_id": "membatasi",
+      "definition_en": "restrict within limits",
+      "example": "“Strict rules circumscribed the students' freedom.”",
+      "source_page": 7
+    },
+    {
+      "id": 83,
+      "word": "clamor",
+      "part_of_speech": "NOUN",
+      "meaning_id": "keributan; teriakan riuh",
+      "definition_en": "loud and confused noise",
+      "example": "“A clamor rose from the angry crowd.”",
+      "source_page": 7
+    },
+    {
+      "id": 84,
+      "word": "clout",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pengaruh; kekuasaan",
+      "definition_en": "influence or power",
+      "example": "“The senator has real clout in the committee.”",
+      "source_page": 7
+    },
+    {
+      "id": 85,
+      "word": "coalesce",
+      "part_of_speech": "VERB",
+      "meaning_id": "menyatu; bergabung",
+      "definition_en": "come together to form a whole",
+      "example": "“Scattered protests coalesced into a movement.”",
+      "source_page": 7
+    },
+    {
+      "id": 86,
+      "word": "cogent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "meyakinkan; masuk akal",
+      "definition_en": "clear and persuasive",
+      "example": "“She made a cogent case for reform.”",
+      "source_page": 7
+    },
+    {
+      "id": 87,
+      "word": "cognizant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menyadari; sadar akan",
+      "definition_en": "having knowledge of",
+      "example": "“He was cognizant of the risks.”",
+      "source_page": 7
+    },
+    {
+      "id": 88,
+      "word": "commensurate",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sepadan; sebanding",
+      "definition_en": "equal to",
+      "example": "“Pay should be commensurate with experience.”",
+      "source_page": 7
+    },
+    {
+      "id": 89,
+      "word": "comparable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sebanding; sepadan",
+      "definition_en": "similar to another thing",
+      "example": "“The two phones have comparable features.”",
+      "source_page": 7
+    },
+    {
+      "id": 90,
+      "word": "complement",
+      "part_of_speech": "VERB",
+      "meaning_id": "melengkapi",
+      "definition_en": "add to or make complete",
+      "example": "“The wine complements the meal perfectly.”",
+      "source_page": 7
+    },
+    {
+      "id": 91,
+      "word": "compunction",
+      "part_of_speech": "NOUN",
+      "meaning_id": "rasa bersalah; penyesalan",
+      "definition_en": "feeling of guilt",
+      "example": "“He lied without compunction.”",
+      "source_page": 7
+    },
+    {
+      "id": 92,
+      "word": "concomitant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "yang menyertai",
+      "definition_en": "naturally accompanying",
+      "example": "“Fame brings concomitant loss of privacy.”",
+      "source_page": 7
+    },
+    {
+      "id": 93,
+      "word": "conducive",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kondusif; mendukung",
+      "definition_en": "helps produce positive or desired results",
+      "example": "“Quiet rooms are conducive to studying.”",
+      "source_page": 7
+    },
+    {
+      "id": 94,
+      "word": "conduit",
+      "part_of_speech": "NOUN",
+      "meaning_id": "saluran; perantara",
+      "definition_en": "vessel or channel for transporting something",
+      "example": "“The pipe is a conduit for water.”",
+      "source_page": 7
+    },
+    {
+      "id": 95,
+      "word": "conflagration",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kebakaran besar",
+      "definition_en": "a large fire",
+      "example": "“The conflagration destroyed half the village.”",
+      "source_page": 8
+    },
+    {
+      "id": 96,
+      "word": "connive",
+      "part_of_speech": "VERB",
+      "meaning_id": "bersekongkol; bersekutu diam-diam",
+      "definition_en": "trick; conspire",
+      "example": "“They connived to overthrow the manager.”",
+      "source_page": 8
+    },
+    {
+      "id": 97,
+      "word": "consign",
+      "part_of_speech": "VERB",
+      "meaning_id": "menyerahkan; menempatkan",
+      "definition_en": "assign or deliver into someone else's custody",
+      "example": "“The old files were consigned to the basement.”",
+      "source_page": 8
+    },
+    {
+      "id": 98,
+      "word": "constituent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bagian pembentuk; penyusun",
+      "definition_en": "being part of a whole",
+      "example": "“Hydrogen is a constituent element of water.”",
+      "source_page": 8
+    },
+    {
+      "id": 99,
+      "word": "constructive",
+      "part_of_speech": "ADJ",
+      "meaning_id": "membangun; bermanfaat",
+      "definition_en": "helpful, useful",
+      "example": "“She offered constructive feedback on my essay.”",
+      "source_page": 8
+    },
+    {
+      "id": 100,
+      "word": "construe",
+      "part_of_speech": "VERB",
+      "meaning_id": "menafsirkan",
+      "definition_en": "interpret",
+      "example": "“Her silence was construed as agreement.”",
+      "source_page": 8
+    },
+    {
+      "id": 101,
+      "word": "contend",
+      "part_of_speech": "VERB",
+      "meaning_id": "bersaing; berjuang; berpendapat",
+      "definition_en": "reckon with; struggle against",
+      "example": "“Athletes contend for the gold medal.”",
+      "source_page": 8
+    },
+    {
+      "id": 102,
+      "word": "contentious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kontroversial; mudah memicu debat",
+      "definition_en": "likely to cause an argument",
+      "example": "“Taxes are a contentious issue.”",
+      "source_page": 8
+    },
+    {
+      "id": 103,
+      "word": "contravene",
+      "part_of_speech": "VERB",
+      "meaning_id": "melanggar; bertentangan dengan",
+      "definition_en": "violate the order of; conflict",
+      "example": "“The act contravenes international law.”",
+      "source_page": 8
+    },
+    {
+      "id": 104,
+      "word": "contrite",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menyesal",
+      "definition_en": "feeling of remorse or guilt",
+      "example": "“The contrite boy apologized to his teacher.”",
+      "source_page": 8
+    },
+    {
+      "id": 105,
+      "word": "contusion",
+      "part_of_speech": "NOUN",
+      "meaning_id": "memar",
+      "definition_en": "a bruise",
+      "example": "“The fall left a contusion on her knee.”",
+      "source_page": 8
+    },
+    {
+      "id": 106,
+      "word": "convivial",
+      "part_of_speech": "ADJ",
+      "meaning_id": "riang; ramah (suasana)",
+      "definition_en": "friendly and cheerful environment",
+      "example": "“The convivial dinner lasted for hours.”",
+      "source_page": 8
+    },
+    {
+      "id": 107,
+      "word": "copious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "melimpah",
+      "definition_en": "abundant in quantity",
+      "example": "“She took copious notes in class.”",
+      "source_page": 8
+    },
+    {
+      "id": 108,
+      "word": "corpulence",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kegemukan",
+      "definition_en": "obesity; fatness",
+      "example": "“His corpulence made climbing the stairs hard.”",
+      "source_page": 8
+    },
+    {
+      "id": 109,
+      "word": "covet",
+      "part_of_speech": "VERB",
+      "meaning_id": "mendambakan (milik orang)",
+      "definition_en": "want greatly",
+      "example": "“He coveted his neighbor's vintage car.”",
+      "source_page": 8
+    },
+    {
+      "id": 110,
+      "word": "credulous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "mudah percaya; lugu",
+      "definition_en": "easily deceived; gullible",
+      "example": "“Credulous buyers believed the false ad.”",
+      "source_page": 8
+    },
+    {
+      "id": 111,
+      "word": "cryptic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "samar; penuh teka-teki",
+      "definition_en": "mysterious or puzzling",
+      "example": "“She left a cryptic note on the door.”",
+      "source_page": 8
+    },
+    {
+      "id": 112,
+      "word": "cupidity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "keserakahan akan uang",
+      "definition_en": "greed for money",
+      "example": "“Cupidity led him to embezzle funds.”",
+      "source_page": 8
+    },
+    {
+      "id": 113,
+      "word": "cursory",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sekilas; terburu-buru",
+      "definition_en": "hasty and superficial",
+      "example": "“He gave the contract only a cursory glance.”",
+      "source_page": 8
+    },
+    {
+      "id": 114,
+      "word": "daunting",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menciutkan nyali",
+      "definition_en": "intimidating or discouraging",
+      "example": "“Finals week felt like a daunting challenge.”",
+      "source_page": 9
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+{
+  "part": 5,
+  "total_parts": 8,
+  "start_id": 229,
+  "end_id": 285,
+  "count": 57,
+  "words": [
+    {
+      "id": 229,
+      "word": "innocuous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak berbahaya",
+      "definition_en": "benign, not harmful",
+      "example": "“The joke seemed innocuous but upset her.”",
+      "source_page": 15
+    },
+    {
+      "id": 230,
+      "word": "inoculate",
+      "part_of_speech": "VERB",
+      "meaning_id": "memvaksinasi; mengimunisasi",
+      "definition_en": "immunize someone against",
+      "example": "“Nurses inoculate children against measles.”",
+      "source_page": 15
+    },
+    {
+      "id": 231,
+      "word": "insidious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "licik dan berbahaya diam-diam",
+      "definition_en": "harmful (in a gradual, subtle way)",
+      "example": "“Insidious rumors spread through the school.”",
+      "source_page": 15
+    },
+    {
+      "id": 232,
+      "word": "insipid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "hambar; membosankan",
+      "definition_en": "lacking flavor or interest",
+      "example": "“The soup was insipid and bland.”",
+      "source_page": 15
+    },
+    {
+      "id": 233,
+      "word": "instigate",
+      "part_of_speech": "VERB",
+      "meaning_id": "memicu; menghasut",
+      "definition_en": "bring about; incite",
+      "example": "“He instigated a fight at the match.”",
+      "source_page": 15
+    },
+    {
+      "id": 234,
+      "word": "insurgent",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pemberontak",
+      "definition_en": "rebel or revolutionary",
+      "example": "“Insurgents seized the radio station.”",
+      "source_page": 15
+    },
+    {
+      "id": 235,
+      "word": "interlocutor",
+      "part_of_speech": "NOUN",
+      "meaning_id": "lawan bicara",
+      "definition_en": "someone engaged in conversation",
+      "example": "“The interlocutor asked sharp questions.”",
+      "source_page": 15
+    },
+    {
+      "id": 236,
+      "word": "intransigent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "keras kepala; tak mau berkompromi",
+      "definition_en": "stubborn; unwilling to change one's views",
+      "example": "“Intransigent leaders blocked the peace deal.”",
+      "source_page": 15
+    },
+    {
+      "id": 237,
+      "word": "intrepid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "gagah berani",
+      "definition_en": "fearless",
+      "example": "“The intrepid explorer crossed the desert alone.”",
+      "source_page": 15
+    },
+    {
+      "id": 238,
+      "word": "inure",
+      "part_of_speech": "VERB",
+      "meaning_id": "membiasakan (pada hal tak enak)",
+      "definition_en": "to accustom, particularly to something unpleasant",
+      "example": "“Years of work inured him to hardship.”",
+      "source_page": 15
+    },
+    {
+      "id": 239,
+      "word": "invective",
+      "part_of_speech": "NOUN",
+      "meaning_id": "cacian; kata-kata kasar",
+      "definition_en": "insulting or abusive language",
+      "example": "“He hurled invective at the referee.”",
+      "source_page": 15
+    },
+    {
+      "id": 240,
+      "word": "inveterate",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kronis; mendarah daging",
+      "definition_en": "long-established and unlikely to change",
+      "example": "“An inveterate gambler, he lost again.”",
+      "source_page": 15
+    },
+    {
+      "id": 241,
+      "word": "irreverence",
+      "part_of_speech": "NOUN",
+      "meaning_id": "ketidakhormatan; sikap kurang ajar",
+      "definition_en": "lack of respect for",
+      "example": "“His irreverence shocked the elders.” J                                                                                                          3 kata",
+      "source_page": 15
+    },
+    {
+      "id": 242,
+      "word": "jocular",
+      "part_of_speech": "ADJ",
+      "meaning_id": "jenaka; suka bercanda",
+      "definition_en": "humorous or playful",
+      "example": "“The jocular uncle told jokes all evening.”",
+      "source_page": 15
+    },
+    {
+      "id": 243,
+      "word": "judicious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bijaksana",
+      "definition_en": "showing good judgment",
+      "example": "“A judicious use of time raised her grades.”",
+      "source_page": 15
+    },
+    {
+      "id": 244,
+      "word": "juxtapose",
+      "part_of_speech": "VERB",
+      "meaning_id": "menjejerkan untuk dibandingkan",
+      "definition_en": "place side by side for comparison",
+      "example": "“The exhibit juxtaposes old and new art.”",
+      "source_page": 15
+    },
+    {
+      "id": 245,
+      "word": "laconic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "singkat bicara; irit kata",
+      "definition_en": "using few words",
+      "example": "“His laconic reply was just \"No.\"”",
+      "source_page": 16
+    },
+    {
+      "id": 246,
+      "word": "lambast",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengecam keras",
+      "definition_en": "criticize harshly",
+      "example": "“Critics lambasted the sequel.”",
+      "source_page": 16
+    },
+    {
+      "id": 247,
+      "word": "largesse",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kemurahan hati; kedermawanan",
+      "definition_en": "generosity in bestowing money or gifts",
+      "example": "“The prince's largesse fed the poor.”",
+      "source_page": 16
+    },
+    {
+      "id": 248,
+      "word": "latent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tersembunyi; laten",
+      "definition_en": "hidden; not yet developed",
+      "example": "“She had a latent talent for music.”",
+      "source_page": 16
+    },
+    {
+      "id": 249,
+      "word": "laudable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "terpuji",
+      "definition_en": "deserving praise",
+      "example": "“Her goal of helping others is laudable.”",
+      "source_page": 16
+    },
+    {
+      "id": 250,
+      "word": "lethargic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lesu; lamban",
+      "definition_en": "sluggish; lacking energy",
+      "example": "“The heat made us lethargic.”",
+      "source_page": 16
+    },
+    {
+      "id": 251,
+      "word": "licentious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bejat; tak bermoral",
+      "definition_en": "promiscuous; morally unrestrained",
+      "example": "“The play was banned as licentious.”",
+      "source_page": 16
+    },
+    {
+      "id": 252,
+      "word": "litigant",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pihak yang berperkara",
+      "definition_en": "a person involved in a lawsuit",
+      "example": "“Both litigants appeared before the judge.”",
+      "source_page": 16
+    },
+    {
+      "id": 253,
+      "word": "loquacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat banyak bicara",
+      "definition_en": "very talkative",
+      "example": "“The loquacious guest dominated the dinner.”",
+      "source_page": 16
+    },
+    {
+      "id": 254,
+      "word": "lucid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "jelas; mudah dipahami",
+      "definition_en": "clear and easy to understand",
+      "example": "“The teacher gave a lucid explanation.”",
+      "source_page": 16
+    },
+    {
+      "id": 255,
+      "word": "lugubrious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "murung; sangat sedih",
+      "definition_en": "mournful; overly sad",
+      "example": "“The lugubrious tune made us weep.” M",
+      "source_page": 16
+    },
+    {
+      "id": 256,
+      "word": "luminous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bercahaya; terang",
+      "definition_en": "bright; shining",
+      "example": "“The luminous moon lit the path.” 22 kata",
+      "source_page": 16
+    },
+    {
+      "id": 257,
+      "word": "maelstrom",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pusaran besar; kekacauan",
+      "definition_en": "a powerful storm; turmoil",
+      "example": "“She was caught in a maelstrom of emotions.”",
+      "source_page": 16
+    },
+    {
+      "id": 258,
+      "word": "magnanimous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berjiwa besar; pemaaf",
+      "definition_en": "generous in forgiving",
+      "example": "“The magnanimous winner praised her rival.”",
+      "source_page": 16
+    },
+    {
+      "id": 259,
+      "word": "malevolent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "jahat; berniat buruk",
+      "definition_en": "wishing evil on others",
+      "example": "“The villain gave a malevolent grin.”",
+      "source_page": 16
+    },
+    {
+      "id": 260,
+      "word": "malign",
+      "part_of_speech": "VERB",
+      "meaning_id": "memfitnah; menjelekkan",
+      "definition_en": "speak about in a harmful way",
+      "example": "“Do not malign people behind their backs.”",
+      "source_page": 16
+    },
+    {
+      "id": 261,
+      "word": "maudlin",
+      "part_of_speech": "ADJ",
+      "meaning_id": "cengeng; terlalu sentimental",
+      "definition_en": "overly sentimental; self-pitying",
+      "example": "“The maudlin song bored everyone.”",
+      "source_page": 16
+    },
+    {
+      "id": 262,
+      "word": "maverick",
+      "part_of_speech": "NOUN",
+      "meaning_id": "orang yang berpikir bebas; nonkonformis",
+      "definition_en": "independent-minded person; nonconformist",
+      "example": "“The maverick scientist ignored accepted theories.”",
+      "source_page": 16
+    },
+    {
+      "id": 263,
+      "word": "mawkish",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menye-menye; terlalu sentimental",
+      "definition_en": "sentimental in a sweet or sickly way",
+      "example": "“The movie's ending was mawkish.”",
+      "source_page": 17
+    },
+    {
+      "id": 264,
+      "word": "maxim",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pepatah; pegangan hidup",
+      "definition_en": "short, pithy statement of truth",
+      "example": "“\"Practice makes perfect\" is a familiar maxim.”",
+      "source_page": 17
+    },
+    {
+      "id": 265,
+      "word": "mendacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "suka berbohong",
+      "definition_en": "lying",
+      "example": "“The mendacious witness was exposed.”",
+      "source_page": 17
+    },
+    {
+      "id": 266,
+      "word": "mercurial",
+      "part_of_speech": "ADJ",
+      "meaning_id": "cepat berubah suasana hati",
+      "definition_en": "subject to sudden mood changes",
+      "example": "“The mercurial boss was hard to please.”",
+      "source_page": 17
+    },
+    {
+      "id": 267,
+      "word": "meretricious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menarik tapi tak bernilai",
+      "definition_en": "appearing attractive but having little value",
+      "example": "“The meretricious jewelry was only painted plastic.”",
+      "source_page": 17
+    },
+    {
+      "id": 268,
+      "word": "meticulous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat teliti",
+      "definition_en": "extremely careful and precise",
+      "example": "“A meticulous editor, she checked every comma.”",
+      "source_page": 17
+    },
+    {
+      "id": 269,
+      "word": "mitigate",
+      "part_of_speech": "VERB",
+      "meaning_id": "meringankan; mengurangi dampak",
+      "definition_en": "make less severe",
+      "example": "“Seat belts mitigate injuries in crashes.”",
+      "source_page": 17
+    },
+    {
+      "id": 270,
+      "word": "modicum",
+      "part_of_speech": "NOUN",
+      "meaning_id": "sedikit; sejumput",
+      "definition_en": "a small quantity of something",
+      "example": "“Show a modicum of respect.”",
+      "source_page": 17
+    },
+    {
+      "id": 271,
+      "word": "mollify",
+      "part_of_speech": "VERB",
+      "meaning_id": "menenangkan; meredakan amarah",
+      "definition_en": "appease or pacify",
+      "example": "“An apology mollified the angry customer.”",
+      "source_page": 17
+    },
+    {
+      "id": 272,
+      "word": "momentous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat penting; bersejarah",
+      "definition_en": "important or significant",
+      "example": "“Graduation was a momentous occasion.”",
+      "source_page": 17
+    },
+    {
+      "id": 273,
+      "word": "morass",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kekacauan; situasi rumit",
+      "definition_en": "a mess; a complicated situation",
+      "example": "“They were stuck in a morass of paperwork.”",
+      "source_page": 17
+    },
+    {
+      "id": 274,
+      "word": "mordant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tajam menyindir",
+      "definition_en": "sharply sarcastic",
+      "example": "“His mordant humor stung his rivals.”",
+      "source_page": 17
+    },
+    {
+      "id": 275,
+      "word": "morose",
+      "part_of_speech": "ADJ",
+      "meaning_id": "murung; muram",
+      "definition_en": "sullen and ill-tempered",
+      "example": "“The morose teenager sat alone.”",
+      "source_page": 17
+    },
+    {
+      "id": 276,
+      "word": "multifarious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "beraneka ragam",
+      "definition_en": "having many varied parts",
+      "example": "“The job has multifarious duties.”",
+      "source_page": 17
+    },
+    {
+      "id": 277,
+      "word": "mundane",
+      "part_of_speech": "ADJ",
+      "meaning_id": "biasa; membosankan",
+      "definition_en": "ordinary; lacking interest",
+      "example": "“He complained about mundane chores.” N",
+      "source_page": 17
+    },
+    {
+      "id": 278,
+      "word": "munificent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat dermawan",
+      "definition_en": "generous",
+      "example": "“A munificent gift built the hospital wing.” 9 kata",
+      "source_page": 17
+    },
+    {
+      "id": 279,
+      "word": "nadir",
+      "part_of_speech": "NOUN",
+      "meaning_id": "titik terendah",
+      "definition_en": "lowest point",
+      "example": "“The team hit its nadir with a 0-10 record.”",
+      "source_page": 17
+    },
+    {
+      "id": 280,
+      "word": "nascent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "baru lahir; baru muncul",
+      "definition_en": "just coming into existence",
+      "example": "“The nascent industry needs support.”",
+      "source_page": 17
+    },
+    {
+      "id": 281,
+      "word": "nebulous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kabur; tidak jelas",
+      "definition_en": "vague or unclear",
+      "example": "“His plans were nebulous at best.”",
+      "source_page": 17
+    },
+    {
+      "id": 282,
+      "word": "nefarious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "jahat; kriminal",
+      "definition_en": "wicked or criminal",
+      "example": "“The spy uncovered a nefarious plot.”",
+      "source_page": 17
+    },
+    {
+      "id": 283,
+      "word": "negligent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lalai",
+      "definition_en": "failing to do something; neglectful",
+      "example": "“The negligent driver ignored the signs.”",
+      "source_page": 18
+    },
+    {
+      "id": 284,
+      "word": "neophyte",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pemula",
+      "definition_en": "person new to a subject, skill, or belief",
+      "example": "“The neophyte struggled with the software.”",
+      "source_page": 18
+    },
+    {
+      "id": 285,
+      "word": "noisome",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berbau busuk; menjijikkan",
+      "definition_en": "disagreeable; having an offensive smell",
+      "example": "“A noisome stench rose from the drain.”",
+      "source_page": 18
+    }
+  ]
+}

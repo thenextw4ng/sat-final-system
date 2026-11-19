@@ -1,0 +1,522 @@
+{
+  "part": 4,
+  "total_parts": 8,
+  "start_id": 172,
+  "end_id": 228,
+  "count": 57,
+  "words": [
+    {
+      "id": 172,
+      "word": "exigent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "mendesak; menuntut",
+      "definition_en": "pressing, demanding",
+      "example": "“Exigent circumstances required immediate action.”",
+      "source_page": 11
+    },
+    {
+      "id": 173,
+      "word": "expedient",
+      "part_of_speech": "ADJ",
+      "meaning_id": "praktis (meski kurang etis);",
+      "definition_en": "menguntungkan",
+      "example": "convenient though possibly improper “It was expedient, though not fair, to blame him.”",
+      "source_page": 12
+    },
+    {
+      "id": 174,
+      "word": "expiate",
+      "part_of_speech": "VERB",
+      "meaning_id": "menebus (dosa/kesalahan)",
+      "definition_en": "atone for guilt or sin",
+      "example": "“He volunteered for years to expiate his mistake.”",
+      "source_page": 12
+    },
+    {
+      "id": 175,
+      "word": "expunge",
+      "part_of_speech": "VERB",
+      "meaning_id": "menghapus; membuang",
+      "definition_en": "get rid of",
+      "example": "“The judge expunged the record.”",
+      "source_page": 12
+    },
+    {
+      "id": 176,
+      "word": "extol",
+      "part_of_speech": "VERB",
+      "meaning_id": "memuji setinggi langit",
+      "definition_en": "praise",
+      "example": "“Reviewers extolled the novel's beauty.”",
+      "source_page": 12
+    },
+    {
+      "id": 177,
+      "word": "extraneous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak relevan; tambahan yang tak perlu",
+      "definition_en": "irrelevant",
+      "example": "“Delete extraneous details from your essay.” F",
+      "source_page": 12
+    },
+    {
+      "id": 178,
+      "word": "extricate",
+      "part_of_speech": "VERB",
+      "meaning_id": "membebaskan; melepaskan diri",
+      "definition_en": "free from a difficulty",
+      "example": "“He extricated himself from the awkward chat.” 13 kata",
+      "source_page": 12
+    },
+    {
+      "id": 179,
+      "word": "facilitate",
+      "part_of_speech": "VERB",
+      "meaning_id": "memudahkan; memfasilitasi",
+      "definition_en": "make easier, guide forward",
+      "example": "“Technology facilitates communication.”",
+      "source_page": 12
+    },
+    {
+      "id": 180,
+      "word": "fallacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "keliru; menyesatkan",
+      "definition_en": "false; based on mistaken belief",
+      "example": "“The argument is fallacious and misleading.”",
+      "source_page": 12
+    },
+    {
+      "id": 181,
+      "word": "fastidious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat teliti; rewel",
+      "definition_en": "very attentive to detail",
+      "example": "“The fastidious chef checked every plate.”",
+      "source_page": 12
+    },
+    {
+      "id": 182,
+      "word": "fatuous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bodoh; konyol tak bermakna",
+      "definition_en": "silly and pointless",
+      "example": "“He made a fatuous remark about the weather.”",
+      "source_page": 12
+    },
+    {
+      "id": 183,
+      "word": "fervent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bergelora; sangat bersemangat",
+      "definition_en": "showing intense emotion",
+      "example": "“She is a fervent supporter of the team.”",
+      "source_page": 12
+    },
+    {
+      "id": 184,
+      "word": "flagrant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "terang-terangan (salah); mencolok",
+      "definition_en": "obviously offensive",
+      "example": "“It was a flagrant violation of the rules.”",
+      "source_page": 12
+    },
+    {
+      "id": 185,
+      "word": "flippant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak serius; sembrono",
+      "definition_en": "not showing serious consideration",
+      "example": "“His flippant reply annoyed the teacher.”",
+      "source_page": 12
+    },
+    {
+      "id": 186,
+      "word": "forbearance",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kesabaran; pengendalian diri",
+      "definition_en": "restraint; self-control",
+      "example": "“She showed forbearance despite the insults.”",
+      "source_page": 12
+    },
+    {
+      "id": 187,
+      "word": "fortuitous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kebetulan (yang menguntungkan)",
+      "definition_en": "happening by chance",
+      "example": "“Our fortuitous meeting led to a job offer.”",
+      "source_page": 12
+    },
+    {
+      "id": 188,
+      "word": "fractious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "mudah marah; sulit diatur",
+      "definition_en": "irritable and difficult to control",
+      "example": "“The fractious toddler refused to nap.”",
+      "source_page": 12
+    },
+    {
+      "id": 189,
+      "word": "frugal",
+      "part_of_speech": "ADJ",
+      "meaning_id": "hemat; berhemat",
+      "definition_en": "thrifty; sparing",
+      "example": "“A frugal shopper, she saved half her pay.”",
+      "source_page": 12
+    },
+    {
+      "id": 190,
+      "word": "furtive",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sembunyi-sembunyi; licik",
+      "definition_en": "secretive; sly",
+      "example": "“He cast a furtive glance at the clock.”",
+      "source_page": 12
+    },
+    {
+      "id": 191,
+      "word": "futile",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sia-sia",
+      "definition_en": "pointless; useless",
+      "example": "“It is futile to argue with him.”",
+      "source_page": 12
+    },
+    {
+      "id": 192,
+      "word": "gainsay",
+      "part_of_speech": "VERB",
+      "meaning_id": "menyangkal; membantah",
+      "definition_en": "deny or contradict",
+      "example": "“No one could gainsay her results.”",
+      "source_page": 13
+    },
+    {
+      "id": 193,
+      "word": "garrulous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "cerewet; banyak bicara",
+      "definition_en": "talkative",
+      "example": "“The garrulous host talked for an hour.”",
+      "source_page": 13
+    },
+    {
+      "id": 194,
+      "word": "germane",
+      "part_of_speech": "ADJ",
+      "meaning_id": "relevan; berkaitan erat",
+      "definition_en": "relevant to a subject",
+      "example": "“Keep comments germane to the topic.”",
+      "source_page": 13
+    },
+    {
+      "id": 195,
+      "word": "glib",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lancar tapi tidak tulus",
+      "definition_en": "fluent but insincere",
+      "example": "“His glib excuse fooled no one.”",
+      "source_page": 13
+    },
+    {
+      "id": 196,
+      "word": "grandiloquent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bombastis; muluk dalam bahasa",
+      "definition_en": "pompous or extravagant in language",
+      "example": "“The grandiloquent mayor loved long speeches.”",
+      "source_page": 13
+    },
+    {
+      "id": 197,
+      "word": "grapple",
+      "part_of_speech": "VERB",
+      "meaning_id": "bergulat; bergumul",
+      "definition_en": "wrestle, physically or mentally",
+      "example": "“Scientists grapple with the problem of climate change.”",
+      "source_page": 13
+    },
+    {
+      "id": 198,
+      "word": "gratuitous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak perlu; tanpa alasan",
+      "definition_en": "uncalled for; unnecessary",
+      "example": "“The film has gratuitous violence.”",
+      "source_page": 13
+    },
+    {
+      "id": 199,
+      "word": "gregarious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "suka bergaul; ramah",
+      "definition_en": "sociable and outgoing",
+      "example": "“A gregarious child, he made friends easily.”",
+      "source_page": 13
+    },
+    {
+      "id": 200,
+      "word": "guile",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kelicikan; tipu muslihat",
+      "definition_en": "sly cunning",
+      "example": "“The fox won with guile, not strength.” H                                                                                                          8 kata",
+      "source_page": 13
+    },
+    {
+      "id": 201,
+      "word": "hackneyed",
+      "part_of_speech": "ADJ",
+      "meaning_id": "klise; basi",
+      "definition_en": "overused; cliched",
+      "example": "“The movie relied on hackneyed plot twists.”",
+      "source_page": 13
+    },
+    {
+      "id": 202,
+      "word": "hapless",
+      "part_of_speech": "ADJ",
+      "meaning_id": "malang; sial",
+      "definition_en": "unfortunate",
+      "example": "“The hapless tourist lost his wallet.”",
+      "source_page": 13
+    },
+    {
+      "id": 203,
+      "word": "harangue",
+      "part_of_speech": "NOUN",
+      "meaning_id": "ocehan panjang yang menyerang",
+      "definition_en": "lengthy aggressive speech",
+      "example": "“The coach delivered a harangue after the game.”",
+      "source_page": 13
+    },
+    {
+      "id": 204,
+      "word": "haughty",
+      "part_of_speech": "ADJ",
+      "meaning_id": "angkuh; sombong",
+      "definition_en": "arrogantly superior",
+      "example": "“The haughty clerk ignored the customers.”",
+      "source_page": 13
+    },
+    {
+      "id": 205,
+      "word": "hedonist",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pemburu kesenangan; hedonis",
+      "definition_en": "person devoted to pleasure",
+      "example": "“The hedonist spent every night at parties.”",
+      "source_page": 13
+    },
+    {
+      "id": 206,
+      "word": "hegemony",
+      "part_of_speech": "NOUN",
+      "meaning_id": "hegemoni; dominasi",
+      "definition_en": "leadership or dominance of one country over another",
+      "example": "“The empire sought hegemony over the region.”",
+      "source_page": 13
+    },
+    {
+      "id": 207,
+      "word": "heresy",
+      "part_of_speech": "NOUN",
+      "meaning_id": "bidah; ajaran menyimpang",
+      "definition_en": "belief contrary to orthodox doctrine",
+      "example": "“Questioning the dogma was seen as heresy.”",
+      "source_page": 13
+    },
+    {
+      "id": 208,
+      "word": "heterogenous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "beragam; tidak seragam",
+      "definition_en": "not uniform; varied",
+      "example": "“The class is a heterogenous mix of ages.”",
+      "source_page": 13
+    },
+    {
+      "id": 209,
+      "word": "iconoclast",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pendobrak tradisi",
+      "definition_en": "person who attacks cherished beliefs",
+      "example": "“The iconoclast mocked every convention.”",
+      "source_page": 14
+    },
+    {
+      "id": 210,
+      "word": "idiosyncratic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "khas; unik pada satu orang",
+      "definition_en": "peculiar to an individual",
+      "example": "“Her idiosyncratic style set her apart.”",
+      "source_page": 14
+    },
+    {
+      "id": 211,
+      "word": "ignominious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "memalukan; hina",
+      "definition_en": "shameful or disgraceful",
+      "example": "“The team suffered an ignominious defeat.”",
+      "source_page": 14
+    },
+    {
+      "id": 212,
+      "word": "impecunious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "miskin; tidak punya uang",
+      "definition_en": "having little money; penniless",
+      "example": "“The impecunious student ate instant noodles daily.”",
+      "source_page": 14
+    },
+    {
+      "id": 213,
+      "word": "impede",
+      "part_of_speech": "VERB",
+      "meaning_id": "menghambat; merintangi",
+      "definition_en": "prevent or hold back",
+      "example": "“Heavy rain impeded the rescue effort.”",
+      "source_page": 14
+    },
+    {
+      "id": 214,
+      "word": "impervious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kebal; tidak tembus",
+      "definition_en": "unable to be affected by",
+      "example": "“The coat is impervious to water.”",
+      "source_page": 14
+    },
+    {
+      "id": 215,
+      "word": "impetuous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "gegabah; impulsif",
+      "definition_en": "acting without care",
+      "example": "“His impetuous decision cost him dearly.”",
+      "source_page": 14
+    },
+    {
+      "id": 216,
+      "word": "impinge",
+      "part_of_speech": "VERB",
+      "meaning_id": "melanggar; mengganggu batas",
+      "definition_en": "encroach on",
+      "example": "“Noise should not impinge on others' rest.”",
+      "source_page": 14
+    },
+    {
+      "id": 217,
+      "word": "implacable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tak dapat dilunakkan",
+      "definition_en": "unable to be appeased",
+      "example": "“The implacable foe never forgave them.”",
+      "source_page": 14
+    },
+    {
+      "id": 218,
+      "word": "impute",
+      "part_of_speech": "VERB",
+      "meaning_id": "menuduhkan; mengaitkan (kesalahan)",
+      "definition_en": "attribute to",
+      "example": "“Do not impute bad motives to her.”",
+      "source_page": 14
+    },
+    {
+      "id": 219,
+      "word": "inane",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bodoh; hampa makna",
+      "definition_en": "ridiculous",
+      "example": "“He asked an inane question.”",
+      "source_page": 14
+    },
+    {
+      "id": 220,
+      "word": "inchoate",
+      "part_of_speech": "ADJ",
+      "meaning_id": "baru mulai; belum terbentuk",
+      "definition_en": "just beginning; not fully formed",
+      "example": "“Her ideas were still inchoate.”",
+      "source_page": 14
+    },
+    {
+      "id": 221,
+      "word": "incongruous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak serasi; janggal",
+      "definition_en": "not fitting in",
+      "example": "“A neon sign looked incongruous on the old building.”",
+      "source_page": 14
+    },
+    {
+      "id": 222,
+      "word": "incontrovertible",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tak terbantahkan",
+      "definition_en": "unable to be denied",
+      "example": "“The video was incontrovertible proof.”",
+      "source_page": 14
+    },
+    {
+      "id": 223,
+      "word": "indelible",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tak terhapuskan",
+      "definition_en": "permanent; unable to be removed",
+      "example": "“The trip left an indelible memory.”",
+      "source_page": 14
+    },
+    {
+      "id": 224,
+      "word": "indolent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "malas",
+      "definition_en": "lazy",
+      "example": "“The indolent cat slept all day.”",
+      "source_page": 14
+    },
+    {
+      "id": 225,
+      "word": "inexorable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tak terelakkan",
+      "definition_en": "impossible to prevent",
+      "example": "“The inexorable tide swallowed the sandcastle.”",
+      "source_page": 14
+    },
+    {
+      "id": 226,
+      "word": "ingenuous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "polos; tulus",
+      "definition_en": "innocent and unsuspecting",
+      "example": "“The ingenuous girl trusted every stranger.”",
+      "source_page": 14
+    },
+    {
+      "id": 227,
+      "word": "inimical",
+      "part_of_speech": "ADJ",
+      "meaning_id": "merugikan; bermusuhan",
+      "definition_en": "tending to obstruct or harm; unfriendly",
+      "example": "“Pollution is inimical to marine life.”",
+      "source_page": 14
+    },
+    {
+      "id": 228,
+      "word": "injunction",
+      "part_of_speech": "NOUN",
+      "meaning_id": "perintah resmi; putusan larangan",
+      "definition_en": "an authoritative order",
+      "example": "“A court injunction stopped the construction.”",
+      "source_page": 14
+    }
+  ]
+}

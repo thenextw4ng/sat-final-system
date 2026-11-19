@@ -1,0 +1,513 @@
+{
+  "part": 8,
+  "total_parts": 8,
+  "start_id": 400,
+  "end_id": 455,
+  "count": 56,
+  "words": [
+    {
+      "id": 400,
+      "word": "surmise",
+      "part_of_speech": "VERB",
+      "meaning_id": "menduga; menebak",
+      "definition_en": "guess without proof",
+      "example": "“I surmise that he was late.”",
+      "source_page": 24
+    },
+    {
+      "id": 401,
+      "word": "surreptitious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "diam-diam; sembunyi-sembunyi",
+      "definition_en": "kept secret",
+      "example": "“She took a surreptitious peek at the answers.” T",
+      "source_page": 24
+    },
+    {
+      "id": 402,
+      "word": "sycophant",
+      "part_of_speech": "NOUN",
+      "meaning_id": "penjilat",
+      "definition_en": "person who flatters for personal gain",
+      "example": "“The king was surrounded by sycophants.” 17 kata",
+      "source_page": 24
+    },
+    {
+      "id": 403,
+      "word": "taciturn",
+      "part_of_speech": "ADJ",
+      "meaning_id": "pendiam",
+      "definition_en": "reserved in speech",
+      "example": "“The taciturn farmer rarely spoke.”",
+      "source_page": 24
+    },
+    {
+      "id": 404,
+      "word": "tangential",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak langsung berkaitan; melenceng",
+      "definition_en": "peripheral to the central matter",
+      "example": "“His remark was tangential to the debate.”",
+      "source_page": 24
+    },
+    {
+      "id": 405,
+      "word": "tenable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "dapat dipertahankan; masuk akal",
+      "definition_en": "reasonable, maintainable",
+      "example": "“The theory is no longer tenable.”",
+      "source_page": 24
+    },
+    {
+      "id": 406,
+      "word": "tenacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "gigih; ulet",
+      "definition_en": "holding firmly; persistent",
+      "example": "“A tenacious reporter, she never gave up.”",
+      "source_page": 24
+    },
+    {
+      "id": 407,
+      "word": "tentative",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sementara; ragu-ragu",
+      "definition_en": "not certain; hesitant",
+      "example": "“We made tentative plans for Friday.”",
+      "source_page": 24
+    },
+    {
+      "id": 408,
+      "word": "terse",
+      "part_of_speech": "ADJ",
+      "meaning_id": "singkat dan ketus",
+      "definition_en": "brief",
+      "example": "“He sent a terse reply.”",
+      "source_page": 24
+    },
+    {
+      "id": 409,
+      "word": "timorous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "penakut; pemalu",
+      "definition_en": "showing fear or nervousness",
+      "example": "“The timorous child hid behind his mother.”",
+      "source_page": 24
+    },
+    {
+      "id": 410,
+      "word": "torpid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lesu; tidak aktif",
+      "definition_en": "lethargic; inactive",
+      "example": "“The torpid snake lay in the sun.”",
+      "source_page": 24
+    },
+    {
+      "id": 411,
+      "word": "tractable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "penurut; mudah diatur",
+      "definition_en": "easy to control",
+      "example": "“The tractable horse followed commands.”",
+      "source_page": 24
+    },
+    {
+      "id": 412,
+      "word": "transient",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sementara; singkat",
+      "definition_en": "lasting only a short time",
+      "example": "“Transient workers move from farm to farm.”",
+      "source_page": 24
+    },
+    {
+      "id": 413,
+      "word": "travesty",
+      "part_of_speech": "NOUN",
+      "meaning_id": "olok-olok; penggambaran yang",
+      "definition_en": "menyimpang",
+      "example": "false representation of something “The trial was a travesty of justice.”",
+      "source_page": 24
+    },
+    {
+      "id": 414,
+      "word": "trenchant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tajam dan lugas",
+      "definition_en": "vigorous in expression; sharp",
+      "example": "“Her trenchant critique exposed the flaws.”",
+      "source_page": 24
+    },
+    {
+      "id": 415,
+      "word": "trepidation",
+      "part_of_speech": "NOUN",
+      "meaning_id": "rasa cemas; gentar",
+      "definition_en": "feeling of fear about something",
+      "example": "“He opened the letter with trepidation.”",
+      "source_page": 24
+    },
+    {
+      "id": 416,
+      "word": "trite",
+      "part_of_speech": "ADJ",
+      "meaning_id": "basi; klise",
+      "definition_en": "overused and lacking originality",
+      "example": "“The speech was full of trite phrases.”",
+      "source_page": 24
+    },
+    {
+      "id": 417,
+      "word": "trounce",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengalahkan telak",
+      "definition_en": "defeat heavily",
+      "example": "“Our team trounced its rival 6-0.”",
+      "source_page": 24
+    },
+    {
+      "id": 418,
+      "word": "truculent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "agresif; suka berkelahi",
+      "definition_en": "eager to argue or fight",
+      "example": "“The truculent customer shouted at staff.”",
+      "source_page": 24
+    },
+    {
+      "id": 419,
+      "word": "turpitude",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kebejatan; kebusukan moral",
+      "definition_en": "depravity, wickedness",
+      "example": "“He was fired for moral turpitude.” U                                                                                                        11 kata",
+      "source_page": 25
+    },
+    {
+      "id": 420,
+      "word": "ubiquitous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "ada di mana-mana",
+      "definition_en": "present everywhere",
+      "example": "“Smartphones are ubiquitous today.”",
+      "source_page": 25
+    },
+    {
+      "id": 421,
+      "word": "umbrage",
+      "part_of_speech": "NOUN",
+      "meaning_id": "rasa tersinggung",
+      "definition_en": "offense (take umbrage at)",
+      "example": "“She took umbrage at his rude remark.”",
+      "source_page": 25
+    },
+    {
+      "id": 422,
+      "word": "unconventional",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tidak lazim; nyeleneh",
+      "definition_en": "acting outside of the norm",
+      "example": "“He has an unconventional teaching style.”",
+      "source_page": 25
+    },
+    {
+      "id": 423,
+      "word": "undulate",
+      "part_of_speech": "VERB",
+      "meaning_id": "bergelombang",
+      "definition_en": "move in a wave-like pattern",
+      "example": "“The hills undulate toward the sea.”",
+      "source_page": 25
+    },
+    {
+      "id": 424,
+      "word": "unmitigated",
+      "part_of_speech": "ADJ",
+      "meaning_id": "mutlak; tanpa keringanan",
+      "definition_en": "not lessened; absolute",
+      "example": "“The plan was an unmitigated disaster.”",
+      "source_page": 25
+    },
+    {
+      "id": 425,
+      "word": "unveil",
+      "part_of_speech": "VERB",
+      "meaning_id": "meresmikan; mengungkap",
+      "definition_en": "reveal",
+      "example": "“The company will unveil its new phone.”",
+      "source_page": 25
+    },
+    {
+      "id": 426,
+      "word": "upbraid",
+      "part_of_speech": "VERB",
+      "meaning_id": "menegur keras; mencela",
+      "definition_en": "scold or find fault with someone",
+      "example": "“The captain upbraided the crew for laziness.”",
+      "source_page": 25
+    },
+    {
+      "id": 427,
+      "word": "upshot",
+      "part_of_speech": "NOUN",
+      "meaning_id": "hasil akhir; kesimpulan",
+      "definition_en": "outcome or result of an action",
+      "example": "“The upshot was a new school policy.”",
+      "source_page": 25
+    },
+    {
+      "id": 428,
+      "word": "urbane",
+      "part_of_speech": "ADJ",
+      "meaning_id": "luwes; berkelas",
+      "definition_en": "suave; sophisticated",
+      "example": "“The urbane diplomat charmed the guests.”",
+      "source_page": 25
+    },
+    {
+      "id": 429,
+      "word": "usurp",
+      "part_of_speech": "VERB",
+      "meaning_id": "merebut kekuasaan (tanpa hak)",
+      "definition_en": "take a position of power without right",
+      "example": "“The general usurped the throne.”",
+      "source_page": 25
+    },
+    {
+      "id": 430,
+      "word": "usury",
+      "part_of_speech": "NOUN",
+      "meaning_id": "riba; pinjaman dengan bunga mencekik",
+      "definition_en": "unethical money lending",
+      "example": "“Usury trapped families in debt.” V                                                                                                        16 kata",
+      "source_page": 25
+    },
+    {
+      "id": 431,
+      "word": "validate",
+      "part_of_speech": "VERB",
+      "meaning_id": "membenarkan; mengesahkan",
+      "definition_en": "support the truth or value of",
+      "example": "“New data validated her hypothesis.”",
+      "source_page": 25
+    },
+    {
+      "id": 432,
+      "word": "vapid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "hambar; tak bersemangat",
+      "definition_en": "dull; lacking liveliness",
+      "example": "“The vapid talk show had nothing to say.”",
+      "source_page": 25
+    },
+    {
+      "id": 433,
+      "word": "venerate",
+      "part_of_speech": "VERB",
+      "meaning_id": "menghormati; memuliakan",
+      "definition_en": "regard with great respect",
+      "example": "“Many cultures venerate their ancestors.”",
+      "source_page": 25
+    },
+    {
+      "id": 434,
+      "word": "veracity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kebenaran; keakuratan",
+      "definition_en": "truth or accuracy",
+      "example": "“Reporters checked the veracity of the claim.”",
+      "source_page": 25
+    },
+    {
+      "id": 435,
+      "word": "verbose",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bertele-tele; terlalu banyak kata",
+      "definition_en": "using more words than necessary",
+      "example": "“His verbose essay could be cut in half.”",
+      "source_page": 26
+    },
+    {
+      "id": 436,
+      "word": "vestige",
+      "part_of_speech": "NOUN",
+      "meaning_id": "sisa; jejak",
+      "definition_en": "trace or remnant of something gone",
+      "example": "“Only a vestige of the old wall remains.”",
+      "source_page": 26
+    },
+    {
+      "id": 437,
+      "word": "vexation",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kejengkelan",
+      "definition_en": "state of being annoyed",
+      "example": "“She sighed in vexation.”",
+      "source_page": 26
+    },
+    {
+      "id": 438,
+      "word": "viability",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kelayakan; kemampuan bertahan",
+      "definition_en": "ability to work successfully",
+      "example": "“They doubted the plan's viability.”",
+      "source_page": 26
+    },
+    {
+      "id": 439,
+      "word": "vicissitude",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pasang surut; perubahan nasib",
+      "definition_en": "a change of circumstances",
+      "example": "“He survived the vicissitudes of fortune.”",
+      "source_page": 26
+    },
+    {
+      "id": 440,
+      "word": "vilify",
+      "part_of_speech": "VERB",
+      "meaning_id": "menjelek-jelekkan",
+      "definition_en": "speak about in a disparaging manner",
+      "example": "“The press vilified the coach after the loss.”",
+      "source_page": 26
+    },
+    {
+      "id": 441,
+      "word": "virtuoso",
+      "part_of_speech": "NOUN",
+      "meaning_id": "ahli; maestro",
+      "definition_en": "highly skilled person, particularly in the arts",
+      "example": "“The violin virtuoso dazzled the crowd.”",
+      "source_page": 26
+    },
+    {
+      "id": 442,
+      "word": "vital",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat penting; vital",
+      "definition_en": "necessary",
+      "example": "“Water is vital to life.”",
+      "source_page": 26
+    },
+    {
+      "id": 443,
+      "word": "vitriolic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "penuh kebencian; sangat pedas",
+      "definition_en": "filled with hatred",
+      "example": "“The vitriolic attack shocked readers.”",
+      "source_page": 26
+    },
+    {
+      "id": 444,
+      "word": "vituperate",
+      "part_of_speech": "VERB",
+      "meaning_id": "mencaci maki",
+      "definition_en": "blame or insult someone strongly",
+      "example": "“The crowd vituperated the referee.”",
+      "source_page": 26
+    },
+    {
+      "id": 445,
+      "word": "vivacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lincah; ceria",
+      "definition_en": "lively and full of spirit",
+      "example": "“The vivacious host lit up the room.” W",
+      "source_page": 26
+    },
+    {
+      "id": 446,
+      "word": "vociferous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "vokal; lantang",
+      "definition_en": "outspoken",
+      "example": "“The vociferous crowd demanded change.” 4 kata",
+      "source_page": 26
+    },
+    {
+      "id": 447,
+      "word": "wanton",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sewenang-wenang; tanpa alasan",
+      "definition_en": "deliberate and unprovoked; sexually unrestrained",
+      "example": "“The wanton destruction of the park angered locals.”",
+      "source_page": 26
+    },
+    {
+      "id": 448,
+      "word": "winsome",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menawan; memikat",
+      "definition_en": "attractive or charming",
+      "example": "“Her winsome smile won everyone over.”",
+      "source_page": 26
+    },
+    {
+      "id": 449,
+      "word": "wistful",
+      "part_of_speech": "ADJ",
+      "meaning_id": "merindu sendu",
+      "definition_en": "filled with sad longing",
+      "example": "“She gave a wistful look at her old home.” Y",
+      "source_page": 26
+    },
+    {
+      "id": 450,
+      "word": "wizened",
+      "part_of_speech": "ADJ",
+      "meaning_id": "keriput; layu",
+      "definition_en": "shriveled or wrinkled with age",
+      "example": "“The wizened man told stories by the fire.” 2 kata",
+      "source_page": 26
+    },
+    {
+      "id": 451,
+      "word": "yield",
+      "part_of_speech": "VERB",
+      "meaning_id": "menyerah; menghasilkan",
+      "definition_en": "surrender, give way to pressure",
+      "example": "“The branch yielded under the weight of the snow.”",
+      "source_page": 26
+    },
+    {
+      "id": 452,
+      "word": "yoke",
+      "part_of_speech": "VERB",
+      "meaning_id": "mengikat; menyatukan",
+      "definition_en": "tie two things together",
+      "example": "“Oxen were yoked to the plow.”",
+      "source_page": 26
+    },
+    {
+      "id": 453,
+      "word": "zealous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bersemangat; fanatik",
+      "definition_en": "showing great enthusiasm",
+      "example": "“The zealous volunteer worked every weekend.”",
+      "source_page": 27
+    },
+    {
+      "id": 454,
+      "word": "zenith",
+      "part_of_speech": "NOUN",
+      "meaning_id": "puncak; titik tertinggi",
+      "definition_en": "the peak",
+      "example": "“The empire reached its zenith in 1500.”",
+      "source_page": 27
+    },
+    {
+      "id": 455,
+      "word": "zephyr",
+      "part_of_speech": "NOUN",
+      "meaning_id": "angin sepoi-sepoi",
+      "definition_en": "a gentle breeze",
+      "example": "“A warm zephyr rustled the leaves.”",
+      "source_page": 27
+    }
+  ]
+}

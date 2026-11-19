@@ -1,0 +1,522 @@
+{
+  "part": 7,
+  "total_parts": 8,
+  "start_id": 343,
+  "end_id": 399,
+  "count": 57,
+  "words": [
+    {
+      "id": 343,
+      "word": "propitious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menguntungkan; pertanda baik",
+      "definition_en": "favorable; giving good signs",
+      "example": "“It was a propitious time to invest.”",
+      "source_page": 21
+    },
+    {
+      "id": 344,
+      "word": "proscribe",
+      "part_of_speech": "VERB",
+      "meaning_id": "melarang secara resmi",
+      "definition_en": "forbid by law",
+      "example": "“The law proscribes the sale of such drugs.”",
+      "source_page": 21
+    },
+    {
+      "id": 345,
+      "word": "protean",
+      "part_of_speech": "ADJ",
+      "meaning_id": "serba bisa; mudah berubah bentuk",
+      "definition_en": "able to change easily",
+      "example": "“The actor's protean talent covered every role.”",
+      "source_page": 21
+    },
+    {
+      "id": 346,
+      "word": "prudent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bijaksana; hati-hati",
+      "definition_en": "showing wise judgment",
+      "example": "“It is prudent to save for emergencies.”",
+      "source_page": 21
+    },
+    {
+      "id": 347,
+      "word": "prurient",
+      "part_of_speech": "ADJ",
+      "meaning_id": "cabul; birahi berlebihan",
+      "definition_en": "overly sexual",
+      "example": "“The tabloid fed prurient curiosity.”",
+      "source_page": 21
+    },
+    {
+      "id": 348,
+      "word": "puerile",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kekanak-kanakan",
+      "definition_en": "childishly silly",
+      "example": "“His puerile jokes annoyed the adults.”",
+      "source_page": 21
+    },
+    {
+      "id": 349,
+      "word": "pugnacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "suka berkelahi",
+      "definition_en": "quick to fight",
+      "example": "“The pugnacious boxer started a brawl.”",
+      "source_page": 21
+    },
+    {
+      "id": 350,
+      "word": "punctilious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sangat cermat; teliti soal aturan",
+      "definition_en": "paying attention to detail",
+      "example": "“A punctilious host, he set the table exactly.” Q",
+      "source_page": 21
+    },
+    {
+      "id": 351,
+      "word": "pundit",
+      "part_of_speech": "NOUN",
+      "meaning_id": "pengamat; pakar yang berkomentar",
+      "definition_en": "expert who voices opinions publicly",
+      "example": "“The pundit predicted the election result.” 5 kata",
+      "source_page": 21
+    },
+    {
+      "id": 352,
+      "word": "quaint",
+      "part_of_speech": "ADJ",
+      "meaning_id": "unik dan kuno; menarik",
+      "definition_en": "old-fashioned",
+      "example": "“We stayed in a quaint village inn.”",
+      "source_page": 21
+    },
+    {
+      "id": 353,
+      "word": "quandary",
+      "part_of_speech": "NOUN",
+      "meaning_id": "dilema; kebingungan",
+      "definition_en": "state of perplexity; a dilemma",
+      "example": "“He was in a quandary over which job to take.”",
+      "source_page": 21
+    },
+    {
+      "id": 354,
+      "word": "quell",
+      "part_of_speech": "VERB",
+      "meaning_id": "meredam; menumpas",
+      "definition_en": "suppress or put down",
+      "example": "“Police quelled the riot.”",
+      "source_page": 21
+    },
+    {
+      "id": 355,
+      "word": "querulous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "suka mengeluh; rewel",
+      "definition_en": "complaining",
+      "example": "“The querulous patient complained constantly.”",
+      "source_page": 21
+    },
+    {
+      "id": 356,
+      "word": "quixotic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "idealis tapi tak realistis",
+      "definition_en": "idealistic",
+      "example": "“His quixotic quest to fix everything failed.” R                                                                                                         18 kata",
+      "source_page": 21
+    },
+    {
+      "id": 357,
+      "word": "rancor",
+      "part_of_speech": "NOUN",
+      "meaning_id": "dendam; kebencian",
+      "definition_en": "bitter resentment",
+      "example": "“He spoke without rancor about his rival.”",
+      "source_page": 21
+    },
+    {
+      "id": 358,
+      "word": "rapacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "rakus; serakah",
+      "definition_en": "greedy",
+      "example": "“The rapacious landlord raised rents again.”",
+      "source_page": 21
+    },
+    {
+      "id": 359,
+      "word": "recalcitrant",
+      "part_of_speech": "ADJ",
+      "meaning_id": "membangkang; sulit diatur",
+      "definition_en": "uncooperative attitude",
+      "example": "“The recalcitrant student refused to follow rules.”",
+      "source_page": 22
+    },
+    {
+      "id": 360,
+      "word": "reconcile",
+      "part_of_speech": "VERB",
+      "meaning_id": "mendamaikan; menyelaraskan",
+      "definition_en": "restore friendly relations",
+      "example": "“The brothers reconciled after years apart.”",
+      "source_page": 22
+    },
+    {
+      "id": 361,
+      "word": "redoubtable",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tangguh; disegani",
+      "definition_en": "formidable; impressive",
+      "example": "“She was a redoubtable opponent in debate.”",
+      "source_page": 22
+    },
+    {
+      "id": 362,
+      "word": "relegate",
+      "part_of_speech": "VERB",
+      "meaning_id": "menurunkan; mengesampingkan",
+      "definition_en": "cast to a lower rank or role",
+      "example": "“The club was relegated to the lower division.”",
+      "source_page": 22
+    },
+    {
+      "id": 363,
+      "word": "remiss",
+      "part_of_speech": "ADJ",
+      "meaning_id": "lalai",
+      "definition_en": "negligent",
+      "example": "“I would be remiss not to thank you.”",
+      "source_page": 22
+    },
+    {
+      "id": 364,
+      "word": "replete",
+      "part_of_speech": "ADJ",
+      "meaning_id": "penuh; berlimpah",
+      "definition_en": "filled or well-supplied",
+      "example": "“The story is replete with vivid details.”",
+      "source_page": 22
+    },
+    {
+      "id": 365,
+      "word": "reprieve",
+      "part_of_speech": "NOUN",
+      "meaning_id": "penundaan hukuman; keringanan",
+      "definition_en": "cancellation or postponement of a punishment",
+      "example": "“The governor granted a last-minute reprieve.”",
+      "source_page": 22
+    },
+    {
+      "id": 366,
+      "word": "reprobate",
+      "part_of_speech": "NOUN",
+      "meaning_id": "orang tak bermoral",
+      "definition_en": "unprincipled person",
+      "example": "“The reprobate cheated everyone he met.”",
+      "source_page": 22
+    },
+    {
+      "id": 367,
+      "word": "repudiate",
+      "part_of_speech": "VERB",
+      "meaning_id": "menolak; menyangkal secara resmi",
+      "definition_en": "reject as invalid",
+      "example": "“She repudiated the rumor publicly.”",
+      "source_page": 22
+    },
+    {
+      "id": 368,
+      "word": "rescind",
+      "part_of_speech": "VERB",
+      "meaning_id": "mencabut; membatalkan",
+      "definition_en": "take back",
+      "example": "“The school rescinded the new rule.”",
+      "source_page": 22
+    },
+    {
+      "id": 369,
+      "word": "resolute",
+      "part_of_speech": "ADJ",
+      "meaning_id": "teguh; bertekad bulat",
+      "definition_en": "firm and determined",
+      "example": "“She remained resolute despite setbacks.”",
+      "source_page": 22
+    },
+    {
+      "id": 370,
+      "word": "reticent",
+      "part_of_speech": "ADJ",
+      "meaning_id": "pendiam; tertutup",
+      "definition_en": "reserved; not revealing thoughts",
+      "example": "“He was reticent about his past.”",
+      "source_page": 22
+    },
+    {
+      "id": 371,
+      "word": "ribald",
+      "part_of_speech": "ADJ",
+      "meaning_id": "cabul; kasar (lelucon)",
+      "definition_en": "improper; lewd",
+      "example": "“The ribald joke made her blush.”",
+      "source_page": 22
+    },
+    {
+      "id": 372,
+      "word": "rife",
+      "part_of_speech": "ADJ",
+      "meaning_id": "merajalela; penuh dengan",
+      "definition_en": "filled with; widespread",
+      "example": "“The city was rife with rumors.”",
+      "source_page": 22
+    },
+    {
+      "id": 373,
+      "word": "rudimentary",
+      "part_of_speech": "ADJ",
+      "meaning_id": "dasar; belum berkembang",
+      "definition_en": "basic; undeveloped",
+      "example": "“He has only rudimentary computer skills.” S",
+      "source_page": 22
+    },
+    {
+      "id": 374,
+      "word": "ruse",
+      "part_of_speech": "NOUN",
+      "meaning_id": "tipu muslihat",
+      "definition_en": "a trick or deception",
+      "example": "“The call was a ruse to steal data.” 28 kata",
+      "source_page": 22
+    },
+    {
+      "id": 375,
+      "word": "sacrosanct",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sakral; tak boleh diganggu gugat",
+      "definition_en": "regarded as too important to be interfered with",
+      "example": "“Free speech is sacrosanct to many.”",
+      "source_page": 22
+    },
+    {
+      "id": 376,
+      "word": "sagacious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "bijak; arif",
+      "definition_en": "wise; insightful",
+      "example": "“The sagacious elder gave sound advice.”",
+      "source_page": 22
+    },
+    {
+      "id": 377,
+      "word": "salient",
+      "part_of_speech": "ADJ",
+      "meaning_id": "menonjol; paling penting",
+      "definition_en": "most notable or important",
+      "example": "“Highlight the salient points of the text.”",
+      "source_page": 22
+    },
+    {
+      "id": 378,
+      "word": "sanctimonious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "munafik; sok suci",
+      "definition_en": "being morally superior to others",
+      "example": "“His sanctimonious lectures irritated everyone.”",
+      "source_page": 22
+    },
+    {
+      "id": 379,
+      "word": "sanction",
+      "part_of_speech": "NOUN",
+      "meaning_id": "sanksi; persetujuan resmi",
+      "definition_en": "official approval or penalty",
+      "example": "“The country faced economic sanctions.”",
+      "source_page": 23
+    },
+    {
+      "id": 380,
+      "word": "sanguine",
+      "part_of_speech": "ADJ",
+      "meaning_id": "optimis",
+      "definition_en": "optimistic",
+      "example": "“She stayed sanguine despite the delay.”",
+      "source_page": 23
+    },
+    {
+      "id": 381,
+      "word": "sardonic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "sinis; menyindir pahit",
+      "definition_en": "grimly mocking",
+      "example": "“He gave a sardonic smile.”",
+      "source_page": 23
+    },
+    {
+      "id": 382,
+      "word": "scurrilous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "kasar dan memfitnah",
+      "definition_en": "spreading disparaging claims; slanderous",
+      "example": "“The tabloid printed scurrilous gossip.”",
+      "source_page": 23
+    },
+    {
+      "id": 383,
+      "word": "sedulous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tekun; rajin",
+      "definition_en": "diligent and persistent",
+      "example": "“The sedulous clerk filed every form.”",
+      "source_page": 23
+    },
+    {
+      "id": 384,
+      "word": "serendipity",
+      "part_of_speech": "NOUN",
+      "meaning_id": "keberuntungan tak terduga",
+      "definition_en": "chance or good luck",
+      "example": "“Finding the book was pure serendipity.”",
+      "source_page": 23
+    },
+    {
+      "id": 385,
+      "word": "servile",
+      "part_of_speech": "ADJ",
+      "meaning_id": "budak; terlalu penurut",
+      "definition_en": "excessively submissive",
+      "example": "“The servile assistant agreed with everything.”",
+      "source_page": 23
+    },
+    {
+      "id": 386,
+      "word": "solicitous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "perhatian; penuh perhatian",
+      "definition_en": "attentive to",
+      "example": "“The solicitous nurse checked on him often.”",
+      "source_page": 23
+    },
+    {
+      "id": 387,
+      "word": "sophistry",
+      "part_of_speech": "NOUN",
+      "meaning_id": "sofisme; dalih yang menyesatkan",
+      "definition_en": "deceptive but plausible argument",
+      "example": "“His speech was sophistry, not truth.”",
+      "source_page": 23
+    },
+    {
+      "id": 388,
+      "word": "soporific",
+      "part_of_speech": "ADJ",
+      "meaning_id": "membuat ngantuk",
+      "definition_en": "causing sleep",
+      "example": "“The lecture was soporific.”",
+      "source_page": 23
+    },
+    {
+      "id": 389,
+      "word": "specious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tampak benar padahal salah",
+      "definition_en": "appearing true but actually false",
+      "example": "“He made a specious argument.”",
+      "source_page": 23
+    },
+    {
+      "id": 390,
+      "word": "sporadic",
+      "part_of_speech": "ADJ",
+      "meaning_id": "jarang-jarang; tidak teratur",
+      "definition_en": "occurring at irregular intervals",
+      "example": "“Sporadic showers fell all day.”",
+      "source_page": 23
+    },
+    {
+      "id": 391,
+      "word": "spurious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "palsu; tidak sah",
+      "definition_en": "appears truthful but is false",
+      "example": "“The report cited spurious data.”",
+      "source_page": 23
+    },
+    {
+      "id": 392,
+      "word": "staid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tenang; konservatif",
+      "definition_en": "sedate, respectable",
+      "example": "“The staid bank avoided risks.”",
+      "source_page": 23
+    },
+    {
+      "id": 393,
+      "word": "stolid",
+      "part_of_speech": "ADJ",
+      "meaning_id": "tenang; tidak mudah terpengaruh",
+      "definition_en": "calm and dependable",
+      "example": "“The stolid guard did not flinch.”",
+      "source_page": 23
+    },
+    {
+      "id": 394,
+      "word": "strident",
+      "part_of_speech": "ADJ",
+      "meaning_id": "melengking; keras dan kasar",
+      "definition_en": "loud and harsh",
+      "example": "“Her strident voice carried across the hall.”",
+      "source_page": 23
+    },
+    {
+      "id": 395,
+      "word": "substantial",
+      "part_of_speech": "ADJ",
+      "meaning_id": "besar; signifikan",
+      "definition_en": "large in size, amount, or importance",
+      "example": "“He made a substantial donation.”",
+      "source_page": 23
+    },
+    {
+      "id": 396,
+      "word": "supercilious",
+      "part_of_speech": "ADJ",
+      "meaning_id": "angkuh; memandang rendah",
+      "definition_en": "behaving in a haughty manner",
+      "example": "“The supercilious waiter sneered at us.”",
+      "source_page": 23
+    },
+    {
+      "id": 397,
+      "word": "superfluous",
+      "part_of_speech": "ADJ",
+      "meaning_id": "berlebihan; tidak perlu",
+      "definition_en": "unnecessary; more than required",
+      "example": "“Cut superfluous words from the essay.”",
+      "source_page": 23
+    },
+    {
+      "id": 398,
+      "word": "supposition",
+      "part_of_speech": "NOUN",
+      "meaning_id": "dugaan; asumsi",
+      "definition_en": "assumption without proof",
+      "example": "“The theory is pure supposition.”",
+      "source_page": 23
+    },
+    {
+      "id": 399,
+      "word": "surfeit",
+      "part_of_speech": "NOUN",
+      "meaning_id": "kelebihan; kekenyangan",
+      "definition_en": "excessive amount",
+      "example": "“A surfeit of sweets made him sick.”",
+      "source_page": 24
+    }
+  ]
+}
