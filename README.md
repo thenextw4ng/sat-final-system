@@ -1,6 +1,6 @@
 # SAT Final System
 
-Private, source-first SAT Reading & Writing study workspace with two independent study tracks.
+Source-first SAT Reading & Writing study workspace with two independent study tracks.
 
 ## Study tracks
 
@@ -37,8 +37,9 @@ Use [`docs/MASTER_AI_TUTOR_PROMPT.md`](docs/MASTER_AI_TUTOR_PROMPT.md) as the ma
 
 - `VOCAB DAY 1` … `VOCAB DAY 8`
 - `SOAL DAY 1` … `SOAL DAY 21`
+- `BAHAS SOAL #NNNN` for a structured Indonesian explanation of one exact Question ID
 
-The two tracks keep independent progress. For exact source question presentation, use the browser app, which loads the private repository files directly. ChatGPT should focus on teaching, original passage generation, error analysis, and review rather than reproducing large copyrighted source blocks in chat.
+The two tracks keep independent progress. For exact source question presentation, use the browser app, which loads the repository files directly. ChatGPT should focus on teaching, original passage generation, error analysis, and review rather than reproducing large copyrighted source blocks in chat.
 
 ## Source files and integrity
 
@@ -55,7 +56,7 @@ python -m pip install -r requirements.txt
 python scripts/build_content.py --vocab sources/SAT_Vocab_455.pdf --questions sources/01_English_Question_Bank_1234.md --out data
 ```
 
-Keep this repository private unless the source licenses explicitly permit redistribution. A license for personal study does not necessarily grant permission to publish or redistribute source files.
+This repository is currently public. Verify that every source license explicitly permits public redistribution before sharing it; a personal-use license may not be sufficient. A license for personal study does not necessarily grant permission to publish or redistribute source files.
 
 ## Progress and privacy
 
