@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "source_files": {
+    "vocabulary": "SAT_Vocab_455.pdf",
+    "questions": "01_English_Question_Bank_1234.md"
+  },
+  "vocabulary": {
+    "total": 455,
+    "parts": [
+      {
+        "part": 1,
+        "start_id": 1,
+        "end_id": 57,
+        "count": 57,
+        "first_word": "abandon",
+        "last_word": "bolster"
+      },
+      {
+        "part": 2,
+        "start_id": 58,
+        "end_id": 114,
+        "count": 57,
+        "first_word": "bombastic",
+        "last_word": "daunting"
+      },
+      {
+        "part": 3,
+        "start_id": 115,
+        "end_id": 171,
+        "count": 57,
+        "first_word": "dearth",
+        "last_word": "exhort"
+      },
+      {
+        "part": 4,
+        "start_id": 172,
+        "end_id": 228,
+        "count": 57,
+        "first_word": "exigent",
+        "last_word": "injunction"
+      },
+      {
+        "part": 5,
+        "start_id": 229,
+        "end_id": 285,
+        "count": 57,
+        "first_word": "innocuous",
+        "last_word": "noisome"
+      },
+      {
+        "part": 6,
+        "start_id": 286,
+        "end_id": 342,
+        "count": 57,
+        "first_word": "nonchalant",
+        "last_word": "promulgate"
+      },
+      {
+        "part": 7,
+        "start_id": 343,
+        "end_id": 399,
+        "count": 57,
+        "first_word": "propitious",
+        "last_word": "surfeit"
+      },
+      {
+        "part": 8,
+        "start_id": 400,
+        "end_id": 455,
+        "count": 56,
+        "first_word": "surmise",
+        "last_word": "zephyr"
+      }
+    ]
+  },
+  "questions": {
+    "total": 1234,
+    "items_per_full_part": 60,
+    "parts": [
+      {
+        "part": 1,
+        "start_id": 1,
+        "end_id": 60,
+        "count": 60
+      },
+      {
+        "part": 2,
+        "start_id": 61,
+        "end_id": 120,
+        "count": 60
+      },
+      {
+        "part": 3,
+        "start_id": 121,
+        "end_id": 180,
+        "count": 60
+      },
+      {
+        "part": 4,
+        "start_id": 181,
+        "end_id": 240,
+        "count": 60
+      },
+      {
+        "part": 5,
+        "start_id": 241,
+        "end_id": 300,
+        "count": 60
+      },
+      {
+        "part": 6,
+        "start_id": 301,
+        "end_id": 360,
+        "count": 60
+      },
+      {
+        "part": 7,
+        "start_id": 361,
+        "end_id": 420,
+        "count": 60
+      },
+      {
+        "part": 8,
+        "start_id": 421,
+        "end_id": 480,
+        "count": 60
+      },
+      {
+        "part": 9,
+        "start_id": 481,
+        "end_id": 540,
+        "count": 60
+      },
+      {
+        "part": 10,
+        "start_id": 541,
+        "end_id": 600,
+        "count": 60
+      },
+      {
+        "part": 11,
+        "start_id": 601,
+        "end_id": 660,
+        "count": 60
+      },
+      {
+        "part": 12,
+        "start_id": 661,
+        "end_id": 720,
+        "count": 60
+      },
+      {
+        "part": 13,
+        "start_id": 721,
+        "end_id": 780,
+        "count": 60
+      },
+      {
+        "part": 14,
+        "start_id": 781,
+        "end_id": 840,
+        "count": 60
+      },
+      {
+        "part": 15,
+        "start_id": 841,
+        "end_id": 900,
+        "count": 60
+      },
+      {
+        "part": 16,
+        "start_id": 901,
+        "end_id": 960,
+        "count": 60
+      },
+      {
+        "part": 17,
+        "start_id": 961,
+        "end_id": 1020,
+        "count": 60
+      },
+      {
+        "part": 18,
+        "start_id": 1021,
+        "end_id": 1080,
+        "count": 60
+      },
+      {
+        "part": 19,
+        "start_id": 1081,
+        "end_id": 1140,
+        "count": 60
+      },
+      {
+        "part": 20,
+        "start_id": 1141,
+        "end_id": 1200,
+        "count": 60
+      },
+      {
+        "part": 21,
+        "start_id": 1201,
+        "end_id": 1234,
+        "count": 34
+      }
+    ]
+  }
+}
