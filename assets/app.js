@@ -3,7 +3,7 @@
 
   const $ = (id) => document.getElementById(id);
   const KEYS = {
-    mastered: "sat-final-system:vocab-mastered:v2",
+    mastered: "sat-final-system:vocab-mastered:v1",
     vocabDay: (day) => `sat-final-system:vocab-day:${day}:v2`,
     questionDay: (day) => `sat-final-system:question-day:${day}:v2`,
   };
@@ -573,7 +573,8 @@
     try {
       const markdown = await loadText(`data/question-markdown/part-${String(day).padStart(2, "0")}.md`);
       state.questions = parseQuestionMarkdown(markdown, day);
-      const saved = read(KEYS.questionDay(day), { answers: {}, index: 0, finished: false });
+      const legacy = read(`sat-final-system:quiz:${day}:v1`, { answers: {}, finished: false });
+      const saved = read(KEYS.questionDay(day), { answers: legacy.answers || {}, index: 0, finished: !!legacy.finished });
       state.questionAnswers = saved.answers || {};
       state.questionIndex = Math.min(saved.index || 0, Math.max(0, state.questions.count - 1));
       state.questionFinished = !!saved.finished;
