@@ -133,36 +133,40 @@
     area.replaceChildren();
     area.classList.add("hidden");
     state.readingPassage = null;
-    if (day !== 1) return;
     try {
-      const passage = await loadJson("data/reading-passages/day-01.json");
+      const passage = await loadJson(`data/reading-passages/day-${String(day).padStart(2, "0")}.json`);
       state.readingPassage = passage;
+      const expectedWords = state.vocab.words.map((entry) => entry.word);
+      const passageWords = passage.target_words || [];
       const fullText = passage.paragraphs.join(" ");
-      const found = passage.target_words.filter((word) => new RegExp("\\b" + word + "\\b", "i").test(fullText));
-      const missing = passage.target_words.filter((word) => !found.includes(word));
+      const found = expectedWords.filter((word) => new RegExp("\\\\b" + word + "\\\\b", "i").test(fullText));
+      const missing = expectedWords.filter((word) => !found.includes(word));
+      const listMatches = expectedWords.length === passageWords.length
+        && expectedWords.every((word, index) => word === passageWords[index]);
       const card = node("article", "reading-card");
       const header = node("div", "reading-heading");
       header.append(
-        node("div", "eyebrow", "DAY 1 · CONTEXTUAL READING"),
+        node("div", "eyebrow", `DAY ${day} · CONTEXTUAL READING`),
         node("h3", "", passage.title),
         node("p", "subtle", passage.subtitle)
       );
       const body = node("div", "reading-body");
       passage.paragraphs.forEach((paragraph) => {
         const p = node("p");
-        appendHighlightedText(p, paragraph, passage.target_words);
+        appendHighlightedText(p, paragraph, expectedWords);
         body.append(p);
       });
-      const audit = node("div", `passage-audit ${missing.length ? "audit-warning" : "audit-success"}`,
-        missing.length
-          ? `Vocabulary coverage: ${found.length}/${passage.target_words.length}. Missing: ${missing.join(", ")}`
-          : `Vocabulary coverage verified: all ${found.length}/${passage.target_words.length} exact target words appear in the passage. Highlighted words are the Day 1 list.`
+      const valid = missing.length === 0 && listMatches;
+      const audit = node("div", `passage-audit ${valid ? "audit-success" : "audit-warning"}`,
+        valid
+          ? `Cakupan terverifikasi: semua ${found.length}/${expectedWords.length} headword hari ini muncul dalam bacaan. Kata target diberi highlight.`
+          : `Pemeriksaan cakupan: ${found.length}/${expectedWords.length} kata ditemukan. ${missing.length ? "Belum ditemukan: " + missing.join(", ") + ". " : ""}${listMatches ? "" : "Daftar target passage tidak sama persis dengan vocabulary source."}`
       );
       card.append(header, body, audit);
       area.append(card);
       area.classList.remove("hidden");
     } catch (error) {
-      area.replaceChildren(node("div", "error", `Reading passage unavailable: ${error.message}`));
+      area.replaceChildren(node("div", "error", `Reading passage unavailable for Day ${day}: ${error.message}`));
       area.classList.remove("hidden");
     }
   }
@@ -416,14 +420,14 @@
     const words = state.vocab.words.map((item) => item.word).join(", ");
     return [
       "Act as my SAT Reading and Writing vocabulary tutor.",
-      `Use Vocabulary Day ${state.vocabDay} from thenextw4ng/sat-final-system as the source of the target-word list.`,
+      `Use Vocabulary Day ${state.vocabDay} from thenextw4ng/sat-final-system.`,
       `The exact target words for this day are: ${words}.`,
-      "First, verify the target list against data/vocabulary/part-XX.json in the repository. Do not add, omit, or substitute headwords.",
-      "Create one coherent original academic reading passage in 3–5 connected paragraphs (about 550–800 words) that uses every target word naturally. Do not force awkward usage; if a word genuinely cannot fit, identify it and explain why.",
-      "Then create exactly five original Digital SAT Reading and Writing-style multiple-choice questions about the passage. Use varied skills: words in context, central idea, inference, textual evidence, and author purpose/structure.",
-      "For every target word, also provide a clear, natural Indonesian definition that explains the concept, not only a one-word synonym. Keep the English definition and Indonesian explanation side by side.",
-      "For every question, provide four plausible choices, one correct answer, and a structured explanation entirely in Indonesian: (1) inti yang ditanyakan, (2) bukti/petunjuk kunci, (3) langkah penalaran, (4) alasan jawaban benar, (5) alasan setiap distractor salah, and (6) strategi mengenali pola serupa. Keep the passage and question in English. Do not copy a published SAT passage or question.",
-      "Render the five questions as a genuinely interactive multiple-choice quiz with clickable A–D options and immediate right/wrong feedback, correct answer, and explanation after each selection.",
+      `Load the existing original contextual reading from data/reading-passages/day-${String(state.vocabDay).padStart(2, "0")}.json and verify its target_words against data/vocabulary/part-${String(state.vocabDay).padStart(2, "0")}.json. Do not replace, rewrite, add to, or omit any part of the built-in passage.`,
+      "Create exactly five new Digital SAT Reading and Writing-style multiple-choice questions based only on that built-in passage. Use varied skills: Words in Context, Central Ideas / Text Structure, Inferences, Command of Evidence, and Author's Purpose / Function.",
+      "For every question, provide four plausible choices A–D, exactly one defensible correct answer, and a structured explanation entirely in Indonesian: (1) inti yang ditanyakan, (2) skill yang diuji, (3) bukti kunci yang diparafrasekan, (4) langkah penalaran, (5) alasan jawaban benar, (6) analisis A–D satu per satu, (7) jebakan umum, and (8) strategi SAT. The passage and questions remain in English. Do not copy any published SAT question or passage.",
+      "Before presenting the quiz, independently solve every generated question and verify that the answer key agrees with the passage and the explanation. Check that no distractor is also defensible.",
+      "Label all five questions GENERATED PRACTICE. Never insert them into or confuse them with the original 1,234-question bank.",
+      "Render the five questions as a genuinely interactive multiple-choice quiz with clickable A–D options and immediate right/wrong feedback, correct answer, and Indonesian explanation after each selection.",
       "After the reading quiz, run the vocabulary quiz in blocks of 20, 20, 10, then the remaining 7 words (6 on Day 8). Explain the tested word's Indonesian meaning and usage after each answer.",
       "Use Indonesian for teaching and explanations, but keep the passage and questions in English. Keep vocabulary progress separate from the original question-bank progress."
     ].join("\n\n");
@@ -433,7 +437,7 @@
     if (!state.vocab) return;
     try {
       await navigator.clipboard.writeText(buildReadingPrompt());
-      $("headerStatus").textContent = `Reading prompt copied · Vocab Day ${state.vocabDay}`;
+      $("headerStatus").textContent = `Comprehension quiz prompt copied · Vocab Day ${state.vocabDay}`;
     } catch (_) {
       $("readingPromptPreview").textContent = buildReadingPrompt();
       $("readingPromptPreview").classList.remove("hidden");
