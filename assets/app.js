@@ -119,8 +119,7 @@
   }
 
   function appendHighlightedText(parent, text, words) {
-    const escaped = words.map((word) => word.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&"));
-    const pattern = new RegExp(`\\\\b(${escaped.join("|")})\\\\b`, "gi");
+    const pattern = new RegExp("\\b(" + words.join("|") + ")\\b", "gi");
     let cursor = 0;
     for (const match of text.matchAll(pattern)) {
       parent.append(document.createTextNode(text.slice(cursor, match.index)));
@@ -129,7 +128,6 @@
     }
     parent.append(document.createTextNode(text.slice(cursor)));
   }
-
   async function renderReadingPassage(day) {
     const area = $("readingPassageArea");
     area.replaceChildren();
@@ -140,7 +138,7 @@
       const passage = await loadJson("data/reading-passages/day-01.json");
       state.readingPassage = passage;
       const fullText = passage.paragraphs.join(" ");
-      const found = passage.target_words.filter((word) => new RegExp(`\\\\b${word}\\\\b`, "i").test(fullText));
+      const found = passage.target_words.filter((word) => new RegExp("\\\\b" + word + "\\\\b", "i").test(fullText));
       const missing = passage.target_words.filter((word) => !found.includes(word));
       const card = node("article", "reading-card");
       const header = node("div", "reading-heading");
