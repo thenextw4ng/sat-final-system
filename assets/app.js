@@ -521,7 +521,7 @@
       "4. LANGKAH PENALARAN — uraikan proses berpikir secara berurutan, dari petunjuk sampai kesimpulan.",
       "5. JAWABAN BENAR — jelaskan mengapa opsi yang benar paling tepat.",
       "6. ANALISIS SEMUA OPSI — bahas A, B, C, dan D satu per satu: mengapa benar atau mengapa tidak tepat. Jangan hanya mengatakan 'tidak didukung'.",
-      "7. JEBakan / KESALAHAN UMUM — jelaskan daya tarik distractor dan miskonsepsi yang harus dihindari.",
+      "7. JEBAKAN / KESALAHAN UMUM — jelaskan daya tarik distractor dan miskonsepsi yang harus dihindari.",
       "8. STRATEGI SAT — berikan cara mengenali pola soal serupa dan langkah efisien untuk mengerjakannya.",
       "Jawaban saya: " + (state.questionAnswers[question.id] || "belum dijawab"),
       "Jangan mengarang bukti yang tidak ada. Bila ada grafik, tabel, atau teks yang tidak dapat dibaca dari record, jelaskan keterbatasannya."
