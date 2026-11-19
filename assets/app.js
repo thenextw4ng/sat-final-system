@@ -138,7 +138,7 @@
       const passage = await loadJson("data/reading-passages/day-01.json");
       state.readingPassage = passage;
       const fullText = passage.paragraphs.join(" ");
-      const found = passage.target_words.filter((word) => new RegExp("\\\\b" + word + "\\\\b", "i").test(fullText));
+      const found = passage.target_words.filter((word) => new RegExp("\\b" + word + "\\b", "i").test(fullText));
       const missing = passage.target_words.filter((word) => !found.includes(word));
       const card = node("article", "reading-card");
       const header = node("div", "reading-heading");
