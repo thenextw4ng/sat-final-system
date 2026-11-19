@@ -19,7 +19,7 @@ Vocabulary Day 1 includes an original four-paragraph contextual reading in the a
 
 ### Original question-bank track
 
-Each day maps directly to the matching question Markdown part. Days 1–20 contain 60 source questions each, shown in three sets of 20. Day 21 contains 34 questions, shown as 20 + 14. The interface preserves the original Question ID, hash, question block, answer choices, key, explanation, and available metadata. Clicking A–D immediately reveals the correctness and source explanation. Progress and the last position are saved per day.
+Each day maps directly to the matching question Markdown part. Days 1–20 contain 60 source questions each, shown in three sets of 20. Day 21 contains 34 questions, shown as 20 + 14. The interface preserves the original Question ID, hash, question block, answer choices, key, explanation, and available metadata. Clicking A–D immediately reveals correctness and the source explanation. Use **Salin prompt pembahasan Indonesia** to ask ChatGPT for a structured Indonesian analysis based on the exact Question ID. Progress and the last position are saved per day.
 
 ## Run locally
 
