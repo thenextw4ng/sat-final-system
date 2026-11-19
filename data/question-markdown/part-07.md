@@ -75,7 +75,8 @@ Narwhals are shy whales that live in the remote Arctic Ocean. Some of them have 
 
 ### Answer choices
 
-- **A.** some narwhals would seek a new habitat.- **B.** fewer marine animals would also have tusks.
+- **A.** some narwhals would seek a new habitat.
+- **B.** fewer marine animals would also have tusks.
 - **C.** more narwhals would have a tusk.
 - **D.** narwhals would become less shy over time.
 
@@ -1074,6 +1075,7 @@ Conventional theories of rhetoric hold that presenting information as coming fro
 ### Explanation
 
 Choice C is the best answer because it presents the conclusion that most logically follows from the text’s discussion of how participants considered messages from former trial volunteers and doctors. The text first establishes that information coming from credentialed experts typically increases the credibility of that information. However, the text goes on to describe a situation that goes against this expectation: the messages from previous trial volunteers were judged as more credible than the messages from licensed doctors when recruiting clinic trial participants. The text then goes on to speculate as to why this may have been the case, stating that participants likely considered the messages from the former trial volunteers to be more convincing than the messages from the doctors because the former trial volunteers were perceived as having undergone the same experience that the participants were considering. It is reasonable to infer, then, that participants regarded the former trial volunteers’ direct experience as more important to their decision-making than the doctors’ status as credentialed experts. Choice A is incorrect because the text does not provide any indication as to the content or the tone of the messages provided by either the doctors or the former trial volunteers regarding the clinical trials. Choice B is incorrect. Since the study participants had not themselves participated in the clinical trial, they could not rely on their experience to evaluate the credibility of either the former trial volunteers or the doctors. Choice D is incorrect. While the text does establish that the participants likely considered the messages from both the doctors and the former trial volunteers, it does not suggest that the participants doubted the doctors’ credentials. Rather, the text speculates that participants may have given the experiences of the former trial volunteers more importance than the doctors’ credentials when considering the recruitment messages.
+
 ## Question 0410 — `cae97f58`
 Domain: Information and Ideas · Skill: Inferences · Difficulty: Hard
 

@@ -354,6 +354,7 @@ Choice D is the best answer because it most effectively uses data from the table
 Domain: Information and Ideas · Skill: Command of Evidence · Difficulty: Medium
 
 ### Question
+
 Metal Content of Plants with and without Kanamycin Exposure 700 600 (parts per million) 500 Metal content 400 300 200 100 0 in in yc yc m m ana ana k k ut th th o wi wi Experimental condition zinc iron Many plants lose their leaf color when exposed to kanamycin, an antibiotic produced by some soil microorganisms. Spelman College biologist Mentewab Ayalew and her colleagues hypothesized that plants’ response to kanamycin exposure involves altering their uptake of metals, such as iron and zinc. The researchers grew two groups of seedlings of the plant Arabidopsis thaliana, half of which were exposed to kanamycin and half of which were a control group without exposure to kanamycin, and measured the plants’ metal content five days after germination. Which choice best describes data in
 
 **Prompt:** the graph that support Ayalew and her colleagues’ hypothesis?

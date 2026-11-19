@@ -345,6 +345,7 @@ While researching a topic, a student has taken the following notes: Researchers 
 - **D.** Though some of the languages differed in number of syllables spoken per second, all 17 conveyed information at roughly the same rate.
 
 **Correct answer: D**
+
 ### Explanation
 
 Choice D is the best answer. The sentence presents an overview of the study’s findings, noting that, for some of the languages (the examples of Spanish and Vietnamese are given in the notes), the number of syllables spoken per second varied, while the amount of information conveyed per second remained roughly constant across all 17 languages. Choice A is incorrect. While the sentence describes one of the metrics the study assessed, it doesn’t present any of the study’s findings. Choice B is incorrect. While the sentence compares specific findings about two of the languages studied, it doesn’t provide an overview of the study’s findings across all 17 languages. Choice C is incorrect. The sentence compares specific findings about two of the languages studied; it doesn’t provide an overview of the study’s findings across all 17 languages. It also misrepresents the information from the notes about Spanish’s information rate.

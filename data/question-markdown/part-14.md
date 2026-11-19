@@ -985,6 +985,7 @@ Magnetic levitation (maglev) trains are suspended above a track by powerful elec
 **Correct answer: A**
 
 ### Explanation
+
 Choice A is the best answer. This sentence emphasizes just how far maglev advocates dreams are from coming true. “In fact” is a transition used to emphasize the truth of a statement that modifies the previous statement and therefore fits perfectly in this context. Choice B is incorrect. This choice uses a cause-and-effect transition, which doesn't make sense here. Maglev advocates dream remaining unrealized would not cause there to be only a few maglev trains, all located in Asia. Choice C is incorrect. This choice uses a disagreement transition, which doesn't make sense here. In fact, this sentence agrees with the previous sentence — both talk about how maglev trains are far from becoming common in the US. Choice D is incorrect. This choice uses a disagreement transition, which doesn't make sense here. In fact, this sentence agrees with the previous sentence — both talk about how maglev trains are far from becoming common in the US.
 
 ## Question 0826 — `56cad44a`

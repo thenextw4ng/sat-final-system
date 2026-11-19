@@ -673,6 +673,7 @@ Philadelphia’s Black Pearl Chamber Orchestra, founded by Jeri Lynne Johnson, p
 - **B.** Johnson founded the Black Pearl orchestra to perform classical music by contemporary artist Jessie Montgomery.
 - **C.** The Black Pearl orchestra gives community members the chance to both listen to and participate in classical music performance.
 - **D.** Johnson has community members conduct an orchestra to demonstrate how difficult the task is.
+
 **Correct answer: C**
 
 ### Explanation

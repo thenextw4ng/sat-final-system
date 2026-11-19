@@ -305,6 +305,7 @@ While researching a topic, a student has taken the following notes: Ukiyo-e wood
 ### Explanation
 
 Choice C is the best answer. The sentence contrasts the two production methods, noting that ukiyo-e prints are produced by teams of artisans, whereas's ōsaku-hanga prints are typically produced by an individual artist. Choice A is incorrect. The sentence indicates a difference between the two styles, noting that's ōsaku-hanga emphasizes individual artistic expression, but it doesn’t provide sufficient information about ukiyo-e prints to contrast the two styles’ production methods. Choice B is incorrect. The sentence contrasts when the two styles were popular; it doesn’t contrast their production methods. Choice D is incorrect. The sentence mischaracterizes information from the notes: both styles include drawing and wood carving in their production, not just's ōsaku-hanga.
+
 ## Question 0735 — `11df9b99`
 Domain: Expression of Ideas · Skill: Transitions · Difficulty: Hard
 
@@ -1305,6 +1306,7 @@ The Coastal Virginia Offshore Wind project is anticipated to generate 2.6 gigawa
 **Prompt:** Which choice completes the text with the most logical transition?
 
 ### Answer choices
+
 - **A.** To be exact,
 - **B.** In conclusion,
 - **C.** As a result,

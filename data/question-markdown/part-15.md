@@ -666,6 +666,7 @@ Domain: Expression of Ideas · Skill: Rhetorical Synthesis · Difficulty: Medium
 While researching a topic, a student has taken the following notes: Cecilia Vicu ña is a multidisciplinary artist. In 1971, her first solo art exhibition, Pinturas, poemas y explicaciones, was shown at the Museo Nacional de Bellas Artes in Santiago, Chile. Her poetry collection Precario/Precarious was published in 1983 by Tanam Press. Her poetry collection Instan was published in 2002 by Kelsey St. Press. She lives part time in Chile, where she was born, and part time in New York. The student wants to introduce the artist’s 1983 poetry collection.
 
 **Prompt:** Which choice most effectively uses relevant information from the notes to accomplish this goal?
+
 ### Answer choices
 
 - **A.** Before she published the books Precario/Precarious (1983) and Instan (2002), Cecilia Vicu ña exhibited visual art at the Museo Nacional de Bellas Artes in Santiago, Chile.

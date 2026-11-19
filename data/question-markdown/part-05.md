@@ -713,7 +713,8 @@ Outi Tervo and team studied the effect of human-caused noise on narwhals (Monodo
 
 ### Answer choices
 
-- **A.** sonic pulses can be heard at significantly greater ocean depths than ship sounds can.- **B.** ship sounds contribute so much to the overall sound level that the addition of sonic pulses has little effect on the narwhals auditory environment.
+- **A.** sonic pulses can be heard at significantly greater ocean depths than ship sounds can.
+- **B.** ship sounds contribute so much to the overall sound level that the addition of sonic pulses has little effect on the narwhals auditory environment.
 - **C.** narwhals forage at shallower depths in the presence of ship sounds alone than in the presence of ship sounds coupled with sonic pulses.
 - **D.** the narwhals weren't as sensitive to human-caused sounds as the researchers had predicted.
 

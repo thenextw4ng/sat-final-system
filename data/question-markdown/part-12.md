@@ -612,7 +612,8 @@ The following text is from Annie Dillard's 1987 autobiographical novel An Americ
 
 ### Answer choices
 
-- **A.** It describes the narrator trying to memorize her telephone number.- **B.** It provides examples of what the narrator thinks about at night.
+- **A.** It describes the narrator trying to memorize her telephone number.
+- **B.** It provides examples of what the narrator thinks about at night.
 - **C.** It gives directions to the narrator's favorite local store.
 - **D.** It portrays the narrator's relationship with her mother.
 

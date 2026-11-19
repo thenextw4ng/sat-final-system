@@ -466,6 +466,7 @@ Composer Florence Price won first place for her score Symphony in E Minor at the
 **Correct answer: A**
 
 ### Explanation
+
 Choice A is the best answer. The text provides an overview of Florence Price’s importance by describing her success at the 1932 Wanamaker Foundation Awards, her blending of Black spirituals and classical European Romantic musical traditions, and the recent performances and recordings of her concertos and symphonies by major orchestras. Choice B is incorrect. The text does mention that Price’s compositions have been performed and recorded by major orchestras, but it doesn’t argue that more orchestras should do so. Choice C is incorrect. The text does mention the blending of Black spirituals and classical European Romantic musical traditions, but only briefly, as part of a broader overview of Price’s career. Choice D is incorrect. The text mentions Price’s blending of Black spirituals with classical European Romantic musical traditions, but it doesn’t directly compare Price’s scores with those of classical European composers.
 
 ## Question 0503 — `f61c22f3`

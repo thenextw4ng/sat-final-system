@@ -998,6 +998,7 @@ Domain: Information and Ideas · Skill: Command of Evidence · Difficulty: Hard
 ### Question
 
 Linguist Deborah Tannen has cautioned against framing contentious issues in terms of two highly competitive perspectives, such as pro versus con. According to Tannen, this debate-driven approach can strip issues of their complexity and, when used in front of an audience, can be less informative than the presentation of multiple perspectives in a noncompetitive format. To test Tannen’s hypothesis, students conducted a study in which they showed participants one of three different versions of local news commentary about the same issue. Each version featured a debate between two commentators with opposing views, a panel of three commentators with various views, or a single commentator.
+
 **Prompt:** Which finding from the students’ study, if true, would most strongly support Tannen’s hypothesis?
 
 ### Answer choices

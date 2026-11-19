@@ -753,6 +753,7 @@ Featuring works by the photographers Lola Álvarez Bravo and Else “Yva” Neul
 ### Explanation
 
 Choice A is the best answer. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a comma and the coordinating conjunction "and" to join the first main clause ("Featuring...1950s") and the second main clause ("given...successful"). Choice B is incorrect because when coordinating two longer main clauses such as these, it’s conventional to use a comma before the coordinating conjunction. Choice C is incorrect because it results in a run-on sentence. The two main clauses are fused without punctuation and/or a conjunction. Choice D is incorrect because it results in a comma splice. Without a conjunction following it, a comma can’t be used in this way to join two main clauses.
+
 ## Question 1057 — `2c9c6ca9`
 
 ### Question

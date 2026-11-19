@@ -26,6 +26,7 @@ Domain: Expression of Ideas · Skill: Rhetorical Synthesis · Difficulty: Medium
 ### Question
 
 While researching a topic, a student has taken the following notes: Minnesota defines a lake as an inland body of water of at least 10 acres. Wisconsin's definition of a lake doesn't take size into account. By its own definition, Wisconsin has over 15,000 lakes, many smaller than 10 acres. By Minnesota's definition, Wisconsin has only about 6,000 lakes. The student wants to contrast Minnesota's definition of a lake with Wisconsin's.
+
 **Prompt:** Which choice most effectively uses relevant information from the notes to accomplish this goal?
 
 ### Answer choices
@@ -1025,6 +1026,7 @@ Choice A is the best answer. The convention being tested is the use of punctuati
 In January 1776, Thomas Paine published Common Sense, an appeal for freedom from the British monarchy that famously helped ignite the desire for independence among the American colonists. After the colonies achieved their independence, Paine moved to Paris, where the provocative ______ would contribute to another revolution —the French Revolution.
 
 **Prompt:** Which choice completes the text so that it conforms to the conventions of Standard English?
+
 ### Answer choices
 
 - **A.** authors political writings

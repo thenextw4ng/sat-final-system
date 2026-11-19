@@ -492,7 +492,8 @@ During the decades-long movement to codify the rights of Latinos in the US, cert
 ### Answer choices
 
 - **A.** 1929. For one, the
-- **B.** 1929, for one, the- **C.** 1929 for one, the
+- **B.** 1929, for one, the
+- **C.** 1929 for one, the
 - **D.** 1929, for one. The
 
 **Correct answer: D**

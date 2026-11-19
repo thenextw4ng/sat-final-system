@@ -232,6 +232,7 @@ Choice D is the best answer. The convention being tested is subject-verb agreeme
 ## Question 1152 — `c8540a5b`
 
 ### Question
+
 Swedish scientists Eva Engvall and Peter Perlmann developed a method for measuring the concentration of different proteins in a biological sample. Their ______ ELISA (enzyme-linked immunosorbent assay), is used to detect and measure proteins that indicate the presence of certain diseases.
 
 **Prompt:** Which choice completes the text so that it conforms to the conventions of Standard English?
@@ -1231,6 +1232,7 @@ In Marisol’s 1968 sculpture Mi Mama y Yo, gone are the types of pop culture re
 - **D.** it’s
 
 **Correct answer: C**
+
 ### Explanation
 
 Choice C is the best answer. The convention being tested is the use of possessive determiners. The plural possessive determiner "their" agrees in number with the plural noun "types" and thus indicates that the more personal subject matter of Marisol’s 1968 sculpture takes the place of those types of pop culture references that made Marisol a star. Choice A is incorrect because the singular possessive determiner "its" doesn’t agree in number with the plural noun "types." Choice B is incorrect because "they’re" is the contraction for "they are," not a possessive determiner. Choice D is incorrect because "it’s" is the contraction for "it is" or "it has," not a possessive determiner.

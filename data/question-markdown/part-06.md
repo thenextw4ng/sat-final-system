@@ -396,6 +396,7 @@ Choice A is the best answer because it presents the quotation that best illustra
 
 ## Question 0319 — `3ae2638c`
 Domain: Information and Ideas · Skill: Inferences · Difficulty: Medium
+
 ### Question
 
 In documents called judicial opinions, judges explain the reasoning behind their legal rulings, and in those explanations they sometimes cite and discuss historical and contemporary philosophers. Legal scholar and philosopher Anita L. Allen argues that while judges are naturally inclined to mention philosophers whose views align with their own positions, the strongest judicial opinions consider and rebut potential objections; discussing philosophers whose views conflict with judges’ views could therefore ______

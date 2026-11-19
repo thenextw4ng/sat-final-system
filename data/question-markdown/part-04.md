@@ -33,7 +33,8 @@ The following text is from Milan Kundera's 1984 novel The Unbearable Lightness o
 
 - **A.** As a dog, Karenin possesses a sense of time that involves a strong preference for predictability and an aversion to disruption.
 - **B.** After he's moved to a new home, Karenin's negative response to changes has become more pronounced.
-- **C.** Similar to Tomas and Tereza, Karenin comprehends time as circular rather than as a straightforward progression.- **D.** As is the case for other dogs, Karenin's sense of time seems to accelerate depending on the objects and places that surround him.
+- **C.** Similar to Tomas and Tereza, Karenin comprehends time as circular rather than as a straightforward progression.
+- **D.** As is the case for other dogs, Karenin's sense of time seems to accelerate depending on the objects and places that surround him.
 
 **Correct answer: A**
 
@@ -1033,6 +1034,7 @@ Choice A is the best answer. It most logically completes the text. The text says
 
 ## Question 0228 — `350e2336`
 Domain: Information and Ideas · Skill: Inferences · Difficulty: Medium
+
 ### Question
 
 The Haitian Declaration of Independence was issued in 1804, bringing to an end the revolution against colonial France that began in 1791. Written in French, which was not the first language of most Haitians but which was used throughout Europe as the language of international diplomacy, the declaration notes that Haiti will not bring rebellion to other Caribbean nations, promises to respect the sovereignty of its neighbors — widely understood as a reassurance to the United States — and sets up Haiti as an example for future struggles against colonizers (an implicit reference to the many colonies then found in the Americas). So even though the declaration is explicitly addressed to the Haitian people, it's reasonable to conclude that ______
