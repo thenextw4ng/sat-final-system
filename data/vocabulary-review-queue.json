@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "manual_verification_required",
+  "source_to_check": "SAT_Vocab_455.pdf",
+  "note": "These records were flagged in a prior extraction audit for possible field-splitting or page-layout artifacts. This file does not assert the correct replacement text. Compare each record with the original licensed PDF before editing it.",
+  "items": [
+    {"id": 42, "reason": "Possible split or misplaced meaning/definition/example fields"},
+    {"id": 47, "reason": "Possible trailing page-marker character in example"},
+    {"id": 48, "reason": "Possible trailing word-count artifact in example"},
+    {"id": 64, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 142, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 178, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 200, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 241, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 256, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 278, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 287, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 351, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 356, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 374, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 402, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 419, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 430, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 446, "reason": "Possible extraction or page-layout artifact"},
+    {"id": 450, "reason": "Possible extraction or page-layout artifact"}
+  ]
+}
