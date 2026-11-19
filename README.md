@@ -15,7 +15,8 @@ The 10-day / 600-question core plan is Question Parts 01–10. Parts 11–21 pre
 
 These are the real partition contents, not only indexes or ID ranges:
 
-- `data/vocabulary/part-01.json` … `part-08.json`: complete word entries with Indonesian meanings, English definitions, and example sentences.
+- `data/vocabulary-markdown/part-01.md` … `part-08.md`: readable, complete word lists with Indonesian meanings, English definitions, and example sentences.
+- `data/vocabulary/part-01.json` … `part-08.json`: the same complete entries in structured form for the app.
 - `data/question-markdown/part-01.md` … `part-21.md`: full copied original Markdown question blocks, including text/passages, four choices, answer keys, and explanations.
 
 The quiz interface reads those Markdown question files directly. The last question part contains 34 questions; all other question parts contain 60.
