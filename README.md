@@ -1,47 +1,62 @@
 # SAT Final System
 
-Private, source-first SAT Reading & Writing study workspace.
+Private, source-first SAT Reading & Writing study workspace with two independent study tracks.
 
-## Audited partitioning
+## Study tracks
 
-| Collection | Total | Parts | Distribution |
+| Track | Days | Total | Daily distribution |
 |---|---:|---:|---|
-| Vocabulary | 455 | 8 | Parts 01–07: 57 words; Part 08: 56 |
-| Original question bank | 1,234 | 21 | Parts 01–20: 60 questions; Part 21: 34 |
+| Vocabulary | 8 | 455 words | Days 1–7: 57 words; Day 8: 56 words |
+| Original question bank | 21 | 1,234 questions | Days 1–20: 60 questions; Day 21: 34 questions |
 
-The 10-day / 600-question core plan is Question Parts 01–10. Parts 11–21 preserve the remaining 634 source questions for continuation; none are discarded.
+The day number is independent between tracks. For example, Vocabulary Day 3 and Question Bank Day 8 can be studied in any order.
 
-## Actual content files (already committed)
+### Vocabulary track
 
-These are the real partition contents, not only indexes or ID ranges:
+Each day maps directly to the matching vocabulary data part. The browser app includes source vocabulary cards, meaning/definition/example reveal, a mastery checklist, and an interactive multiple-choice quiz. The quiz is divided into 20 + 20 + 10 questions, followed by a short bonus block containing the remaining 7 words (6 on Day 8), so every word is tested.
 
-- `data/vocabulary-markdown/part-01.md` … `part-08.md`: readable, complete word lists with Indonesian meanings, English definitions, and example sentences.
-- `data/vocabulary/part-01.json` … `part-08.json`: the same complete entries in structured form for the app.
-- `data/question-markdown/part-01.md` … `part-21.md`: full copied original Markdown question blocks, including text/passages, four choices, answer keys, and explanations.
+Use **Copy SAT reading-passage prompt** in the app to create a ChatGPT prompt for that day's target words. The AI tutor should generate an original 3–5 paragraph academic passage using the target words and exactly five new SAT-style questions. These passages and questions are generated practice, never inserted into the original question bank.
 
-The quiz interface reads those Markdown question files directly. The last question part contains 34 questions; all other question parts contain 60.
+### Original question-bank track
 
-## Build the source data
+Each day maps directly to the matching question Markdown part. Days 1–20 contain 60 source questions each, shown in three sets of 20. Day 21 contains 34 questions, shown as 20 + 14. The interface preserves the original Question ID, hash, question block, answer choices, key, explanation, and available metadata. Clicking A–D immediately reveals the correctness and source explanation. Progress and the last position are saved per day.
 
-Put the two source files in `sources/`:
-- `SAT_Vocab_455.pdf`
-- `01_English_Question_Bank_1234.md`
+## Run locally
 
-Install dependencies with `python -m pip install -r requirements.txt`, then run:
+From the repository root:
 
 ```bash
+python -m http.server 8000
+```
+
+Open `http://localhost:8000`.
+
+## ChatGPT activation prompt
+
+Use [`docs/MASTER_AI_TUTOR_PROMPT.md`](docs/MASTER_AI_TUTOR_PROMPT.md) as the master instruction. Commands:
+
+- `VOCAB DAY 1` … `VOCAB DAY 8`
+- `SOAL DAY 1` … `SOAL DAY 21`
+
+The two tracks keep independent progress. For exact source question presentation, use the browser app, which loads the private repository files directly. ChatGPT should focus on teaching, original passage generation, error analysis, and review rather than reproducing large copyrighted source blocks in chat.
+
+## Source files and integrity
+
+- `data/vocabulary/part-01.json` … `part-08.json`: source vocabulary records.
+- `data/vocabulary-markdown/part-01.md` … `part-08.md`: readable vocabulary source views.
+- `data/question-markdown/part-01.md` … `part-21.md`: original question parts.
+- `data/partition-manifest.json`: canonical partition map.
+- `data/vocabulary-review-queue.json`: vocabulary records requiring manual comparison against the original licensed PDF before being treated as clean.
+
+The importer can rebuild the data after the original source files are placed in `sources/`:
+
+```bash
+python -m pip install -r requirements.txt
 python scripts/build_content.py --vocab sources/SAT_Vocab_455.pdf --questions sources/01_English_Question_Bank_1234.md --out data
 ```
 
-The importer generates 8 vocabulary JSON files, 21 question JSON files, 21 verbatim Markdown question parts, and audit/partition manifests. It checks IDs 1–455 and 0001–1234, choice count, answer keys, and explanations.
+Keep this repository private unless the source licenses explicitly permit redistribution. A license for personal study does not necessarily grant permission to publish or redistribute source files.
 
-Run the app with `python -m http.server 8000` from the repository root, then open `http://localhost:8000`.
+## Progress and privacy
 
-## Source-integrity rules
-
-- Question parts preserve original ID order, hash, question text, choices, key, and explanation.
-- No question is generated, paraphrased, or substituted in the original bank.
-- Missing Domain/Skill/Difficulty metadata remains null.
-- 27 source questions have no explicit `**Prompt:**` marker; the app shows the complete supplied question block without inventing a prompt.
-- Keep this repository private unless the source licenses explicitly permit redistribution.
-- Browser progress is stored locally in localStorage; no analytics are used.
+Progress is stored in this browser's `localStorage`; it is not synced between devices and no analytics are sent. Vocabulary mastery, vocabulary quizzes, and question-bank answers use separate storage keys.
