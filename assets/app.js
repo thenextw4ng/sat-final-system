@@ -422,7 +422,7 @@
       "Create one coherent original academic reading passage in 3–5 connected paragraphs (about 550–800 words) that uses every target word naturally. Do not force awkward usage; if a word genuinely cannot fit, identify it and explain why.",
       "Then create exactly five original Digital SAT Reading and Writing-style multiple-choice questions about the passage. Use varied skills: words in context, central idea, inference, textual evidence, and author purpose/structure.",
       "For every target word, also provide a clear, natural Indonesian definition that explains the concept, not only a one-word synonym. Keep the English definition and Indonesian explanation side by side.",
-      "For every question, provide four plausible choices, one correct answer, and a concise explanation. Do not copy a published SAT passage or question.",
+      "For every question, provide four plausible choices, one correct answer, and a structured explanation entirely in Indonesian: (1) inti yang ditanyakan, (2) bukti/petunjuk kunci, (3) langkah penalaran, (4) alasan jawaban benar, (5) alasan setiap distractor salah, and (6) strategi mengenali pola serupa. Keep the passage and question in English. Do not copy a published SAT passage or question.",
       "Render the five questions as a genuinely interactive multiple-choice quiz with clickable A–D options and immediate right/wrong feedback, correct answer, and explanation after each selection.",
       "After the reading quiz, run the vocabulary quiz in blocks of 20, 20, 10, then the remaining 7 words (6 on Day 8). Explain the tested word's Indonesian meaning and usage after each answer.",
       "Use Indonesian for teaching and explanations, but keep the passage and questions in English. Keep vocabulary progress separate from the original question-bank progress."
@@ -504,6 +504,43 @@
     renderQuestionReview();
   }
 
+  function buildQuestionExplanationPrompt(question) {
+    const id = String(question.id).padStart(4, "0");
+    const part = String(state.questionDay).padStart(2, "0");
+    return [
+      "BAHAS SOAL #" + id,
+      "Repository sumber: https://github.com/thenextw4ng/sat-final-system",
+      "File sumber: data/question-markdown/part-" + part + ".md",
+      "Cari dan verifikasi Question ID #" + id + " beserta hash-nya di file tersebut. Gunakan record itu sebagai sumber; jangan menebak jika file atau record tidak dapat diakses.",
+      "Jelaskan seluruh pembahasan dalam bahasa Indonesia yang sederhana, runtut, dan mendalam. Pertahankan istilah SAT/English yang penting dalam tanda kurung lalu jelaskan artinya.",
+      "Jangan menyalin ulang soal atau passage. Parafrase bukti yang relevan dengan kata-katamu sendiri.",
+      "Gunakan struktur wajib berikut:",
+      "1. INTI SOAL — apa tepatnya yang diminta?",
+      "2. KONSEP / SKILL — jelaskan skill yang diuji. Jika metadata tidak tersedia, nyatakan bahwa metadata sumber tidak tersedia dan klasifikasikan secara hati-hati.",
+      "3. BUKTI KUNCI — tunjukkan bagian informasi, hubungan, data, atau aturan grammar yang menentukan jawaban; parafrase, jangan salin panjang.",
+      "4. LANGKAH PENALARAN — uraikan proses berpikir secara berurutan, dari petunjuk sampai kesimpulan.",
+      "5. JAWABAN BENAR — jelaskan mengapa opsi yang benar paling tepat.",
+      "6. ANALISIS SEMUA OPSI — bahas A, B, C, dan D satu per satu: mengapa benar atau mengapa tidak tepat. Jangan hanya mengatakan 'tidak didukung'.",
+      "7. JEBakan / KESALAHAN UMUM — jelaskan daya tarik distractor dan miskonsepsi yang harus dihindari.",
+      "8. STRATEGI SAT — berikan cara mengenali pola soal serupa dan langkah efisien untuk mengerjakannya.",
+      "Jawaban saya: " + (state.questionAnswers[question.id] || "belum dijawab"),
+      "Jangan mengarang bukti yang tidak ada. Bila ada grafik, tabel, atau teks yang tidak dapat dibaca dari record, jelaskan keterbatasannya."
+    ].join("\n\n");
+  }
+
+  async function copyQuestionExplanationPrompt(question) {
+    const prompt = buildQuestionExplanationPrompt(question);
+    try {
+      await navigator.clipboard.writeText(prompt);
+      $("headerStatus").textContent = "Prompt pembahasan Indonesia disalin · Question #" + String(question.id).padStart(4, "0");
+    } catch (_) {
+      const preview = $("questionPromptPreview");
+      preview.textContent = prompt;
+      preview.classList.remove("hidden");
+      $("headerStatus").textContent = "Clipboard tidak tersedia; prompt ditampilkan di bawah";
+    }
+  }
+
   function renderQuestion() {
     const area = $("quizArea");
     area.replaceChildren();
@@ -548,9 +585,12 @@
     if (chosen) {
       const feedback = node("div", `feedback ${correct ? "feedback-correct" : "feedback-incorrect"}`);
       feedback.append(
-        node("strong", "", correct ? "Correct!" : `Incorrect. Correct answer: ${question.correct_answer}.`),
-        node("p", "", question.explanation)
+        node("strong", "", correct ? "Benar!" : `Belum tepat. Jawaban benar: ${question.correct_answer}.`),
+        node("div", "explanation-label", "Penjelasan sumber (bahasa Inggris)"),
+        node("p", "source-explanation", question.explanation),
+        node("div", "explanation-guidance", "Ingin memahami alasan jawabannya dalam bahasa Indonesia? Salin prompt di bawah, lalu kirim ke ChatGPT. Tutor akan mengambil record berdasarkan Question ID dan membahasnya dengan format terstruktur.")
       );
+      feedback.append(button("Salin prompt pembahasan Indonesia", "button primary explanation-copy", () => copyQuestionExplanationPrompt(question)));
       card.append(feedback);
     } else {
       card.append(node("p", "subtle", "Choose A–D. The answer and source explanation appear immediately after your selection."));
