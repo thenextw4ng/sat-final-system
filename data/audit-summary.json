@@ -1,0 +1,42 @@
+{
+  "vocabulary_count": 455,
+  "vocabulary_parts": [
+    57,
+    57,
+    57,
+    57,
+    57,
+    57,
+    57,
+    56
+  ],
+  "question_count": 1234,
+  "question_parts": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    34
+  ],
+  "questions_with_explicit_metadata": 875,
+  "questions_without_explicit_metadata": 359,
+  "questions_missing_prompt_tag": 27,
+  "exact_question_id_coverage": "0001-1234; each ID appears once in the 21-part output",
+  "source_wording_diff_check": "0 differences in question Markdown content after splitting"
+}
