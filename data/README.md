@@ -1,0 +1,1 @@
+Generated data directory. Run scripts/build_content.py to generate vocabulary/part-01..08.json, questions/part-01..21.json, question-markdown/part-01..21.md, partition-manifest.json, and audit-summary.json. The full generated data bundle is supplied separately as a ZIP for one-step import.
