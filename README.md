@@ -15,7 +15,7 @@ The day number is independent between tracks. For example, Vocabulary Day 3 and 
 
 Each day maps directly to the matching vocabulary data part. The browser app includes source vocabulary cards, meaning/definition/example reveal, a mastery checklist, and an interactive multiple-choice quiz. The quiz is divided into 20 + 20 + 10 questions, followed by a short bonus block containing the remaining 7 words (6 on Day 8), so every word is tested.
 
-Use **Copy SAT reading-passage prompt** in the app to create a ChatGPT prompt for that day's target words. The AI tutor should generate an original 3–5 paragraph academic passage using the target words and exactly five new SAT-style questions. These passages and questions are generated practice, never inserted into the original question bank.
+Vocabulary Day 1 includes an original four-paragraph contextual reading in the app; all 57 target headwords are highlighted and checked. The Day 1 Indonesian definition overlay provides expanded explanations alongside the short Indonesian gloss and English definition. For Days 2–8, use **Copy AI practice prompt** to create a ChatGPT prompt for that day's target words. The AI tutor should generate an original 3–5 paragraph academic passage using the target words and exactly five new SAT-style questions. These passages and questions are generated practice, never inserted into the original question bank.
 
 ### Original question-bank track
 
