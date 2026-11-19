@@ -13,7 +13,8 @@
         "end_id": 57,
         "count": 57,
         "first_word": "abandon",
-        "last_word": "bolster"
+        "last_word": "bolster",
+        "file": "vocabulary/part-01.json"
       },
       {
         "part": 2,
@@ -21,7 +22,8 @@
         "end_id": 114,
         "count": 57,
         "first_word": "bombastic",
-        "last_word": "daunting"
+        "last_word": "daunting",
+        "file": "vocabulary/part-02.json"
       },
       {
         "part": 3,
@@ -29,7 +31,8 @@
         "end_id": 171,
         "count": 57,
         "first_word": "dearth",
-        "last_word": "exhort"
+        "last_word": "exhort",
+        "file": "vocabulary/part-03.json"
       },
       {
         "part": 4,
@@ -37,7 +40,8 @@
         "end_id": 228,
         "count": 57,
         "first_word": "exigent",
-        "last_word": "injunction"
+        "last_word": "injunction",
+        "file": "vocabulary/part-04.json"
       },
       {
         "part": 5,
@@ -45,7 +49,8 @@
         "end_id": 285,
         "count": 57,
         "first_word": "innocuous",
-        "last_word": "noisome"
+        "last_word": "noisome",
+        "file": "vocabulary/part-05.json"
       },
       {
         "part": 6,
@@ -53,7 +58,8 @@
         "end_id": 342,
         "count": 57,
         "first_word": "nonchalant",
-        "last_word": "promulgate"
+        "last_word": "promulgate",
+        "file": "vocabulary/part-06.json"
       },
       {
         "part": 7,
@@ -61,7 +67,8 @@
         "end_id": 399,
         "count": 57,
         "first_word": "propitious",
-        "last_word": "surfeit"
+        "last_word": "surfeit",
+        "file": "vocabulary/part-07.json"
       },
       {
         "part": 8,
@@ -69,7 +76,8 @@
         "end_id": 455,
         "count": 56,
         "first_word": "surmise",
-        "last_word": "zephyr"
+        "last_word": "zephyr",
+        "file": "vocabulary/part-08.json"
       }
     ]
   },
@@ -81,128 +89,171 @@
         "part": 1,
         "start_id": 1,
         "end_id": 60,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-01.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 2,
         "start_id": 61,
         "end_id": 120,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-02.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 3,
         "start_id": 121,
         "end_id": 180,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-03.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 4,
         "start_id": 181,
         "end_id": 240,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-04.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 5,
         "start_id": 241,
         "end_id": 300,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-05.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 6,
         "start_id": 301,
         "end_id": 360,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-06.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 7,
         "start_id": 361,
         "end_id": 420,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-07.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 8,
         "start_id": 421,
         "end_id": 480,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-08.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 9,
         "start_id": 481,
         "end_id": 540,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-09.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 10,
         "start_id": 541,
         "end_id": 600,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-10.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 11,
         "start_id": 601,
         "end_id": 660,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-11.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 12,
         "start_id": 661,
         "end_id": 720,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-12.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 13,
         "start_id": 721,
         "end_id": 780,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-13.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 14,
         "start_id": 781,
         "end_id": 840,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-14.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 15,
         "start_id": 841,
         "end_id": 900,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-15.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 16,
         "start_id": 901,
         "end_id": 960,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-16.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 17,
         "start_id": 961,
         "end_id": 1020,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-17.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 18,
         "start_id": 1021,
         "end_id": 1080,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-18.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 19,
         "start_id": 1081,
         "end_id": 1140,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-19.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 20,
         "start_id": 1141,
         "end_id": 1200,
-        "count": 60
+        "count": 60,
+        "file": "question-markdown/part-20.md",
+        "format": "verbatim-markdown"
       },
       {
         "part": 21,
         "start_id": 1201,
         "end_id": 1234,
-        "count": 34
+        "count": 34,
+        "file": "question-markdown/part-21.md",
+        "format": "verbatim-markdown"
       }
-    ]
+    ],
+    "partition_rule": "Parts 01–20 contain 60 full source questions each; Part 21 contains 34 full source questions."
   }
 }
