@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a36"><title>SAT Final System</title>
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-mark">S</span><div><strong>SAT FINAL SYSTEM</strong><small>Reading & Writing • Source-first workspace</small></div></div><div class="header-status" id="headerStatus">Local progress enabled</div></header>
+<main class="shell">
+<section class="hero"><div class="eyebrow">YOUR STUDY WORKSPACE</div><h1>Build accuracy.<br><em>Keep every source traceable.</em></h1><p>455 vocabulary entries across 8 parts. 1,234 original questions across 21 parts. No substituted questions.</p><div class="hero-stats"><div><strong>455</strong><span>Vocabulary</span></div><div><strong>1,234</strong><span>Original questions</span></div><div><strong>60</strong><span>Questions per full part</span></div></div></section>
+<nav class="tabs" aria-label="Study modules"><button class="tab active" data-tab="vocab">Vocabulary <span>8 parts</span></button><button class="tab" data-tab="quiz">Question bank <span>21 parts</span></button><a class="tab-link" href="docs/STUDY_PROTOCOL.md">Study protocol ↗</a></nav>
+<section id="vocabPanel" class="panel"><div class="panel-heading"><div><div class="eyebrow">MODULE 01</div><h2>Vocabulary</h2><p>Reveal the meaning, study the example, then mark words you can recall without help.</p></div><div class="progress-bubble" id="vocabProgress">0 / 455 mastered</div></div><div class="toolbar"><label>Part <select id="vocabPart"></select></label><span id="vocabRange" class="range-label"></span><button id="resetVocab" class="button ghost">Reset this part</button></div><div id="vocabGrid" class="vocab-grid"><div class="loading">Loading vocabulary data…</div></div></section>
+<section id="quizPanel" class="panel hidden"><div class="panel-heading"><div><div class="eyebrow">MODULE 02</div><h2>Original question bank</h2><p>Question text, choices, keys, and explanations are sourced from your uploaded bank.</p></div><div class="progress-bubble" id="quizProgress">Part not started</div></div><div class="toolbar"><label>Part <select id="questionPart"></select></label><span id="questionRange" class="range-label"></span><button id="resumeQuiz" class="button ghost">Resume saved answers</button></div><div id="quizArea"><div class="loading">Loading question data…</div></div></section>
+<footer><span>Private study workspace</span><span>Source IDs are preserved • Progress stays in this browser</span></footer>
+</main><script src="assets/app.js" defer></script>
+</body></html>
