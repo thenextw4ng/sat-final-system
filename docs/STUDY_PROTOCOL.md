@@ -57,3 +57,10 @@ Browser progress is local to the current browser/device. Clearing browser storag
 ## Provenance
 
 The question bank's audit reports 875 questions with complete explicit Domain/Skill/Difficulty metadata and 359 without the complete trio. Missing tags remain absent. Newly generated passages and questions belong to a separate generated-practice workflow and must never be inserted into the original-bank files.
+
+
+### Mandatory explanation format for every quiz
+
+All explanations must be in Indonesian, even when the source explanation is in English. For each Question Bank item, use this order: (1) inti soal, (2) skill yang diuji, (3) petunjuk/bukti kunci, (4) langkah penalaran, (5) alasan jawaban benar, (6) analisis opsi A–D satu per satu, (7) jebakan umum, and (8) strategi SAT yang dapat dipakai ulang. Paraphrase source material; do not reproduce the full passage or long source explanation. If a user answers incorrectly, diagnose the reasoning error constructively.
+
+The browser app currently shows the original source explanation in English and offers a button to copy a Question-ID-based prompt for a structured Indonesian explanation in ChatGPT. The prompt points the tutor to the repository record rather than copying the source question into the chat.
