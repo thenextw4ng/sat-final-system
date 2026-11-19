@@ -11,6 +11,15 @@ Private, source-first SAT Reading & Writing study workspace.
 
 The 10-day / 600-question core plan is Question Parts 01–10. Parts 11–21 preserve the remaining 634 source questions for continuation; none are discarded.
 
+## Actual content files (already committed)
+
+These are the real partition contents, not only indexes or ID ranges:
+
+- `data/vocabulary/part-01.json` … `part-08.json`: complete word entries with Indonesian meanings, English definitions, and example sentences.
+- `data/question-markdown/part-01.md` … `part-21.md`: full copied original Markdown question blocks, including text/passages, four choices, answer keys, and explanations.
+
+The quiz interface reads those Markdown question files directly. The last question part contains 34 questions; all other question parts contain 60.
+
 ## Build the source data
 
 Put the two source files in `sources/`:
