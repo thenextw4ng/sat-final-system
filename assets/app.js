@@ -1,53 +1,613 @@
 (() => {
-"use strict";
-const $=id=>document.getElementById(id);
-const VK="sat-final-system:vocab-mastered:v1";
-const QK=p=>"sat-final-system:quiz:"+p+":v1";
-const s={vocab:null,questions:null,vocabPart:1,questionPart:1,index:0,answers:{},finished:false};
-function read(k,d){try{let x=localStorage.getItem(k);return x?JSON.parse(x):d}catch(e){return d}}
-function write(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){$("headerStatus").textContent="Browser storage unavailable"}}
-function el(t,c,txt){let n=document.createElement(t);if(c)n.className=c;if(txt!==undefined)n.textContent=String(txt);return n}
-async function load(path){let r=await fetch(path);if(!r.ok)throw Error("Cannot load "+path+" (HTTP "+r.status+")");return r.json()}
+  "use strict";
 
-async function loadText(path){const r=await fetch(path,{cache:"no-store"});if(!r.ok)throw Error("Cannot load "+path+" (HTTP "+r.status+")");return r.text()}
-function parseQuestionMarkdown(md,part){
-  const marks=[...md.matchAll(/^## Question (\d{4}) — \x60([0-9a-f]+)\x60[ \t]*$/gm)];
-  if(!marks.length)throw Error("No original questions found in this part");
-  const questions=marks.map((m,i)=>{
-    const raw=md.slice(m.index,i+1<marks.length?marks[i+1].index:md.length);
-    const meta=raw.match(/^Domain: (.+?) · Skill: (.+?) · Difficulty: (.+?)\s*$/m);
-    const blockMatch=raw.match(/### Question\s*\n([\s\S]*?)(?=\n### Answer choices)/);
-    if(!blockMatch)throw Error("Question "+m[1]+" has no question block");
-    let questionText=blockMatch[1].trim(),prompt="";
-    if(questionText.includes("**Prompt:**")){const pieces=questionText.split("**Prompt:**");questionText=pieces[0].trim();prompt=pieces.slice(1).join("**Prompt:**").trim()}
-    const cb=raw.match(/### Answer choices\s*\n([\s\S]*?)(?=\n\*\*Correct answer:)/);
-    const choices=cb?[...cb[1].matchAll(/^- \*\*([A-D])\.\*\*\s*(.*?)\s*$/gm)].map(x=>({letter:x[1],text:x[2].trim()})):[];
-    const answer=raw.match(/\*\*Correct answer: ([A-D])\*\*/);
-    const explanation=raw.match(/### Explanation\s*\n([\s\S]*)$/);
-    if(choices.length!==4||!answer||!explanation)throw Error("Question "+m[1]+" failed structural integrity check");
-    return{id:Number(m[1]),hash:m[2],domain:meta?meta[1]:null,skill:meta?meta[2]:null,difficulty:meta?meta[3]:null,question_text:questionText,prompt,choices,correct_answer:answer[1],explanation:explanation[1].trim()};
+  const $ = (id) => document.getElementById(id);
+  const KEYS = {
+    mastered: "sat-final-system:vocab-mastered:v2",
+    vocabDay: (day) => `sat-final-system:vocab-day:${day}:v2`,
+    questionDay: (day) => `sat-final-system:question-day:${day}:v2`,
+  };
+  const state = {
+    vocab: null,
+    questions: null,
+    vocabDay: 1,
+    questionDay: 1,
+    vocabIndex: 0,
+    vocabAnswers: {},
+    vocabFinished: false,
+    questionIndex: 0,
+    questionAnswers: {},
+    questionFinished: false,
+    vocabMode: "cards",
+  };
+
+  function read(key, fallback) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (_) {
+      return fallback;
+    }
+  }
+
+  function write(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (_) {
+      $("headerStatus").textContent = "Browser storage unavailable";
+    }
+  }
+
+  function node(tag, className, text) {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text !== undefined && text !== null) element.textContent = String(text);
+    return element;
+  }
+
+  function button(text, className, handler) {
+    const element = node("button", className || "button", text);
+    element.type = "button";
+    element.addEventListener("click", handler);
+    return element;
+  }
+
+  async function loadJson(path) {
+    const response = await fetch(path, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Cannot load ${path} (HTTP ${response.status})`);
+    return response.json();
+  }
+
+  async function loadText(path) {
+    const response = await fetch(path, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Cannot load ${path} (HTTP ${response.status})`);
+    return response.text();
+  }
+
+  function showError(target, error) {
+    target.replaceChildren(node("div", "error", `${error.message}. Check that the repository data files are present and run the app through a local web server.`));
+  }
+
+  function selectModule(name) {
+    document.querySelectorAll(".tab[data-tab]").forEach((tab) => tab.classList.toggle("active", tab.dataset.tab === name));
+    $("vocabPanel").classList.toggle("hidden", name !== "vocab");
+    $("quizPanel").classList.toggle("hidden", name !== "quiz");
+  }
+
+  document.querySelectorAll(".tab[data-tab]").forEach((tab) => tab.addEventListener("click", () => selectModule(tab.dataset.tab)));
+
+  for (let day = 1; day <= 8; day += 1) {
+    const count = day === 8 ? 56 : 57;
+    $("vocabDay").add(new Option(`Day ${day} · ${count} words`, day));
+  }
+  for (let day = 1; day <= 21; day += 1) {
+    const count = day === 21 ? 34 : 60;
+    $("questionDay").add(new Option(`Day ${day} · ${count} questions`, day));
+  }
+
+  function masteredIds() {
+    return new Set(read(KEYS.mastered, []));
+  }
+
+  function updateVocabProgress() {
+    const mastered = masteredIds();
+    $("vocabProgress").textContent = `${mastered.size} / 455 mastered`;
+    if (!state.vocab) return;
+    const saved = read(KEYS.vocabDay(state.vocabDay), { answers: {}, index: 0, finished: false });
+    const done = Object.keys(saved.answers || {}).length;
+    $("vocabQuizProgress").textContent = `${done} / ${state.vocab.count} quiz answers saved`;
+  }
+
+  function showVocabCards() {
+    state.vocabMode = "cards";
+    $("vocabCardsArea").classList.remove("hidden");
+    $("vocabQuizArea").classList.add("hidden");
+    $("vocabCardsButton").classList.add("active-mode");
+    $("vocabQuizButton").classList.remove("active-mode");
+  }
+
+  function showVocabQuiz() {
+    state.vocabMode = "quiz";
+    $("vocabCardsArea").classList.add("hidden");
+    $("vocabQuizArea").classList.remove("hidden");
+    $("vocabCardsButton").classList.remove("active-mode");
+    $("vocabQuizButton").classList.add("active-mode");
+    renderVocabQuestion();
+  }
+
+  function renderVocabCards() {
+    const mastered = masteredIds();
+    const grid = $("vocabGrid");
+    grid.replaceChildren();
+    state.vocab.words.forEach((word) => {
+      const card = node("article", "word-card");
+      const top = node("div", "word-top");
+      const details = node("div", "word-detail");
+      const actions = node("div", "word-actions");
+      top.append(node("div", "word", word.word), node("span", "pos", word.part_of_speech || ""));
+      details.hidden = true;
+      details.append(
+        node("div", "meaning", word.meaning_id),
+        node("div", "definition", word.definition_en),
+        node("div", "example", word.example)
+      );
+      const reveal = button("Reveal meaning + example", "reveal", () => {
+        details.hidden = !details.hidden;
+        reveal.textContent = details.hidden ? "Reveal meaning + example" : "Hide details";
+      });
+      const label = node("label", "mastered");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "mastered-toggle";
+      checkbox.checked = mastered.has(word.id);
+      checkbox.addEventListener("change", () => {
+        const all = masteredIds();
+        checkbox.checked ? all.add(word.id) : all.delete(word.id);
+        write(KEYS.mastered, [...all]);
+        updateVocabProgress();
+      });
+      label.append(checkbox, document.createTextNode("I can recall this"));
+      actions.append(reveal, label);
+      card.append(top, details, actions);
+      grid.append(card);
+    });
+    updateVocabProgress();
+  }
+
+  function vocabRounds(count) {
+    const lengths = [20, 20, 10];
+    const rounds = [];
+    let cursor = 0;
+    lengths.forEach((length, index) => {
+      if (cursor >= count) return;
+      const end = Math.min(cursor + length, count);
+      rounds.push({ name: `Set ${index + 1}`, start: cursor, end, count: end - cursor });
+      cursor = end;
+    });
+    if (cursor < count) rounds.push({ name: "Bonus audit", start: cursor, end: count, count: count - cursor });
+    return rounds;
+  }
+
+  function currentVocabRound(index) {
+    return vocabRounds(state.vocab.count).find((round) => index >= round.start && index < round.end) || null;
+  }
+
+  function makeVocabOptions(target, targetIndex) {
+    const words = state.vocab.words;
+    const offsets = [0, 11, 23, 37, 49, 7, 17, 31, 43, 53];
+    const selected = [target];
+    const seenMeanings = new Set([target.meaning_id]);
+    for (const offset of offsets.slice(1)) {
+      const candidate = words[(targetIndex + offset) % words.length];
+      if (!seenMeanings.has(candidate.meaning_id)) {
+        selected.push(candidate);
+        seenMeanings.add(candidate.meaning_id);
+      }
+      if (selected.length === 4) break;
+    }
+    for (const candidate of words) {
+      if (selected.length === 4) break;
+      if (!seenMeanings.has(candidate.meaning_id)) {
+        selected.push(candidate);
+        seenMeanings.add(candidate.meaning_id);
+      }
+    }
+    const shift = (target.id * 7 + state.vocabDay * 3) % 4;
+    const distractors = selected.slice(1);
+    const options = [selected[0], ...distractors];
+    const rotated = options.map((_, index) => options[(index + shift) % options.length]);
+    return rotated.map((entry, index) => ({ letter: "ABCD"[index], text: entry.meaning_id, id: entry.id }));
+  }
+
+  function saveVocab() {
+    write(KEYS.vocabDay(state.vocabDay), {
+      answers: state.vocabAnswers,
+      index: state.vocabIndex,
+      finished: state.vocabFinished,
+    });
+    updateVocabProgress();
+  }
+
+  function renderVocabQuestion() {
+    const area = $("vocabQuizArea");
+    area.replaceChildren();
+    if (!state.vocab) return;
+    if (state.vocabFinished) {
+      renderVocabReview();
+      return;
+    }
+    if (state.vocabIndex >= state.vocab.words.length) {
+      state.vocabFinished = true;
+      saveVocab();
+      renderVocabReview();
+      return;
+    }
+
+    const index = state.vocabIndex;
+    const word = state.vocab.words[index];
+    const round = currentVocabRound(index);
+    const options = makeVocabOptions(word, index);
+    const chosen = state.vocabAnswers[word.id] || null;
+    const correctChoice = options.find((option) => option.id === word.id);
+    const correct = chosen === correctChoice?.letter;
+    const card = node("article", "quiz-card");
+    const meta = node("div", "quiz-meta");
+    meta.append(
+      node("span", "", `VOCAB ID #${String(word.id).padStart(3, "0")} · ${round.name.toUpperCase()}`),
+      node("span", "", `${index + 1} / ${state.vocab.count}`)
+    );
+    card.append(meta, node("div", "subtle", `${round.count} questions in this block · ${index - round.start + 1} / ${round.count}`));
+    card.append(node("h3", "vocab-question-word", word.word));
+    card.append(node("p", "prompt", "Choose the closest Indonesian meaning."));
+
+    const choices = node("div", "choices");
+    options.forEach((option) => {
+      const choice = button(`${option.letter}.  ${option.text}`, "choice-button", () => {
+        if (state.vocabAnswers[word.id]) return;
+        state.vocabAnswers[word.id] = option.letter;
+        saveVocab();
+        renderVocabQuestion();
+      });
+      if (chosen) {
+        choice.disabled = true;
+        if (option.id === word.id) choice.classList.add("choice-correct");
+        else if (option.letter === chosen) choice.classList.add("choice-incorrect");
+      }
+      choices.append(choice);
+    });
+    card.append(choices);
+
+    if (chosen) {
+      const feedback = node("div", `feedback ${correct ? "feedback-correct" : "feedback-incorrect"}`);
+      feedback.append(
+        node("strong", "", correct ? "Correct!" : `Not quite. Correct answer: ${correctChoice.letter}.`),
+        node("p", "meaning", word.meaning_id),
+        node("p", "definition", word.definition_en),
+        node("p", "example", word.example)
+      );
+      card.append(feedback);
+    } else {
+      card.append(node("p", "subtle", "The meaning, definition, and source example appear immediately after you choose."));
+    }
+
+    const nav = node("div", "quiz-nav");
+    const previous = button("← Previous", "button ghost", () => {
+      if (state.vocabIndex > 0) {
+        state.vocabIndex -= 1;
+        saveVocab();
+        renderVocabQuestion();
+      }
+    });
+    previous.disabled = index === 0;
+    const next = button(index === state.vocab.words.length - 1 ? "Finish vocabulary day" : "Next word →", "button primary", () => {
+      if (!state.vocabAnswers[word.id]) return;
+      state.vocabIndex += 1;
+      if (state.vocabIndex >= state.vocab.words.length) state.vocabFinished = true;
+      saveVocab();
+      renderVocabQuestion();
+    });
+    next.disabled = !chosen;
+    nav.append(previous, next);
+    card.append(nav);
+    area.append(card);
+    updateVocabProgress();
+  }
+
+  function renderVocabReview() {
+    const area = $("vocabQuizArea");
+    area.replaceChildren();
+    const total = state.vocab.words.length;
+    const answered = Object.keys(state.vocabAnswers).length;
+    const score = state.vocab.words.reduce((sum, word, index) => {
+      const correct = makeVocabOptions(word, index).find((option) => option.id === word.id);
+      return sum + (state.vocabAnswers[word.id] === correct?.letter ? 1 : 0);
+    }, 0);
+    const summary = node("div", "quiz-card");
+    summary.append(
+      node("div", "eyebrow", `VOCAB DAY ${state.vocabDay} COMPLETE`),
+      node("h2", "", `${score} / ${total} correct`),
+      node("p", "subtle", `${answered} answers recorded. Vocabulary mastery checkboxes are tracked separately.`),
+      button("Retake this vocabulary day", "button ghost", () => {
+        if (!confirm("Clear this day's quiz answers and start again?")) return;
+        state.vocabAnswers = {};
+        state.vocabIndex = 0;
+        state.vocabFinished = false;
+        saveVocab();
+        renderVocabQuestion();
+      })
+    );
+    const rounds = vocabRounds(total);
+    const roundSummary = node("div", "round-summary");
+    rounds.forEach((round) => {
+      const countCorrect = state.vocab.words.slice(round.start, round.end).reduce((sum, word, offset) => {
+        const idx = round.start + offset;
+        const correct = makeVocabOptions(word, idx).find((option) => option.id === word.id);
+        return sum + (state.vocabAnswers[word.id] === correct?.letter ? 1 : 0);
+      }, 0);
+      roundSummary.append(node("span", "round-chip", `${round.name}: ${countCorrect}/${round.count}`));
+    });
+    summary.append(roundSummary);
+    area.append(summary);
+    updateVocabProgress();
+  }
+
+  async function loadVocabDay(day) {
+    state.vocabDay = day;
+    $("vocabDay").value = day;
+    $("vocabGrid").replaceChildren(node("div", "loading", "Loading vocabulary…"));
+    try {
+      state.vocab = await loadJson(`data/vocabulary/part-${String(day).padStart(2, "0")}.json`);
+      const saved = read(KEYS.vocabDay(day), { answers: {}, index: 0, finished: false });
+      state.vocabAnswers = saved.answers || {};
+      state.vocabIndex = Math.min(saved.index || 0, Math.max(0, state.vocab.count - 1));
+      state.vocabFinished = !!saved.finished;
+      $("vocabRange").textContent = `Source IDs #${state.vocab.start_id}–${state.vocab.end_id} · ${state.vocab.count} words`;
+      const flagged = state.vocabReviewQueue.filter((item) => item.id >= state.vocab.start_id && item.id <= state.vocab.end_id);
+      const notice = $("vocabQualityNotice");
+      notice.replaceChildren();
+      notice.classList.toggle("hidden", flagged.length === 0);
+      if (flagged.length) notice.textContent = `Source-quality review required for vocabulary IDs: ${flagged.map((item) => item.id).join(", ")}. Compare these records with the original licensed PDF; do not guess corrections.`;
+      $("vocabDayHeading").textContent = `Vocabulary Day ${day}`;
+      renderVocabCards();
+      if (state.vocabMode === "quiz") renderVocabQuestion();
+    } catch (error) {
+      showError($("vocabGrid"), error);
+    }
+  }
+
+  function buildReadingPrompt() {
+    const words = state.vocab.words.map((item) => item.word).join(", ");
+    return [
+      "Act as my SAT Reading and Writing vocabulary tutor.",
+      `Use Vocabulary Day ${state.vocabDay} from thenextw4ng/sat-final-system as the source of the target-word list.`,
+      `The exact target words for this day are: ${words}.`,
+      "First, verify the target list against data/vocabulary/part-XX.json in the repository. Do not add, omit, or substitute headwords.",
+      "Create one coherent original academic reading passage in 3–5 connected paragraphs (about 550–800 words) that uses every target word naturally. Do not force awkward usage; if a word genuinely cannot fit, identify it and explain why.",
+      "Then create exactly five original Digital SAT Reading and Writing-style multiple-choice questions about the passage. Use varied skills: words in context, central idea, inference, textual evidence, and author purpose/structure.",
+      "For every question, provide four plausible choices, one correct answer, and a concise explanation. Do not copy a published SAT passage or question.",
+      "Render the five questions as a genuinely interactive multiple-choice quiz with clickable A–D options and immediate right/wrong feedback, correct answer, and explanation after each selection.",
+      "After the reading quiz, run the vocabulary quiz in blocks of 20, 20, 10, then the remaining 7 words (6 on Day 8). Explain the tested word's Indonesian meaning and usage after each answer.",
+      "Use Indonesian for teaching and explanations, but keep the passage and questions in English. Keep vocabulary progress separate from the original question-bank progress."
+    ].join("\n\n");
+  }
+
+  async function copyReadingPrompt() {
+    if (!state.vocab) return;
+    try {
+      await navigator.clipboard.writeText(buildReadingPrompt());
+      $("headerStatus").textContent = `Reading prompt copied · Vocab Day ${state.vocabDay}`;
+    } catch (_) {
+      $("readingPromptPreview").textContent = buildReadingPrompt();
+      $("readingPromptPreview").classList.remove("hidden");
+      $("headerStatus").textContent = "Clipboard unavailable; prompt shown below";
+    }
+  }
+
+  function parseQuestionMarkdown(markdown, day) {
+    const headers = [...markdown.matchAll(/^## Question (\d{4}) — `([0-9a-f]+)`[ \t]*$/gm)];
+    if (!headers.length) throw new Error("No original question headers found in this day file");
+    const questions = headers.map((header, index) => {
+      const raw = markdown.slice(header.index, index + 1 < headers.length ? headers[index + 1].index : markdown.length);
+      const metadata = raw.match(/^Domain: (.+?) · Skill: (.+?) · Difficulty: (.+?)\s*$/m);
+      const questionBlock = raw.match(/### Question\s*\n([\s\S]*?)(?=\n### Answer choices)/);
+      if (!questionBlock) throw new Error(`Question ${header[1]} has no question block`);
+      let questionText = questionBlock[1].trim();
+      let prompt = "";
+      if (questionText.includes("**Prompt:**")) {
+        const chunks = questionText.split("**Prompt:**");
+        questionText = chunks[0].trim();
+        prompt = chunks.slice(1).join("**Prompt:**").trim();
+      }
+      const choicesBlock = raw.match(/### Answer choices\s*\n([\s\S]*?)(?=\n\*\*Correct answer:)/);
+      const choices = choicesBlock
+        ? [...choicesBlock[1].matchAll(/^- \*\*([A-D])\.\*\*\s*(.*?)\s*$/gm)].map((match) => ({ letter: match[1], text: match[2].trim() }))
+        : [];
+      const answer = raw.match(/\*\*Correct answer: ([A-D])\*\*/);
+      const explanation = raw.match(/### Explanation\s*\n([\s\S]*)$/);
+      if (choices.length !== 4 || !answer || !explanation) throw new Error(`Question ${header[1]} failed structural integrity check`);
+      return {
+        id: Number(header[1]), hash: header[2],
+        domain: metadata ? metadata[1] : null,
+        skill: metadata ? metadata[2] : null,
+        difficulty: metadata ? metadata[3] : null,
+        question_text: questionText, prompt, choices,
+        correct_answer: answer[1], explanation: explanation[1].trim()
+      };
+    });
+    return {
+      day, total_days: 21, start_id: questions[0].id,
+      end_id: questions[questions.length - 1].id, count: questions.length, questions
+    };
+  }
+
+  function saveQuestions() {
+    write(KEYS.questionDay(state.questionDay), {
+      answers: state.questionAnswers,
+      index: state.questionIndex,
+      finished: state.questionFinished,
+    });
+    updateQuestionProgress();
+  }
+
+  function questionScore() {
+    if (!state.questions) return 0;
+    return state.questions.questions.reduce((sum, question) => sum + (state.questionAnswers[question.id] === question.correct_answer ? 1 : 0), 0);
+  }
+
+  function updateQuestionProgress() {
+    if (!state.questions) return;
+    const answered = Object.keys(state.questionAnswers).filter((id) => state.questionAnswers[id]).length;
+    $("quizProgress").textContent = `${answered} / ${state.questions.count} answered${state.questionFinished ? ` · ${questionScore()} correct` : ""}`;
+  }
+
+  function finishQuestionDay() {
+    state.questionFinished = true;
+    saveQuestions();
+    renderQuestionReview();
+  }
+
+  function renderQuestion() {
+    const area = $("quizArea");
+    area.replaceChildren();
+    if (!state.questions) return;
+    if (state.questionFinished) {
+      renderQuestionReview();
+      return;
+    }
+    const question = state.questions.questions[state.questionIndex];
+    if (!question) return finishQuestionDay();
+    const chosen = state.questionAnswers[question.id] || null;
+    const correct = chosen === question.correct_answer;
+    const setNumber = Math.floor(state.questionIndex / 20) + 1;
+    const setStart = Math.floor(state.questionIndex / 20) * 20;
+    const setCount = Math.min(20, state.questions.count - setStart);
+    const card = node("article", "quiz-card");
+    const meta = node("div", "quiz-meta");
+    meta.append(
+      node("span", "", `QUESTION ID #${String(question.id).padStart(4, "0")} · SET ${setNumber}`),
+      node("span", "", `${state.questionIndex + 1} / ${state.questions.count}`)
+    );
+    card.append(meta, node("div", "subtle", `Set contains ${setCount} questions · ${state.questionIndex - setStart + 1} / ${setCount}`));
+    card.append(node("div", "subtle", [question.domain, question.skill, question.difficulty].filter(Boolean).join(" · ") || "Source metadata not supplied for this item"));
+    card.append(node("div", "passage", question.question_text));
+    if (question.prompt) card.append(node("div", "prompt", question.prompt));
+    const choices = node("div", "choices");
+    question.choices.forEach((choice) => {
+      const option = button(`${choice.letter}.  ${choice.text}`, "choice-button", () => {
+        if (state.questionAnswers[question.id]) return;
+        state.questionAnswers[question.id] = choice.letter;
+        saveQuestions();
+        renderQuestion();
+      });
+      if (chosen) {
+        option.disabled = true;
+        if (choice.letter === question.correct_answer) option.classList.add("choice-correct");
+        else if (choice.letter === chosen) option.classList.add("choice-incorrect");
+      }
+      choices.append(option);
+    });
+    card.append(choices);
+    if (chosen) {
+      const feedback = node("div", `feedback ${correct ? "feedback-correct" : "feedback-incorrect"}`);
+      feedback.append(
+        node("strong", "", correct ? "Correct!" : `Incorrect. Correct answer: ${question.correct_answer}.`),
+        node("p", "", question.explanation)
+      );
+      card.append(feedback);
+    } else {
+      card.append(node("p", "subtle", "Choose A–D. The answer and source explanation appear immediately after your selection."));
+    }
+    const navigation = node("div", "quiz-nav");
+    const previous = button("← Previous", "button ghost", () => {
+      state.questionIndex = Math.max(0, state.questionIndex - 1);
+      saveQuestions();
+      renderQuestion();
+    });
+    previous.disabled = state.questionIndex === 0;
+    const next = button(state.questionIndex === state.questions.count - 1 ? "Finish day" : "Next question →", "button primary", () => {
+      if (!state.questionAnswers[question.id]) return;
+      if (state.questionIndex === state.questions.count - 1) return finishQuestionDay();
+      state.questionIndex += 1;
+      saveQuestions();
+      renderQuestion();
+    });
+    next.disabled = !chosen;
+    navigation.append(previous, next);
+    card.append(navigation);
+    area.append(card);
+    updateQuestionProgress();
+  }
+
+  function renderQuestionReview() {
+    const area = $("quizArea");
+    area.replaceChildren();
+    const score = questionScore();
+    const answered = Object.keys(state.questionAnswers).length;
+    const summary = node("div", "quiz-card");
+    summary.append(
+      node("div", "eyebrow", `QUESTION BANK DAY ${state.questionDay} COMPLETE`),
+      node("h2", "", `${score} / ${state.questions.count} correct`),
+      node("p", "subtle", `${answered} answers recorded. Original Question IDs remain unchanged.`),
+      button("Retake this day", "button ghost", () => {
+        if (!confirm("Clear this day's saved answers and retake it?")) return;
+        state.questionAnswers = {};
+        state.questionIndex = 0;
+        state.questionFinished = false;
+        saveQuestions();
+        renderQuestion();
+      })
+    );
+    const roundChips = node("div", "round-summary");
+    for (let start = 0, round = 1; start < state.questions.count; start += 20, round += 1) {
+      const items = state.questions.questions.slice(start, start + 20);
+      const correct = items.reduce((sum, question) => sum + (state.questionAnswers[question.id] === question.correct_answer ? 1 : 0), 0);
+      roundChips.append(node("span", "round-chip", `Set ${round}: ${correct}/${items.length}`));
+    }
+    summary.append(roundChips);
+    area.append(summary);
+    const list = node("div", "review-list");
+    state.questions.questions.forEach((question) => {
+      const chosen = state.questionAnswers[question.id] || "—";
+      const isCorrect = chosen === question.correct_answer;
+      const item = node("article", `review-item ${isCorrect ? "correct" : "incorrect"}`);
+      const details = document.createElement("details");
+      details.append(
+        node("summary", "", `#${String(question.id).padStart(4, "0")} · Your answer: ${chosen} · Correct: ${question.correct_answer} · ${isCorrect ? "Correct" : "Review"}`),
+        node("p", "", question.question_text)
+      );
+      if (question.prompt) details.append(node("p", "", question.prompt));
+      question.choices.forEach((choice) => details.append(node("p", "", `${choice.letter}. ${choice.text}`)));
+      details.append(node("p", "explanation", question.explanation));
+      item.append(details);
+      list.append(item);
+    });
+    area.append(list);
+    updateQuestionProgress();
+  }
+
+  async function loadQuestionDay(day) {
+    state.questionDay = day;
+    $("questionDay").value = day;
+    $("quizArea").replaceChildren(node("div", "loading", "Loading original question bank…"));
+    try {
+      const markdown = await loadText(`data/question-markdown/part-${String(day).padStart(2, "0")}.md`);
+      state.questions = parseQuestionMarkdown(markdown, day);
+      const saved = read(KEYS.questionDay(day), { answers: {}, index: 0, finished: false });
+      state.questionAnswers = saved.answers || {};
+      state.questionIndex = Math.min(saved.index || 0, Math.max(0, state.questions.count - 1));
+      state.questionFinished = !!saved.finished;
+      $("questionRange").textContent = `Original IDs #${state.questions.start_id}–${state.questions.end_id} · ${state.questions.count} questions`;
+      $("questionDayHeading").textContent = `Question Bank Day ${day}`;
+      renderQuestion();
+    } catch (error) {
+      showError($("quizArea"), error);
+    }
+  }
+
+  $("vocabDay").addEventListener("change", (event) => loadVocabDay(Number(event.target.value)));
+  $("questionDay").addEventListener("change", (event) => loadQuestionDay(Number(event.target.value)));
+  $("vocabCardsButton").addEventListener("click", showVocabCards);
+  $("vocabQuizButton").addEventListener("click", showVocabQuiz);
+  $("copyReadingPrompt").addEventListener("click", copyReadingPrompt);
+  $("resetVocab").addEventListener("click", () => {
+    if (!state.vocab || !confirm("Clear mastered status for this vocabulary day?")) return;
+    const ids = new Set(state.vocab.words.map((word) => word.id));
+    write(KEYS.mastered, [...masteredIds()].filter((id) => !ids.has(id)));
+    renderVocabCards();
   });
-  return{part,total_parts:21,start_id:questions[0].id,end_id:questions[questions.length-1].id,count:questions.length,questions};
-}
+  $("resetQuestionDay").addEventListener("click", () => {
+    if (!state.questions || !confirm("Clear saved answers for this question-bank day?")) return;
+    state.questionAnswers = {};
+    state.questionIndex = 0;
+    state.questionFinished = false;
+    saveQuestions();
+    renderQuestion();
+  });
 
-function error(box,e){box.replaceChildren(el("div","error",e.message+". Run scripts/build_content.py, then commit the generated data/ folder."))}
-function setTab(name){document.querySelectorAll(".tab[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));$("vocabPanel").classList.toggle("hidden",name!=="vocab");$("quizPanel").classList.toggle("hidden",name!=="quiz")}
-document.querySelectorAll(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
-for(let p=1;p<=8;p++)$("vocabPart").add(new Option("Part "+String(p).padStart(2,"0")+" · "+(p===8?56:57)+" words",p));
-for(let p=1;p<=21;p++)$("questionPart").add(new Option("Part "+String(p).padStart(2,"0")+" · "+(p===21?34:60)+" questions",p));
-async function loadVocab(p){s.vocabPart=p;$("vocabPart").value=p;$("vocabGrid").replaceChildren(el("div","loading","Loading vocabulary…"));try{s.vocab=await load("data/vocabulary/part-"+String(p).padStart(2,"0")+".json");$("vocabRange").textContent="Words #"+s.vocab.start_id+"–"+s.vocab.end_id+" · "+s.vocab.count+" entries";renderVocab()}catch(e){error($("vocabGrid"),e)}}
-function progressV(){let n=read(VK,[]).length;$("vocabProgress").textContent=n+" / 455 mastered"}
-function renderVocab(){let mastered=new Set(read(VK,[])),grid=$("vocabGrid");grid.replaceChildren();s.vocab.words.forEach(w=>{let card=el("article","word-card"),top=el("div","word-top"),detail=el("div","word-detail"),actions=el("div","word-actions");top.append(el("div","word",w.word),el("span","pos",w.part_of_speech));detail.hidden=true;detail.append(el("div","meaning",w.meaning_id),el("div","definition",w.definition_en),el("div","example",w.example));let reveal=el("button","reveal","Reveal meaning + example");reveal.type="button";reveal.onclick=()=>{detail.hidden=!detail.hidden;reveal.textContent=detail.hidden?"Reveal meaning + example":"Hide details"};let label=el("label","mastered"),check=document.createElement("input");check.type="checkbox";check.checked=mastered.has(w.id);check.onchange=()=>{let all=new Set(read(VK,[]));check.checked?all.add(w.id):all.delete(w.id);write(VK,Array.from(all));progressV()};label.append(check,document.createTextNode("Mastered"));actions.append(reveal,label);card.append(top,detail,actions);grid.append(card)});progressV()}
-async function loadQuiz(p){s.questionPart=p;$("questionPart").value=p;$("quizArea").replaceChildren(el("div","loading","Loading original questions…"));try{const md=await loadText("data/question-markdown/part-"+String(p).padStart(2,"0")+".md");s.questions=parseQuestionMarkdown(md,p);let old=read(QK(p),{answers:{},finished:false});s.answers=old.answers||{};s.finished=!!old.finished;s.index=0;$("questionRange").textContent="Original IDs #"+s.questions.start_id+"–"+s.questions.end_id+" · "+s.questions.count+" questions";s.finished?review():renderQuestion();progressQ()}catch(e){error($("quizArea"),e)}}
-function saveQ(){write(QK(s.questionPart),{answers:s.answers,finished:s.finished});progressQ()}
-function score(){let n=0;s.questions.questions.forEach(q=>{if(s.answers[q.id]===q.correct_answer)n++});return n}
-function progressQ(){if(!s.questions)return;let n=Object.keys(s.answers).filter(k=>s.answers[k]).length;$("quizProgress").textContent=n+"/"+s.questions.count+" answered"+(s.finished?" · "+score()+"/"+s.questions.count+" correct":"")}
-function renderQuestion(){let q=s.questions.questions[s.index],area=$("quizArea"),card=el("article","quiz-card"),meta=el("div","quiz-meta");area.replaceChildren();meta.append(el("span","","QUESTION "+String(q.id).padStart(4,"0")+" · "+q.hash),el("span","",(s.index+1)+" / "+s.questions.count));card.append(meta,el("div","subtle",[q.domain,q.skill,q.difficulty].filter(Boolean).join(" · ")||"Source metadata not supplied for this item"),el("div","passage",q.question_text));if(q.prompt)card.append(el("div","prompt",q.prompt));let choices=el("div","choices");q.choices.forEach(c=>{let label=el("label","choice"),input=document.createElement("input");input.type="radio";input.name="q-"+q.id;input.value=c.letter;input.checked=s.answers[q.id]===c.letter;input.onchange=()=>{s.answers[q.id]=c.letter;saveQ()};label.append(input,el("span","choice-letter",c.letter+"."),el("span","",c.text));choices.append(label)});card.append(choices);let nav=el("div","quiz-nav"),prev=el("button","button ghost","← Previous"),right=el("div","nav-right"),next=el("button","button primary",s.index===s.questions.count-1?"Review answers":"Next →");prev.disabled=s.index===0;prev.onclick=()=>{s.index--;renderQuestion()};next.onclick=()=>{if(s.index<s.questions.count-1){s.index++;renderQuestion()}else finish()};right.append(next);nav.append(prev,right);card.append(nav,el("div","subtle","Answers are saved in this browser. Correct answers and explanations remain hidden until you finish the part."));area.append(card)}
-function finish(){let missing=s.questions.questions.filter(q=>!s.answers[q.id]).length;if(missing&&!confirm(missing+" question(s) are unanswered. Finish and review now?"))return;s.finished=true;saveQ();review()}
-function review(){let area=$("quizArea"),summary=el("div","quiz-card"),list=el("div","review-list");area.replaceChildren();summary.append(el("div","eyebrow","PART COMPLETE"),el("h2","",score()+" / "+s.questions.count+" correct"),el("p","subtle","Original answers and explanations are available below."));let restart=el("button","button ghost","Retake this part");restart.onclick=()=>{if(!confirm("Clear saved answers and retake this part?"))return;s.answers={};s.finished=false;s.index=0;saveQ();renderQuestion()};summary.append(restart);area.append(summary);s.questions.questions.forEach(q=>{let chosen=s.answers[q.id]||"—",correct=chosen===q.correct_answer,item=el("article","review-item "+(correct?"correct":"incorrect")),details=document.createElement("details");details.append(el("summary","","#"+String(q.id).padStart(4,"0")+" · Your answer: "+chosen+" · Correct: "+q.correct_answer+" · "+(correct?"Correct":"Review")),el("p","",q.question_text));if(q.prompt)details.append(el("p","",q.prompt));details.append(el("p","explanation",q.explanation));item.append(details);list.append(item)});area.append(list);progressQ()}
-$("vocabPart").onchange=e=>loadVocab(Number(e.target.value));
-$("questionPart").onchange=e=>loadQuiz(Number(e.target.value));
-$("resetVocab").onclick=()=>{if(!s.vocab||!confirm("Clear mastered status for this part?"))return;let ids=new Set(s.vocab.words.map(w=>w.id));write(VK,read(VK,[]).filter(id=>!ids.has(id)));renderVocab()};
-$("resumeQuiz").onclick=()=>loadQuiz(s.questionPart);
-loadVocab(1);loadQuiz(1);
+  loadJson("data/vocabulary-review-queue.json").then((queue) => {
+    state.vocabReviewQueue = Array.isArray(queue.items) ? queue.items : [];
+    if (state.vocab) loadVocabDay(state.vocabDay);
+  }).catch(() => { state.vocabReviewQueue = []; });
+  loadVocabDay(1);
+  loadQuestionDay(1);
 })();
