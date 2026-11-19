@@ -14,7 +14,8 @@
         "count": 57,
         "first_word": "abandon",
         "last_word": "bolster",
-        "file": "vocabulary/part-01.json"
+        "file": "vocabulary/part-01.json",
+        "markdown_file": "vocabulary-markdown/part-01.md"
       },
       {
         "part": 2,
@@ -23,7 +24,8 @@
         "count": 57,
         "first_word": "bombastic",
         "last_word": "daunting",
-        "file": "vocabulary/part-02.json"
+        "file": "vocabulary/part-02.json",
+        "markdown_file": "vocabulary-markdown/part-02.md"
       },
       {
         "part": 3,
@@ -32,7 +34,8 @@
         "count": 57,
         "first_word": "dearth",
         "last_word": "exhort",
-        "file": "vocabulary/part-03.json"
+        "file": "vocabulary/part-03.json",
+        "markdown_file": "vocabulary-markdown/part-03.md"
       },
       {
         "part": 4,
@@ -41,7 +44,8 @@
         "count": 57,
         "first_word": "exigent",
         "last_word": "injunction",
-        "file": "vocabulary/part-04.json"
+        "file": "vocabulary/part-04.json",
+        "markdown_file": "vocabulary-markdown/part-04.md"
       },
       {
         "part": 5,
@@ -50,7 +54,8 @@
         "count": 57,
         "first_word": "innocuous",
         "last_word": "noisome",
-        "file": "vocabulary/part-05.json"
+        "file": "vocabulary/part-05.json",
+        "markdown_file": "vocabulary-markdown/part-05.md"
       },
       {
         "part": 6,
@@ -59,7 +64,8 @@
         "count": 57,
         "first_word": "nonchalant",
         "last_word": "promulgate",
-        "file": "vocabulary/part-06.json"
+        "file": "vocabulary/part-06.json",
+        "markdown_file": "vocabulary-markdown/part-06.md"
       },
       {
         "part": 7,
@@ -68,7 +74,8 @@
         "count": 57,
         "first_word": "propitious",
         "last_word": "surfeit",
-        "file": "vocabulary/part-07.json"
+        "file": "vocabulary/part-07.json",
+        "markdown_file": "vocabulary-markdown/part-07.md"
       },
       {
         "part": 8,
@@ -77,7 +84,8 @@
         "count": 56,
         "first_word": "surmise",
         "last_word": "zephyr",
-        "file": "vocabulary/part-08.json"
+        "file": "vocabulary/part-08.json",
+        "markdown_file": "vocabulary-markdown/part-08.md"
       }
     ]
   },
