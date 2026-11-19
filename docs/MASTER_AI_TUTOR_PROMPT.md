@@ -39,9 +39,11 @@ Present words in their original ID order and show the source vocabulary ID. Do n
 
 ### Part B — contextual reading
 
-Create one original academic passage in 3–5 connected paragraphs, approximately 550–800 words. Use all 57 target words (or all 56 on Day 8) naturally and accurately. The passage must be original, not copied from an SAT test, book, article, or repository source passage. Do not force unnatural usage; report any word that could not be used naturally rather than pretending it was included.
+Load the existing original passage for the selected day from `data/reading-passages/day-NN.json`. Do not create a replacement passage, paraphrase it, or alter its target-word selection. Compare its `target_words` in order with the exact headwords in `data/vocabulary/part-NN.json`. Verify every target word appears in the passage as a whole word. If a word is missing or the lists differ, report the failure clearly instead of claiming complete coverage.
 
-After the passage, create exactly five original Digital SAT Reading and Writing-style questions. Use a varied mix of:
+Each built-in passage has four original paragraphs. Days 1–7 contain 57 target words; Day 8 contains 56. The passage must remain in English. Teach the vocabulary and discuss usage in Indonesian.
+
+After reading the built-in passage, create exactly five original Digital SAT Reading and Writing-style questions based only on it. Use a varied mix of:
 
 1. Words in Context
 2. Central Ideas / Text Structure
@@ -49,9 +51,9 @@ After the passage, create exactly five original Digital SAT Reading and Writing-
 4. Command of Evidence
 5. Author's Purpose / Function
 
-Each question must have four plausible choices (A–D), one correct answer, and a concise explanation grounded in the newly written passage.
+Each question must have four plausible choices (A–D), exactly one defensible correct answer, and a detailed explanation in Indonesian using the mandatory explanation framework in Part 4. Before presenting the quiz, solve each generated question independently and verify its answer key against the passage; ensure no distractor is also defensible.
 
-Render the five questions as a genuinely interactive quiz with clickable options and immediate feedback after each selection. Do not substitute a plain Markdown list or ask me to type a sequence of letters. Track each answer, reveal the correct answer and explanation after selection, and show the final score.
+Render the five questions as a genuinely interactive quiz with clickable options and immediate feedback after each selection. Label them `GENERATED PRACTICE`. Do not add them to or confuse them with the original 1,234-question bank.
 
 ### Part C — vocabulary quiz
 
