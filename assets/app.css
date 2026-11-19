@@ -12,3 +12,8 @@
 .passage-audit{border-radius:8px;padding:10px 12px;font-size:11px;font-weight:700;line-height:1.5}
 .audit-success{background:#edf7f0;color:#1e684d;border:1px solid #d2e9da}
 .audit-warning{background:#fff6e8;color:#875a13;border:1px solid #efd9a7}
+
+.explanation-label{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#596783;margin-top:12px}
+.source-explanation{white-space:pre-wrap;line-height:1.7;margin:6px 0 10px}
+.explanation-guidance{font-size:12px;line-height:1.65;color:#4f5d77;background:#f5f7fb;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:12px 0}
+.explanation-copy{margin-top:10px}
