@@ -38,5 +38,148 @@
   "questions_without_explicit_metadata": 359,
   "questions_missing_prompt_tag": 27,
   "exact_question_id_coverage": "0001-1234; each ID appears once in the 21-part output",
-  "source_wording_diff_check": "0 differences in question Markdown content after splitting"
+  "source_wording_diff_check": "0 differences in question Markdown content after splitting",
+  "question_day_map": "question-day-map.json",
+  "mixed_daily_question_counts": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    34
+  ],
+  "mixed_daily_set_counts": [
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      20,
+      14
+    ]
+  ],
+  "source_domain_inventory": {
+    "Information and Ideas": 423,
+    "Craft and Structure": 269,
+    "Expression of Ideas": 281,
+    "Standard English Conventions": 261
+  },
+  "source_domain_shares": {
+    "Information and Ideas": "34.3%",
+    "Craft and Structure": "21.8%",
+    "Expression of Ideas": "22.8%",
+    "Standard English Conventions": "21.1%"
+  },
+  "daily_assignment_integrity": "All 1,234 source Question IDs assigned exactly once across 21 mixed-domain days; every set is 20 questions except Day 21 Set 2 (14)."
 }
