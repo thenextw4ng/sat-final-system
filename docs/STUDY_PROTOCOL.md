@@ -25,22 +25,39 @@ Use two separate counters. Vocabulary Day 1 is not automatically the same study 
 
 The Day 1 Indonesian definition overlay is supplementary learning content; it does not overwrite the extracted source fields. Other vocabulary days currently retain their short Indonesian gloss and English definition until their Indonesian definition overlays are added. The app's source cards are the place to inspect the repository's original vocabulary fields. When generating new examples and comprehension questions in ChatGPT, use fresh wording. The built-in contextual passages are repository-owned original learning content; do not replace them with unrelated passages.
 
-## Track B — Original SAT question bank: 21 days / 1,234 questions
+## Track B — Original SAT question bank: 21 mixed days / 1,234 questions
 
-- Days 1–20: 60 source questions per day, grouped into Set 1 (20), Set 2 (20), and Set 3 (20).
-- Day 21: 34 source questions, grouped into Set 1 (20) and Set 2 (14).
-- Daily source IDs are contiguous and recorded in `data/partition-manifest.json`.
+The daily assignment is canonical in `data/question-day-map.json`. Use that file to determine the exact Question IDs and set membership for the selected day. Do not assume Question Bank Day N corresponds to `question-markdown/part-NN.md`.
+
+- Days 1–20: 60 questions per day, split into Set 1 (20), Set 2 (20), and Set 3 (20).
+- Day 21: 34 questions, split into Set 1 (20) and Set 2 (14).
+- Every day and every set mixes all four domains as evenly as the source inventory permits.
+- All 1,234 original IDs appear exactly once across the 21 days. IDs, hashes, wording, answer choices, answer keys, explanations, and metadata remain attached to the original records.
+
+### Source-file resolution
+
+The `data/question-markdown/part-01.md` … `part-21.md` files remain the canonical source archive, contiguous by Question ID. They are no longer daily assignments. For a Question ID `n`, its source file is `data/question-markdown/part-NN.md`, where `NN = floor((n - 1) / 60) + 1` (two-digit padded). Use the day map's `question_ids` or `sets[].question_ids` to retrieve the assigned records from their source parts, preserving the order specified by the map.
+
+### Domain-inventory limitation
+
+The available bank contains:
+- Information and Ideas: 423 questions (34.3%)
+- Craft and Structure: 269 questions (21.8%)
+- Expression of Ideas: 281 questions (22.8%)
+- Standard English Conventions: 261 questions (21.1%)
+
+The College Board's approximate Reading & Writing domain weights are 26%, 28%, 20%, and 26%, respectively. The source bank has too few Craft and Structure and Standard English Conventions questions to reproduce those exact proportions while using only the existing 1,234 questions. The daily sets are therefore balanced to the available source inventory; do not label them as exact official-weighted simulations.
 
 ### Question session sequence
 
 1. Select a Question Bank Day.
-2. Answer each question by clicking A, B, C, or D.
-3. The app immediately marks the answer correct/incorrect and reveals the source answer and explanation.
-4. Continue through the 20-question sets. On Day 21, the final set contains 14 questions.
-5. Review incorrect items by their exact source Question ID. Use the ID when asking ChatGPT for conceptual analysis.
+2. The app loads `data/question-day-map.json`, then retrieves the original records from the source parts needed for that day.
+3. Answer each question by clicking A, B, C, or D.
+4. The app immediately marks the answer correct/incorrect and reveals the source answer and explanation.
+5. Continue through the 20-question sets. On Day 21, the final set contains 14 questions.
+6. Review incorrect items by their exact source Question ID. Use the ID when asking ChatGPT for conceptual analysis.
 
-Original question IDs, hashes, wording, choices, answer keys, and explanations must remain attached to their source records. Do not invent missing Domain, Skill, or Difficulty tags. Use the browser app for verbatim source-question presentation; ChatGPT should not reproduce large copyrighted question or passage blocks in chat.
-
+Original question IDs and hashes are immutable identifiers. Do not invent missing Domain, Skill, or Difficulty tags. The browser app is the source-faithful interface for displaying and answering the original question text and choices. ChatGPT should focus on teaching, error analysis, and original analogous practice rather than reproducing large copyrighted source blocks.
 ## Independent progress
 
 - Vocabulary mastery checklist: global across 455 words.
