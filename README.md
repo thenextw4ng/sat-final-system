@@ -50,8 +50,9 @@ The two tracks keep independent progress. For exact source question presentation
 
 - `data/vocabulary/part-01.json` … `part-08.json`: source vocabulary records.
 - `data/vocabulary-markdown/part-01.md` … `part-08.md`: readable vocabulary source views.
-- `data/question-markdown/part-01.md` … `part-21.md`: original question parts.
-- `data/partition-manifest.json`: canonical partition map.
+- `data/question-markdown/part-01.md` … `part-21.md`: canonical original-source archives, contiguous by Question ID (not daily files).
+- `data/question-day-map.json`: canonical mixed-domain daily and 20-question set assignments.
+- `data/partition-manifest.json`: source-part manifest and pointer to the daily map.
 - `data/vocabulary-review-queue.json`: vocabulary records requiring manual comparison against the original licensed PDF before being treated as clean.
 
 The importer can rebuild the data after the original source files are placed in `sources/`:
