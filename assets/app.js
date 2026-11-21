@@ -5,7 +5,7 @@
   const KEYS = {
     mastered: "sat-final-system:vocab-mastered:v1",
     vocabDay: (day) => `sat-final-system:vocab-day:${day}:v2`,
-    questionDay: (day) => `sat-final-system:question-day:${day}:v2`,
+    questionDay: (day) => `sat-final-system:question-day:${day}:v3`,
   };
   const state = {
     vocab: null,
@@ -21,6 +21,9 @@
     questionIndex: 0,
     questionAnswers: {},
     questionFinished: false,
+    questionDayMap: null,
+    questionSourceCache: new Map(),
+    legacyQuestionAnswers: null,
     vocabMode: "cards",
   };
 
@@ -482,6 +485,49 @@
     };
   }
 
+  function legacyQuestionAnswers() {
+    if (state.legacyQuestionAnswers) return state.legacyQuestionAnswers;
+    const merged = {};
+    for (let day = 1; day <= 21; day += 1) {
+      const legacy = read(`sat-final-system:quiz:${day}:v1`, { answers: {} });
+      const previous = read(`sat-final-system:question-day:${day}:v2`, { answers: {} });
+      Object.assign(merged, legacy.answers || {}, previous.answers || {});
+    }
+    state.legacyQuestionAnswers = merged;
+    return merged;
+  }
+
+  async function loadQuestionDayRecords(day) {
+    if (!state.questionDayMap) state.questionDayMap = await loadJson("data/question-day-map.json");
+    const dayConfig = state.questionDayMap.days.find((item) => item.day === day);
+    if (!dayConfig) throw new Error(`Question Day ${day} is missing from question-day-map.json`);
+    const requiredIds = new Set(dayConfig.question_ids);
+    const sourceParts = [...new Set(dayConfig.question_ids.map((id) => Math.floor((id - 1) / 60) + 1))];
+    const sourceTexts = await Promise.all(sourceParts.map((part) => {
+      if (!state.questionSourceCache.has(part)) {
+        const request = loadText(`data/question-markdown/part-${String(part).padStart(2, "0")}.md`)
+          .catch((error) => { state.questionSourceCache.delete(part); throw error; });
+        state.questionSourceCache.set(part, request);
+      }
+      return state.questionSourceCache.get(part);
+    }));
+    const records = new Map();
+    sourceTexts.forEach((markdown) => {
+      const headers = [...markdown.matchAll(/^## Question (\\d{4}) — `([0-9a-f]+)`[ \\t]*$/gm)];
+      headers.forEach((header, index) => {
+        const id = Number(header[1]);
+        if (!requiredIds.has(id)) return;
+        const end = index + 1 < headers.length ? headers[index + 1].index : markdown.length;
+        records.set(id, markdown.slice(header.index, end).trim());
+      });
+    });
+    const missing = dayConfig.question_ids.filter((id) => !records.has(id));
+    if (missing.length) throw new Error(`Missing source Question IDs: ${missing.join(", ")}`);
+    const markdown = dayConfig.question_ids.map((id) => records.get(id)).join("\\n\\n");
+    const parsed = parseQuestionMarkdown(markdown, day);
+    if (parsed.count !== dayConfig.count) throw new Error(`Day ${day}: expected ${dayConfig.count} questions, found ${parsed.count}`);
+    return { config: dayConfig, parsed };
+  }
   function saveQuestions() {
     write(KEYS.questionDay(state.questionDay), {
       answers: state.questionAnswers,
@@ -510,7 +556,7 @@
 
   function buildQuestionExplanationPrompt(question) {
     const id = String(question.id).padStart(4, "0");
-    const part = String(state.questionDay).padStart(2, "0");
+    const part = String(Math.floor((question.id - 1) / 60) + 1).padStart(2, "0");
     return [
       "BAHAS SOAL #" + id,
       "Repository sumber: https://github.com/thenextw4ng/sat-final-system",
@@ -670,17 +716,26 @@
   async function loadQuestionDay(day) {
     state.questionDay = day;
     $("questionDay").value = day;
-    $("quizArea").replaceChildren(node("div", "loading", "Loading original question bank…"));
+    $("quizArea").replaceChildren(node("div", "loading", "Loading mixed-domain question set…"));
     try {
-      const markdown = await loadText(`data/question-markdown/part-${String(day).padStart(2, "0")}.md`);
-      state.questions = parseQuestionMarkdown(markdown, day);
-      const legacy = read(`sat-final-system:quiz:${day}:v1`, { answers: {}, finished: false });
-      const saved = read(KEYS.questionDay(day), { answers: legacy.answers || {}, index: 0, finished: !!legacy.finished });
-      state.questionAnswers = saved.answers || {};
-      state.questionIndex = Math.min(saved.index || 0, Math.max(0, state.questions.count - 1));
-      state.questionFinished = !!saved.finished;
-      $("questionRange").textContent = `Original IDs #${state.questions.start_id}–${state.questions.end_id} · ${state.questions.count} questions`;
-      $("questionDayHeading").textContent = `Question Bank Day ${day}`;
+      const { config, parsed } = await loadQuestionDayRecords(day);
+      state.questions = parsed;
+      const saved = read(KEYS.questionDay(day), null);
+      if (saved) {
+        state.questionAnswers = saved.answers || {};
+        state.questionIndex = Math.min(saved.index || 0, Math.max(0, state.questions.count - 1));
+        state.questionFinished = !!saved.finished;
+      } else {
+        const previousAnswers = legacyQuestionAnswers();
+        state.questionAnswers = Object.fromEntries(config.question_ids.filter((id) => previousAnswers[id]).map((id) => [id, previousAnswers[id]]));
+        const firstUnanswered = state.questions.questions.findIndex((question) => !state.questionAnswers[question.id]);
+        state.questionIndex = firstUnanswered < 0 ? Math.max(0, state.questions.count - 1) : firstUnanswered;
+        state.questionFinished = firstUnanswered < 0;
+      }
+      const labels = [["information_ideas", "Info & Ideas"], ["craft_structure", "Craft & Structure"], ["expression_ideas", "Expression of Ideas"], ["standard_english", "Standard English"]];
+      const mix = labels.map(([key, label]) => `${label} ${config.domain_counts[key] || 0}`).join(" · ");
+      $("questionRange").textContent = `${config.count} mixed questions · ${mix}`;
+      $("questionDayHeading").textContent = `Question Bank Day ${day} · Mixed Domains`;
       renderQuestion();
     } catch (error) {
       showError($("quizArea"), error);
