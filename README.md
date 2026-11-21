@@ -7,7 +7,7 @@ Source-first SAT Reading & Writing study workspace with two independent study tr
 | Track | Days | Total | Daily distribution |
 |---|---:|---:|---|
 | Vocabulary | 8 | 455 words | Days 1–7: 57 words; Day 8: 56 words |
-| Original question bank | 21 | 1,234 questions | Days 1–20: 60 questions; Day 21: 34 questions |
+| Original question bank | 21 | 1,234 questions | Days 1–20: 60 mixed questions (3 × 20); Day 21: 34 (20 + 14) |
 
 The day number is independent between tracks. For example, Vocabulary Day 3 and Question Bank Day 8 can be studied in any order.
 
@@ -19,8 +19,13 @@ All eight vocabulary days now include an original contextual reading passage dir
 
 ### Original question-bank track
 
-Each day maps directly to the matching question Markdown part. Days 1–20 contain 60 source questions each, shown in three sets of 20. Day 21 contains 34 questions, shown as 20 + 14. The interface preserves the original Question ID, hash, question block, answer choices, key, explanation, and available metadata. Clicking A–D immediately reveals correctness and the source explanation. Use **Salin prompt pembahasan Indonesia** to ask ChatGPT for a structured Indonesian analysis based on the exact Question ID. Progress and the last position are saved per day.
+Each day now contains a **mixed-domain** selection from all four Reading & Writing domains. Days 1–20 contain 60 questions in three sets of 20; Day 21 contains 34 questions in sets of 20 + 14. The daily assignment is defined by `data/question-day-map.json`, which preserves every original Question ID and assigns it to exactly one day and set.
 
+The original files `data/question-markdown/part-01.md` … `part-21.md` remain canonical, verbatim source archives in contiguous Question ID order. They are **not daily files**. The browser app reads only the source parts needed for the selected mixed day and caches them for later days. Source part for Question ID `n` is `Math.floor((n - 1) / 60) + 1`.
+
+The source bank contains 423 Information and Ideas questions (34.3%), 269 Craft and Structure (21.8%), 281 Expression of Ideas (22.8%), and 261 Standard English Conventions (21.1%). Daily practice is balanced against this available inventory. It therefore does not exactly match the College Board test blueprint; exact official weighting would require adding more Craft and Structure and Standard English Conventions questions.
+
+The interface preserves the original Question ID, hash, question block, answer choices, key, explanation, and available metadata. Clicking A–D immediately reveals correctness and the source explanation. Use **Salin prompt pembahasan Indonesia** to ask ChatGPT for a structured Indonesian analysis based on the exact Question ID. Progress is saved per mixed day.
 ## Run locally
 
 From the repository root:
