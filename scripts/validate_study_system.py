@@ -76,6 +76,66 @@ def main() -> int:
     if question_ids != list(range(1, 1235)):
         errors.append("Question IDs must be exactly 0001–1234 in order")
 
+    # Validate the new mixed-domain day map separately from the immutable source archive.
+    day_map_path = DATA / "question-day-map.json"
+    if not day_map_path.exists():
+        errors.append("data/question-day-map.json is missing")
+    else:
+        day_map = json.loads(day_map_path.read_text(encoding="utf-8"))
+        day_entries = day_map.get("days", [])
+        if len(day_entries) != 21:
+            errors.append(f"Expected 21 mixed question days; found {len(day_entries)}")
+        domain_ranges = day_map.get("source_domain_ranges", [])
+        domain_totals = {d["key"]: 0 for d in domain_ranges}
+        mapped_ids: list[int] = []
+        for expected_day, entry in enumerate(day_entries, start=1):
+            day_no = entry.get("day")
+            expected_count = 34 if expected_day == 21 else 60
+            expected_sets = [20, 14] if expected_day == 21 else [20, 20, 20]
+            ids = entry.get("question_ids", [])
+            sets = entry.get("sets", [])
+            if day_no != expected_day:
+                errors.append(f"Mixed day order mismatch: expected Day {expected_day}, found {day_no}")
+            if entry.get("count") != expected_count or len(ids) != expected_count:
+                errors.append(f"Mixed Day {expected_day}: expected {expected_count} IDs, found {len(ids)}")
+            set_ids = [qid for block in sets for qid in block.get("question_ids", [])]
+            if ids != set_ids:
+                errors.append(f"Mixed Day {expected_day}: question_ids do not match flattened set order")
+            if [block.get("count") for block in sets] != expected_sets:
+                errors.append(f"Mixed Day {expected_day}: expected set counts {expected_sets}")
+            if len(ids) != len(set(ids)):
+                errors.append(f"Mixed Day {expected_day}: duplicate Question IDs")
+            mapped_ids.extend(ids)
+
+            actual_day_counts = {d["key"]: 0 for d in domain_ranges}
+            for qid in ids:
+                if not isinstance(qid, int) or qid < 1 or qid > 1234:
+                    errors.append(f"Mixed Day {expected_day}: invalid Question ID {qid}")
+                    continue
+                matching = [d for d in domain_ranges if d["start"] <= qid <= d["end"]]
+                if len(matching) != 1:
+                    errors.append(f"Question #{qid:04d}: expected exactly one source-domain range")
+                    continue
+                key = matching[0]["key"]
+                actual_day_counts[key] += 1
+                domain_totals[key] += 1
+            if entry.get("domain_counts") != actual_day_counts:
+                errors.append(f"Mixed Day {expected_day}: domain_counts do not match assigned IDs")
+            for set_no, block in enumerate(sets, start=1):
+                block_counts = {d["key"]: 0 for d in domain_ranges}
+                for qid in block.get("question_ids", []):
+                    for d in domain_ranges:
+                        if d["start"] <= qid <= d["end"]:
+                            block_counts[d["key"]] += 1
+                            break
+                if block.get("domain_counts") != block_counts:
+                    errors.append(f"Mixed Day {expected_day} Set {set_no}: domain_counts do not match assigned IDs")
+        if sorted(mapped_ids) != list(range(1, 1235)):
+            errors.append("Mixed day map must assign every Question ID 0001–1234 exactly once")
+        for d in domain_ranges:
+            if domain_totals.get(d["key"]) != d["count"]:
+                errors.append(f"Mixed day map: {d['label']} total does not match source inventory")
+
     queue_path = DATA / "vocabulary-review-queue.json"
     if queue_path.exists():
         queue = json.loads(queue_path.read_text(encoding="utf-8"))
