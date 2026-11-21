@@ -262,6 +262,14 @@
         "format": "verbatim-markdown"
       }
     ],
-    "partition_rule": "Parts 01–20 contain 60 full source questions each; Part 21 contains 34 full source questions."
+    "partition_rule": "The 21 daily practice sets are mixed across all four domains and are defined by data/question-day-map.json. Original question-markdown parts remain contiguous source archives by Question ID.",
+    "day_map_file": "question-day-map.json",
+    "source_partition_rule": "Source parts 01–20 contain 60 contiguous questions each; source part 21 contains IDs 1201–1234 (34 questions).",
+    "daily_domain_inventory": {
+      "information_ideas": 423,
+      "craft_structure": 269,
+      "expression_ideas": 281,
+      "standard_english": 261
+    }
   }
 }
