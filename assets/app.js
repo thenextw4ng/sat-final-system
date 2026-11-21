@@ -513,7 +513,7 @@
     }));
     const records = new Map();
     sourceTexts.forEach((markdown) => {
-      const headers = [...markdown.matchAll(/^## Question (\\d{4}) — `([0-9a-f]+)`[ \\t]*$/gm)];
+      const headers = [...markdown.matchAll(/^## Question (\d{4}) — `([0-9a-f]+)`[ \t]*$/gm)];
       headers.forEach((header, index) => {
         const id = Number(header[1]);
         if (!requiredIds.has(id)) return;
@@ -523,7 +523,7 @@
     });
     const missing = dayConfig.question_ids.filter((id) => !records.has(id));
     if (missing.length) throw new Error(`Missing source Question IDs: ${missing.join(", ")}`);
-    const markdown = dayConfig.question_ids.map((id) => records.get(id)).join("\\n\\n");
+    const markdown = dayConfig.question_ids.map((id) => records.get(id)).join("\n\n");
     const parsed = parseQuestionMarkdown(markdown, day);
     if (parsed.count !== dayConfig.count) throw new Error(`Day ${day}: expected ${dayConfig.count} questions, found ${parsed.count}`);
     return { config: dayConfig, parsed };
